@@ -69,13 +69,13 @@ function markiereFortschritt() {
 
 function initQuizFragen() {
   var fragen = document.querySelectorAll(".frage");
-  var punkteContainer = document.querySelector("[data-quiz-punkte]");
-  var gesamtContainer = document.querySelector("[data-quiz-gesamt]");
+  var punkteContainer = document.querySelectorAll("[data-quiz-punkte]");
+  var gesamtContainer = document.querySelectorAll("[data-quiz-gesamt]");
   var punkte = 0;
 
-  if (gesamtContainer) {
-    gesamtContainer.textContent = fragen.length;
-  }
+  gesamtContainer.forEach(function (el) {
+    el.textContent = fragen.length;
+  });
 
   fragen.forEach(function (frage) {
     var richtigIndex = parseInt(frage.getAttribute("data-richtig"), 10);
@@ -107,9 +107,9 @@ function initQuizFragen() {
           if (rueckmeldungFalsch) rueckmeldungFalsch.classList.add("zeigen");
         }
 
-        if (punkteContainer) {
-          punkteContainer.textContent = punkte;
-        }
+        punkteContainer.forEach(function (el) {
+          el.textContent = punkte;
+        });
 
         frage.dispatchEvent(new CustomEvent("frage-beantwortet", { detail: { istRichtig: istRichtig } }));
       });

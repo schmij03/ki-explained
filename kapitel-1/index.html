@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kapitel 1: Was ist Künstliche Intelligenz? – ki-explained</title>
 <meta name="description" content="Was ist Künstliche Intelligenz, wo begegnet sie euch im Alltag, und was hat es mit dem Turing-Test auf sich?">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body data-kapitel="1">
@@ -44,7 +45,7 @@
   <span class="tag">Kapitel 1</span>
   <h1>Was ist Künstliche Intelligenz?</h1>
   <p class="einleitungstext">
-    Der Begriff „Künstliche Intelligenz" (KI) begegnet euch ständig, in der
+    Der Begriff „Künstliche Intelligenz“ (KI) begegnet euch ständig, in der
     Werbung, in Apps, in den Nachrichten. Aber was bedeutet er eigentlich
     genau? In diesem Kapitel bekommt ihr eine einfache, aber fachlich
     korrekte Antwort.
@@ -62,12 +63,12 @@
     Ein klassisches Programm arbeitet nach festen Regeln, die eine
     Programmiererin oder ein Programmierer vorher genau festgelegt hat.
     Zum Beispiel: „Wenn die Eingabe grösser als 10 ist, zeige eine
-    Warnung." Das Programm tut immer exakt das, was vorprogrammiert wurde,
+    Warnung.“ Das Programm tut immer exakt das, was vorprogrammiert wurde,
     nicht mehr und nicht weniger.
   </p>
   <p>
     Ein KI-System funktioniert anders. Es wurde mit sehr vielen Beispielen
-    „trainiert" und hat daraus selbst Muster gelernt, statt dass ihm jede
+    „trainiert“ und hat daraus selbst Muster gelernt, statt dass ihm jede
     einzelne Regel vorgegeben wurde. Deshalb kann eine KI auch mit neuen,
     unbekannten Situationen umgehen, die niemand vorher explizit
     einprogrammiert hat.
@@ -117,7 +118,7 @@
     <div class="box">
       <svg class="icon-klein" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 17V7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10"/><path d="M2 17h20l-1.5 3h-17Z"/></svg>
       <h3>Technische Funktionsweise</h3>
-      <p style="margin-bottom:0">Wie funktioniert KI eigentlich unter der Haube? Welche Daten braucht sie, wie „lernt" sie?</p>
+      <p style="margin-bottom:0">Wie funktioniert KI eigentlich unter der Haube? Welche Daten braucht sie, wie „lernt“ sie?</p>
     </div>
     <div class="box">
       <svg class="icon-klein" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="7" r="3"/><path d="M2 21v-2a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v2"/><circle cx="18" cy="8" r="2.4"/><path d="M15.5 21v-1.6a4 4 0 0 1 4-4h.3a4 4 0 0 1 3.2 1.6"/></svg>
@@ -143,13 +144,13 @@
   <p>
     Schon 1950 stellte sich der britische Mathematiker <strong>Alan
     Turing</strong> eine spannende Frage: Kann eine Maschine so
-    überzeugend „sprechen", dass ein Mensch im Textgespräch nicht mehr
+    überzeugend „sprechen“, dass ein Mensch im Textgespräch nicht mehr
     erkennt, ob er mit einem Menschen oder mit einem Computer schreibt?
     Genau das prüft der nach ihm benannte Turing-Test.
   </p>
   <p>
     Wichtig dabei: Der Turing-Test prüft nicht, ob eine Maschine wirklich
-    „denkt" oder etwas „versteht". Er prüft nur, ob ihr Verhalten
+    „denkt“ oder etwas „versteht“. Er prüft nur, ob ihr Verhalten
     nach aussen menschlich wirkt. Das ist ein wichtiger Unterschied, den
     ihr im nächsten Kapitel noch genauer kennenlernt.
   </p>
@@ -158,7 +159,7 @@
     <h3>Übung: Mensch oder Maschine?</h3>
     <p>
       Stellt euch vor, jemand hat per Textchat die Frage „Wie war dein
-      Wochenende?" gestellt. Lest die Antwort und schätzt: Stammt sie
+      Wochenende?“ gestellt. Lest die Antwort und schätzt: Stammt sie
       eher von einem Menschen oder von einer Maschine?
     </p>
     <div id="turing-inhalt"></div>
@@ -185,7 +186,7 @@
         {
           text: "Ich habe an einem kreativen Projekt gearbeitet und dabei viel gelernt. Es hat mir Freude bereitet, neue Ideen zu entwickeln.",
           loesung: "maschine",
-          begruendung: "Auffällig glatt, inhaltlich unspezifisch (nur „ein kreatives Projekt", keine Details) und ohne konkrete Angaben. Das ist typisch für automatisch generierten Text."
+          begruendung: "Auffällig glatt, inhaltlich unspezifisch (nur „ein kreatives Projekt“, keine Details) und ohne konkrete Angaben. Das ist typisch für automatisch generierten Text."
         }
       ];
 
@@ -207,7 +208,7 @@
         var beispiel = beispiele[index];
         container.innerHTML =
           '<p class="uebung-fortschritt">Beispiel ' + (index + 1) + ' von ' + beispiele.length + '</p>' +
-          '<p class="uebung-aussage">„' + beispiel.text + '"</p>' +
+          '<p class="uebung-aussage">„' + beispiel.text + '“</p>' +
           '<div class="wahl-reihe">' +
           '<button class="knopf wahl-knopf" data-wahl="mensch">Mensch</button>' +
           '<button class="knopf sekundaer wahl-knopf" data-wahl="maschine">Maschine</button>' +

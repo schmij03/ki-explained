@@ -54,8 +54,9 @@
   <nav class="etappenleiste" aria-label="Weg durch dieses Kapitel">
     <a class="etappe-punkt" href="#was-ist-ki"><span class="kreis">1</span><span class="label">Definition</span></a>
     <a class="etappe-punkt" href="#drei-blickwinkel"><span class="kreis">2</span><span class="label">Drei Blickwinkel</span></a>
-    <a class="etappe-punkt" href="#turing-test"><span class="kreis">3</span><span class="label">Turing-Test</span></a>
-    <a class="etappe-punkt" href="#selbsttest"><span class="kreis">4</span><span class="label">Selbsttest</span></a>
+    <a class="etappe-punkt" href="#ki-trainieren"><span class="kreis">3</span><span class="label">Selbst trainieren</span></a>
+    <a class="etappe-punkt" href="#turing-test"><span class="kreis">4</span><span class="label">Turing-Test</span></a>
+    <a class="etappe-punkt" href="#selbsttest"><span class="kreis">5</span><span class="label">Selbsttest</span></a>
   </nav>
 
   <h2 id="was-ist-ki">Etappe 1: Eine einfache Definition</h2>
@@ -140,7 +141,63 @@
     Risiken im Zentrum.
   </p>
 
-  <h2 id="turing-test">Etappe 3: Der Turing-Test</h2>
+  <h2 id="ki-trainieren">Etappe 3: Trainiert eure eigene Mini-KI</h2>
+  <p>
+    In Etappe 1 habt ihr gelesen, dass eine KI aus Beispielen lernt, statt
+    festen Regeln zu folgen. Das könnt ihr jetzt selbst ausprobieren: mit
+    <strong>Teachable Machine</strong>, einem kostenlosen Werkzeug von
+    Google. Ihr trainiert dort direkt im Browser eine eigene kleine KI,
+    die zum Beispiel per Webcam zwei verschiedene Handzeichen
+    unterscheiden lernt, ganz ohne Programmieren.
+  </p>
+
+  <div class="box hinweis">
+    <h3>Aufgabe: Teachable Machine ausprobieren</h3>
+    <p>
+      Öffnet
+      <a href="https://teachablemachine.withgoogle.com/train" target="_blank" rel="noopener">teachablemachine.withgoogle.com/train</a>
+      in einem neuen Tab (ein externes Angebot von Google, kein Teil dieser
+      Seite) und geht so vor:
+    </p>
+    <ol style="padding-left:1.2rem; margin-bottom:0">
+      <li>Wählt „Image Project“ und danach „Standard image model“.</li>
+      <li>Erstellt mindestens zwei Klassen, zum Beispiel „Daumen hoch“ und „Daumen runter“, oder zwei unterschiedliche Gegenstände.</li>
+      <li>Erlaubt den Zugriff auf die Webcam und nehmt pro Klasse etwa 20 bis 30 Beispielbilder auf.</li>
+      <li>Klickt auf „Train Model“ und wartet, bis das Training abgeschlossen ist.</li>
+      <li>Testet euer Modell im Vorschaubereich: Zeigt der Kamera etwas Neues und schaut, welche Klasse die KI erkennt und wie sicher sie sich ist.</li>
+    </ol>
+  </div>
+
+  <div class="box beispiel">
+    <h3>Reflexionsfragen</h3>
+    <ul style="margin-bottom:0">
+      <li>Was passiert, wenn ihr das Handzeichen bei schlechtem Licht oder aus einem ungewohnten Winkel zeigt? Erkennt die KI es trotzdem?</li>
+      <li>Probiert es mit nur 2 bis 3 Beispielen pro Klasse statt 20 bis 30. Wird die Vorhersage schlechter?</li>
+      <li>Woher „weiss“ die KI, was zu welcher Klasse gehört? Sie erkennt Muster in den Pixeln der Bilder, sie versteht nicht wirklich, was ein Daumen oder ein Gegenstand ist.</li>
+    </ul>
+  </div>
+
+  <p>
+    Genau das ist maschinelles Lernen im Kleinen: Aus Beispielen entstehen
+    Muster, mit denen die KI auch auf neue, ähnliche Bilder reagieren
+    kann. Die Menge und Qualität der Beispiele entscheidet massgeblich
+    darüber, wie gut das funktioniert, ein Prinzip, das auch hinter den
+    grossen KI-Chatbots aus Kapitel 2 steckt.
+  </p>
+
+  <div class="box">
+    <p style="margin-bottom:0">
+      <strong>Hinweis zum Datenschutz:</strong> Teachable Machine
+      verarbeitet die Webcam-Bilder direkt in eurem Browser, sie müssen
+      nicht hochgeladen werden, solange ihr das Modell nicht extra
+      exportiert. Zeigt trotzdem nur euch selbst oder Gegenstände, keine
+      anderen Personen ohne deren Einverständnis. Funktioniert die
+      Webcam auf eurem Gerät nicht, macht die Übung zu zweit oder schaut
+      bei einer Vorführung im Plenum zu.
+    </p>
+  </div>
+
+  <h2 id="turing-test">Etappe 4: Der Turing-Test</h2>
   <p>
     Schon 1950 stellte sich der britische Mathematiker <strong>Alan
     Turing</strong> eine spannende Frage: Kann eine Maschine so
@@ -244,7 +301,7 @@
     })();
   </script>
 
-  <h2 id="selbsttest">Etappe 4: Selbsttest</h2>
+  <h2 id="selbsttest">Etappe 5: Selbsttest</h2>
   <p>Prüft kurz, ob die wichtigsten Punkte aus diesem Kapitel sitzen.</p>
 
   <div class="frage" data-richtig="2">
@@ -303,6 +360,18 @@
     </div>
     <div class="rueckmeldung richtig">Richtig, diese drei Blickwinkel begleiten euch durch die ganze Einheit.</div>
     <div class="rueckmeldung falsch">Die richtige Antwort: technische Funktionsweise, gesellschaftliche Auswirkung, persönliche Nutzung.</div>
+  </div>
+
+  <div class="frage" data-richtig="2">
+    <p class="frage-text">6. Bei der Teachable-Machine-Übung habt ihr mit wenigen Beispielbildern pro Klasse trainiert. Was war zu beobachten?</p>
+    <div class="antwort-liste">
+      <button class="antwort-knopf">Die Anzahl der Beispiele spielt keine Rolle für das Ergebnis.</button>
+      <button class="antwort-knopf">Mit zu wenigen oder unklaren Beispielen erkennt das trainierte Modell neue Bilder schlechter.</button>
+      <button class="antwort-knopf">Weniger Beispiele führen immer zu einem besseren Ergebnis.</button>
+      <button class="antwort-knopf">Die Webcam-Bilder werden dabei automatisch auf einen fremden Server hochgeladen.</button>
+    </div>
+    <div class="rueckmeldung richtig">Genau. Wenige oder unklare Beispiele führen zu einem Modell, das schlechter zwischen den Klassen unterscheiden kann.</div>
+    <div class="rueckmeldung falsch">Nicht ganz. Mit zu wenigen oder unklaren Beispielen erkennt das trainierte Modell neue Bilder schlechter.</div>
   </div>
 
   <nav class="kapitelnav">

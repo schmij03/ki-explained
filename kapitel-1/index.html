@@ -7,6 +7,7 @@
 <meta name="description" content="Was ist Künstliche Intelligenz, wo begegnet sie euch im Alltag, und was hat es mit dem Turing-Test auf sich?">
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" data-lernlandschaft href="../assets/lernlandschaft.css">
 </head>
 <body data-kapitel="1">
 
@@ -31,6 +32,7 @@
       </svg>
     </button>
     <nav class="hauptnav">
+      <a href="../projekt/index.html">Projekt</a>
       <a href="index.html" class="aktiv" data-kapitel-link="1">1. Was ist KI?</a>
       <a href="../kapitel-2/index.html" data-kapitel-link="2">2. Chatbots</a>
       <a href="../kapitel-3/index.html" data-kapitel-link="3">3. Prompting</a>
@@ -40,7 +42,8 @@
   </div>
 </header>
 
-<main>
+<a class="sprunglink" href="#inhalt">Zum Inhalt</a>
+<main id="inhalt">
 
   <span class="tag">Kapitel 1</span>
   <h1>Was ist Künstliche Intelligenz?</h1>
@@ -51,15 +54,43 @@
     korrekte Antwort.
   </p>
 
-  <nav class="etappenleiste" aria-label="Weg durch dieses Kapitel">
-    <a class="etappe-punkt" href="#was-ist-ki"><span class="kreis">1</span><span class="label">Definition</span></a>
-    <a class="etappe-punkt" href="#drei-blickwinkel"><span class="kreis">2</span><span class="label">Drei Blickwinkel</span></a>
-    <a class="etappe-punkt" href="#ki-trainieren"><span class="kreis">3</span><span class="label">Selbst trainieren</span></a>
-    <a class="etappe-punkt" href="#turing-test"><span class="kreis">4</span><span class="label">Turing-Test</span></a>
-    <a class="etappe-punkt" href="#selbsttest"><span class="kreis">5</span><span class="label">Selbsttest</span></a>
+  <section class="lernauftrag" aria-label="Dein Lernauftrag">
+<p class="arbeitsart">3. Sek · Medien und Informatik · 45–60 Min.</p>
+<h2>Das kannst du danach</h2>
+<p>Du unterscheidest feste Regeln von gelernten Mustern und erklärst, warum Trainingsbeispiele wichtig sind.</p>
+<nav class="werkzeugwege" aria-label="Zugänge zum Kapitel">
+<a href="#theorie-start">▤ Theorie lesen</a>
+<a href="#werkstatt">◇ Werkstatt starten</a>
+<a href="#selbsttest">✓ Wissen prüfen</a>
+</nav>
+<p>Dein Weg: Theorie → Experiment → eigene Erklärung → Selbsttest. ? hilft dir weiter; ★ ist freiwillig.</p>
+</section>
+<nav class="etappenleiste" aria-label="Weg durch dieses Kapitel">
+    <a class="etappe-punkt" href="#was-ist-ki">
+<span class="kreis">1</span>
+<span class="label">Definition</span>
+</a>
+    <a class="etappe-punkt" href="#drei-blickwinkel">
+<span class="kreis">2</span>
+<span class="label">Drei Blickwinkel</span>
+</a>
+    <a class="etappe-punkt" href="#ki-trainieren">
+<span class="kreis">3</span>
+<span class="label">Selbst trainieren</span>
+</a>
+    <a class="etappe-punkt" href="#turing-test">
+<span class="kreis">4</span>
+<span class="label">Turing-Test</span>
+</a>
+    <a class="etappe-punkt" href="#selbsttest">
+<span class="kreis">5</span>
+<span class="label">Selbsttest</span>
+</a>
   </nav>
 
-  <h2 id="was-ist-ki">Etappe 1: Eine einfache Definition</h2>
+  <span id="theorie-start">
+</span>
+<h2 id="was-ist-ki">Etappe 1: Eine einfache Definition</h2>
   <p>
     Ein klassisches Programm arbeitet nach festen Regeln, die eine
     Programmiererin oder ein Programmierer vorher genau festgelegt hat.
@@ -68,7 +99,7 @@
     nicht mehr und nicht weniger.
   </p>
   <p>
-    Ein KI-System funktioniert anders. Es wurde mit sehr vielen Beispielen
+    Viele heutige KI-Systeme nutzen maschinelles Lernen. Ein solches System wurde mit vielen Beispielen
     „trainiert“ und hat daraus selbst Muster gelernt, statt dass ihm jede
     einzelne Regel vorgegeben wurde. Deshalb kann eine KI auch mit neuen,
     unbekannten Situationen umgehen, die niemand vorher explizit
@@ -80,13 +111,14 @@
     <p style="margin-bottom:0">
       <strong>Klassisches Programm:</strong> Menschen schreiben feste
       Regeln, der Computer folgt ihnen exakt.<br>
-      <strong>Künstliche Intelligenz:</strong> Der Computer lernt aus
+      <strong>Maschinelles Lernen (ein Bereich der KI):</strong> Der Computer lernt aus
       Beispielen und Daten Muster, mit denen er auch auf neue Situationen
       reagieren kann.
     </p>
   </div>
 
-  <h3>KI in eurem Alltag</h3>
+  <p>KI ist ein Oberbegriff. Es gibt auch KI-Verfahren mit vorgegebenen Regeln. In dieser Einheit untersuchen wir vor allem Systeme, die aus Daten lernen. Auch ihre Lernverfahren werden von Menschen programmiert.</p>
+<h3>KI in eurem Alltag</h3>
   <p>Vermutlich nutzt ihr KI schon öfter, als euch bewusst ist:</p>
   <div class="kachel-raster">
     <div class="box" style="margin:0">
@@ -99,7 +131,7 @@
     </div>
     <div class="box" style="margin:0">
       <h3 style="margin-top:0">Chatbots in Apps</h3>
-      <p style="margin-bottom:0">Support-Chats oder Assistenten, die auf eure Textnachrichten antworten.</p>
+      <p style="margin-bottom:0">Assistenten, die Texte erzeugen. Achtung: Ein einfacher Support-Chat kann auch nur feste Regeln verwenden.</p>
     </div>
     <div class="box" style="margin:0">
       <h3 style="margin-top:0">KI-Funktionen in Word &amp; Co.</h3>
@@ -117,17 +149,28 @@
 
   <div class="drei-spalten">
     <div class="box">
-      <svg class="icon-klein" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 17V7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10"/><path d="M2 17h20l-1.5 3h-17Z"/></svg>
+      <svg class="icon-klein" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M4 17V7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10"/>
+<path d="M2 17h20l-1.5 3h-17Z"/>
+</svg>
       <h3>Technische Funktionsweise</h3>
       <p style="margin-bottom:0">Wie funktioniert KI eigentlich unter der Haube? Welche Daten braucht sie, wie „lernt“ sie?</p>
     </div>
     <div class="box">
-      <svg class="icon-klein" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="7" r="3"/><path d="M2 21v-2a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v2"/><circle cx="18" cy="8" r="2.4"/><path d="M15.5 21v-1.6a4 4 0 0 1 4-4h.3a4 4 0 0 1 3.2 1.6"/></svg>
+      <svg class="icon-klein" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<circle cx="9" cy="7" r="3"/>
+<path d="M2 21v-2a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v2"/>
+<circle cx="18" cy="8" r="2.4"/>
+<path d="M15.5 21v-1.6a4 4 0 0 1 4-4h.3a4 4 0 0 1 3.2 1.6"/>
+</svg>
       <h3>Gesellschaftliche Auswirkung</h3>
       <p style="margin-bottom:0">Was verändert KI für uns alle? Welche Chancen und welche Risiken bringt sie für die Gesellschaft?</p>
     </div>
     <div class="box">
-      <svg class="icon-klein" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="10" y1="19" x2="14" y2="19"/></svg>
+      <svg class="icon-klein" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<rect x="5" y="2" width="14" height="20" rx="2"/>
+<line x1="10" y1="19" x2="14" y2="19"/>
+</svg>
       <h3>Persönliche Nutzung</h3>
       <p style="margin-bottom:0">Wie nutze ich KI selbst sinnvoll, verantwortungsvoll und ohne mich zu sehr darauf zu verlassen?</p>
     </div>
@@ -141,62 +184,16 @@
     Risiken im Zentrum.
   </p>
 
-  <h2 id="ki-trainieren">Etappe 3: Trainiert eure eigene Mini-KI</h2>
-  <p>
-    In Etappe 1 habt ihr gelesen, dass eine KI aus Beispielen lernt, statt
-    festen Regeln zu folgen. Das könnt ihr jetzt selbst ausprobieren: mit
-    <strong>Teachable Machine</strong>, einem kostenlosen Werkzeug von
-    Google. Ihr trainiert dort direkt im Browser eine eigene kleine KI,
-    die zum Beispiel per Webcam zwei verschiedene Handzeichen
-    unterscheiden lernt, ganz ohne Programmieren.
-  </p>
-
-  <div class="box hinweis">
-    <h3>Aufgabe: Teachable Machine ausprobieren</h3>
-    <p>
-      Öffnet
-      <a href="https://teachablemachine.withgoogle.com/train" target="_blank" rel="noopener">teachablemachine.withgoogle.com/train</a>
-      in einem neuen Tab (ein externes Angebot von Google, kein Teil dieser
-      Seite) und geht so vor:
-    </p>
-    <ol style="padding-left:1.2rem; margin-bottom:0">
-      <li>Wählt „Image Project“ und danach „Standard image model“.</li>
-      <li>Erstellt mindestens zwei Klassen, zum Beispiel „Daumen hoch“ und „Daumen runter“, oder zwei unterschiedliche Gegenstände.</li>
-      <li>Erlaubt den Zugriff auf die Webcam und nehmt pro Klasse etwa 20 bis 30 Beispielbilder auf.</li>
-      <li>Klickt auf „Train Model“ und wartet, bis das Training abgeschlossen ist.</li>
-      <li>Testet euer Modell im Vorschaubereich: Zeigt der Kamera etwas Neues und schaut, welche Klasse die KI erkennt und wie sicher sie sich ist.</li>
-    </ol>
-  </div>
-
-  <div class="box beispiel">
-    <h3>Reflexionsfragen</h3>
-    <ul style="margin-bottom:0">
-      <li>Was passiert, wenn ihr das Handzeichen bei schlechtem Licht oder aus einem ungewohnten Winkel zeigt? Erkennt die KI es trotzdem?</li>
-      <li>Probiert es mit nur 2 bis 3 Beispielen pro Klasse statt 20 bis 30. Wird die Vorhersage schlechter?</li>
-      <li>Woher „weiss“ die KI, was zu welcher Klasse gehört? Sie erkennt Muster in den Pixeln der Bilder, sie versteht nicht wirklich, was ein Daumen oder ein Gegenstand ist.</li>
-    </ul>
-  </div>
-
-  <p>
-    Genau das ist maschinelles Lernen im Kleinen: Aus Beispielen entstehen
-    Muster, mit denen die KI auch auf neue, ähnliche Bilder reagieren
-    kann. Die Menge und Qualität der Beispiele entscheidet massgeblich
-    darüber, wie gut das funktioniert, ein Prinzip, das auch hinter den
-    grossen KI-Chatbots aus Kapitel 2 steckt.
-  </p>
-
-  <div class="box">
-    <p style="margin-bottom:0">
-      <strong>Hinweis zum Datenschutz:</strong> Teachable Machine
-      verarbeitet die Webcam-Bilder direkt in eurem Browser, sie müssen
-      nicht hochgeladen werden, solange ihr das Modell nicht extra
-      exportiert. Zeigt trotzdem nur euch selbst oder Gegenstände, keine
-      anderen Personen ohne deren Einverständnis. Funktioniert die
-      Webcam auf eurem Gerät nicht, macht die Übung zu zweit oder schaut
-      bei einer Vorführung im Plenum zu.
-    </p>
-  </div>
-
+  <h2 id="ki-trainieren">Etappe 3: Lernen aus Beispielen</h2>
+<p>Beim <strong>Training</strong> bekommt ein Modell Beispiele. Beschriftete Beispiele verbinden eine Eingabe mit einer gewünschten Zuordnung, etwa ein Bild mit «Apfel». Beim <strong>Testen</strong> prüfst du es an neuen Beispielen, die nicht im Training vorkamen. Nur bekannte Beispiele wiederzuerkennen reicht nicht.</p>
+<div class="box hinweis">
+<h3>Jetzt selbst erforschen</h3>
+<p>Im <a href="#werkstatt">Trainingslabor weiter unten</a> veränderst du Beispiele und beobachtest die Vorhersage. Dafür brauchst du weder Kamera noch Konto.</p>
+</div>
+<details class="bonus">
+<summary>★ Freiwillige Erweiterung mit der Lehrperson</summary>
+<p>Mit einem von der Schule freigegebenen Werkzeug könnt ihr Gegenstände per Kamera unterscheiden lassen. Verwendet nur Gegenstände und keine Personen oder persönlichen Unterlagen. Trainiert mit verschiedenen Ansichten und testet mit neuen Bildern. Die Lehrperson klärt das geeignete Werkzeug und dessen Nutzung vorab.</p>
+</details>
   <h2 id="turing-test">Etappe 4: Der Turing-Test</h2>
   <p>
     Schon 1950 stellte sich der britische Mathematiker <strong>Alan
@@ -217,9 +214,10 @@
     <p>
       Stellt euch vor, jemand hat per Textchat die Frage „Wie war dein
       Wochenende?“ gestellt. Lest die Antwort und schätzt: Stammt sie
-      eher von einem Menschen oder von einer Maschine?
+      eher von einem Menschen oder von einer Maschine? Alle Texte hier sind didaktische Beispiele ohne nachgewiesene Herkunft. Eure Wahl beschreibt nur einen Eindruck; am Schreibstil lässt sich die Herkunft nicht sicher erkennen.
     </p>
-    <div id="turing-inhalt"></div>
+    <div id="turing-inhalt">
+</div>
   </div>
 
   <script>
@@ -228,22 +226,22 @@
         {
           text: "Ziemlich gut! Ich war am Samstag klettern und hab mir dabei fast den Finger eingeklemmt 😅 Und bei dir?",
           loesung: "mensch",
-          begruendung: "Kleine, unerwartete Details wie der eingeklemmte Finger, ein Emoji und eine spontane Gegenfrage wirken typisch menschlich. Eine Maschine antwortet meistens glatter und allgemeiner."
+          begruendung: "Menschen und KI können sowohl locker als auch förmlich schreiben. Details, Emojis und Umgangssprache sind kein verlässlicher Herkunftsnachweis."
         },
         {
           text: "Mein Wochenende verlief gut. Ich habe mich ausgeruht und einige Aufgaben erledigt. Ich hoffe, dein Wochenende war ebenfalls angenehm.",
           loesung: "maschine",
-          begruendung: "Die Antwort ist sehr allgemein und höflich-neutral formuliert, ohne konkrete, persönliche Details. Solche glatten Formulierungen sind typisch für automatisch erzeugten Text."
+          begruendung: "Menschen und KI können sowohl locker als auch förmlich schreiben. Details, Emojis und Umgangssprache sind kein verlässlicher Herkunftsnachweis."
         },
         {
           text: "Hab bis Mittag geschlafen, dann Pizza mit Freunden. War okay, nix Besonderes. Und du, was geht?",
           loesung: "mensch",
-          begruendung: "Umgangssprache, unvollständige Sätze und eine lockere Rückfrage sind für heutige KI-Chatbots zwar grundsätzlich möglich, im Alltag aber oft ein Hinweis auf eine echte Person."
+          begruendung: "Menschen und KI können sowohl locker als auch förmlich schreiben. Details, Emojis und Umgangssprache sind kein verlässlicher Herkunftsnachweis."
         },
         {
           text: "Ich habe an einem kreativen Projekt gearbeitet und dabei viel gelernt. Es hat mir Freude bereitet, neue Ideen zu entwickeln.",
           loesung: "maschine",
-          begruendung: "Auffällig glatt, inhaltlich unspezifisch (nur „ein kreatives Projekt“, keine Details) und ohne konkrete Angaben. Das ist typisch für automatisch generierten Text."
+          begruendung: "Menschen und KI können sowohl locker als auch förmlich schreiben. Details, Emojis und Umgangssprache sind kein verlässlicher Herkunftsnachweis."
         }
       ];
 
@@ -255,8 +253,8 @@
         if (index >= beispiele.length) {
           container.innerHTML =
             '<div class="uebung-abschluss">' +
-            '<span class="punktzahl">' + punkte + ' / ' + beispiele.length + '</span>' +
-            '<p style="margin-bottom:1rem">richtig eingeschätzt.</p>' +
+            '<strong>Vier Eindrücke gesammelt</strong>' +
+            '<p style="margin-bottom:1rem">Es gibt hier keine verlässlich bestimmbare Herkunft.</p>' +
             '<p style="margin-bottom:0">Auch erfahrene Leserinnen und Leser liegen manchmal falsch, denn moderne KI-Chatbots schreiben zunehmend natürlich. Genau das macht den Turing-Test bis heute spannend.</p>' +
             '</div>';
           return;
@@ -275,19 +273,10 @@
         container.querySelectorAll("[data-wahl]").forEach(function (knopf) {
           knopf.addEventListener("click", function () {
             var gewaehlt = knopf.getAttribute("data-wahl");
-            var istRichtig = gewaehlt === beispiel.loesung;
-            if (istRichtig) punkte++;
-
             container.querySelectorAll("[data-wahl]").forEach(function (b) { b.disabled = true; });
-
             var feedback = document.getElementById("turing-feedback");
-            feedback.className = "rueckmeldung zeigen " + (istRichtig ? "richtig" : "falsch");
-            feedback.innerHTML =
-              (istRichtig ? "Richtig eingeschätzt! " : "Diesmal daneben. ") +
-              "Diese Antwort stammt vermutlich von " +
-              (beispiel.loesung === "mensch" ? "einem Menschen" : "einer Maschine") +
-              ". " + beispiel.begruendung +
-              '<div style="margin-top:0.8rem"><button class="knopf sekundaer" id="turing-weiter">Nächstes Beispiel</button></div>';
+            feedback.className = "rueckmeldung zeigen";
+            feedback.innerHTML = "Dein Eindruck: " + (gewaehlt === "mensch" ? "Mensch" : "Maschine") + ". " + beispiel.begruendung + '<div style="margin-top:0.8rem"><button class="knopf sekundaer" id="turing-weiter">Nächstes Beispiel</button></div>';
 
             document.getElementById("turing-weiter").addEventListener("click", function () {
               index++;
@@ -301,7 +290,41 @@
     })();
   </script>
 
-  <h2 id="selbsttest">Etappe 5: Selbsttest</h2>
+  <section id="werkstatt" class="werkstatt">
+<h2>
+<span class="etappenmarke">Werkstatt 1</span>KI im Alltag erkennen</h2>
+<p class="arbeitsart">Einzelarbeit → Austausch zu zweit · 12 Min. · Pflicht</p>
+<h3>Trainingslabor: Welches Obst ist das?</h3>
+<p>Ein sehr einfaches lernendes Modell merkt sich beschriftete Beispiele. Es ordnet neues Obst dem Beispiel zu, dessen Gewicht am nächsten liegt. So funktioniert hier die <strong>Nächster-Nachbar-Methode</strong>. Echte Bilderkennung nutzt viel mehr Merkmale.</p>
+<div class="labor" id="obst-labor">
+<p>
+<strong>Trainingsdaten:</strong> <span id="trainingsdaten">Apfel: 150 g, 180 g · Birne: 110 g, 130 g</span>
+</p>
+<label for="gewicht">Gewicht des Testobsts: <output id="gewicht-wert">160</output> g</label>
+<input id="gewicht" type="range" min="80" max="220" value="160" step="10">
+<p id="obst-ergebnis" role="status">
+</p>
+<button class="knopf sekundaer" id="beispiel-ergaenzen" type="button">Birne mit 160 g als Trainingsbeispiel ergänzen</button>
+<button class="knopf sekundaer" id="labor-reset" type="button">Labor zurücksetzen</button>
+</div>
+<ol>
+<li>Teste 100 g, 160 g und 200 g. Sage vor jedem Test voraus, was passiert.</li>
+<li>Stelle 160 g ein und ergänze das neue Birnen-Beispiel. Was ändert sich?</li>
+<li>Kann dieses Modell einen Apfel und eine Birne mit gleichem Gewicht sicher unterscheiden?</li>
+</ol>
+<label class="journal-label" for="obst">Meine Beobachtung: Was zeigen die neuen Daten und wo liegt die Grenze?</label>
+<textarea id="obst" data-journal="obst" rows="4" placeholder="Deine Beobachtung und Begründung …">
+</textarea>
+<details class="hilfe">
+<summary>? Hilfe und mögliche Lösung</summary>
+<p>Bei 160 g liegt zuerst der Apfel mit 150 g am nächsten. Mit einer Birne von 160 g ändert sich die Zuordnung. Das Gewicht allein reicht nicht: Form oder Farbe könnten zusätzliche Merkmale sein. Mehr Daten helfen nur, wenn sie zur Aufgabe passen.</p>
+</details>
+<details class="bonus">
+<summary>★ Bonus · KI ohne Computer</summary>
+<p>Schreibt sechs erfundene Obst-Beispiele auf Zettel. Beschriftet sie mit Sorte und Gewicht. Lasst eine andere Gruppe drei neue Beispiele nach derselben Methode zuordnen. Erfindet einen Fall, bei dem das Modell falsch liegt.</p>
+</details>
+</section>
+<h2 id="selbsttest">Etappe 5: Selbsttest</h2>
   <p>Prüft kurz, ob die wichtigsten Punkte aus diesem Kapitel sitzen.</p>
 
   <div class="frage" data-richtig="2">
@@ -374,14 +397,32 @@
     <div class="rueckmeldung falsch">Nicht ganz. Mit zu wenigen oder unklaren Beispielen erkennt das trainierte Modell neue Bilder schlechter.</div>
   </div>
 
-  <nav class="kapitelnav">
+  <section class="abschluss">
+<h2>Rückblick &amp; Lernjournal</h2>
+<label class="journal-label" for="reflexion-1">Erkläre das Lernziel oben in eigenen Worten. Nenne ein Beispiel und eine offene Frage.</label>
+<textarea id="reflexion-1" data-journal="reflexion-1" rows="4" placeholder="Deine Beobachtung und Begründung …">
+</textarea>
+<label>
+<input type="checkbox" data-erledigt="1"> Ich habe die Werkstatt bearbeitet, den Selbsttest gemacht und meinen Rückblick geschrieben.</label>
+<p>Diese Selbsteinschätzung ist keine Note.</p>
+<button class="knopf sekundaer" data-export type="button">Lernjournal herunterladen</button>
+<p class="speicherstatus" role="status">
+</p>
+</section>
+<nav class="kapitelnav">
     <a href="../index.html">
-      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<line x1="19" y1="12" x2="5" y2="12"/>
+<polyline points="12 19 5 12 12 5"/>
+</svg>
       Zur Startseite
     </a>
     <a href="../kapitel-2/index.html">
       Weiter zu Kapitel 2: Wie denkt ein Chatbot?
-      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<line x1="5" y1="12" x2="19" y2="12"/>
+<polyline points="12 5 19 12 12 19"/>
+</svg>
     </a>
   </nav>
 
@@ -392,16 +433,26 @@
     <div class="fusszeile-spalte">
       <h4>Kapitel</h4>
       <ul>
-        <li><a href="../kapitel-1/index.html">1. Was ist KI?</a></li>
-        <li><a href="../kapitel-2/index.html">2. Wie denkt ein Chatbot?</a></li>
-        <li><a href="../kapitel-3/index.html">3. Prompting-Grundlagen</a></li>
-        <li><a href="../kapitel-4/index.html">4. Chancen &amp; Regeln</a></li>
+        <li>
+<a href="../kapitel-1/index.html">1. Was ist KI?</a>
+</li>
+        <li>
+<a href="../kapitel-2/index.html">2. Wie denkt ein Chatbot?</a>
+</li>
+        <li>
+<a href="../kapitel-3/index.html">3. Prompting-Grundlagen</a>
+</li>
+        <li>
+<a href="../kapitel-4/index.html">4. Chancen &amp; Regeln</a>
+</li>
       </ul>
     </div>
     <div class="fusszeile-spalte">
       <h4>Üben</h4>
       <ul>
-        <li><a href="../pruefungsvorbereitung/index.html">Prüfungsvorbereitung</a></li>
+        <li>
+<a href="../pruefungsvorbereitung/index.html">Prüfungsvorbereitung</a>
+</li>
       </ul>
     </div>
     <div class="fusszeile-spalte">
@@ -415,5 +466,6 @@
 </footer>
 
 <script src="../assets/script.js"></script>
+<script src="../assets/werkstatt.js"></script>
 </body>
 </html>

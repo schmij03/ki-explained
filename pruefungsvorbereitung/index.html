@@ -7,6 +7,7 @@
 <meta name="description" content="Karteikarten zu allen vier Kapiteln und ein grosses Übungsquiz zur freiwilligen Selbstkontrolle vor der Prüfung.">
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" data-lernlandschaft href="../assets/lernlandschaft.css">
 </head>
 <body>
 
@@ -31,6 +32,7 @@
       </svg>
     </button>
     <nav class="hauptnav">
+      <a href="../projekt/index.html">Projekt</a>
       <a href="../kapitel-1/index.html" data-kapitel-link="1">1. Was ist KI?</a>
       <a href="../kapitel-2/index.html" data-kapitel-link="2">2. Chatbots</a>
       <a href="../kapitel-3/index.html" data-kapitel-link="3">3. Prompting</a>
@@ -40,7 +42,8 @@
   </div>
 </header>
 
-<main>
+<a class="sprunglink" href="#inhalt">Zum Inhalt</a>
+<main id="inhalt">
 
   <span class="tag">Prüfungsvorbereitung</span>
   <h1>Alles auf einen Blick</h1>
@@ -52,8 +55,14 @@
   </p>
 
   <nav class="etappenleiste" aria-label="Weg durch diese Seite">
-    <a class="etappe-punkt" href="#karteikarten"><span class="kreis">1</span><span class="label">Karteikarten</span></a>
-    <a class="etappe-punkt" href="#uebungsquiz"><span class="kreis">2</span><span class="label">Übungsquiz</span></a>
+    <a class="etappe-punkt" href="#karteikarten">
+<span class="kreis">1</span>
+<span class="label">Karteikarten</span>
+</a>
+    <a class="etappe-punkt" href="#uebungsquiz">
+<span class="kreis">2</span>
+<span class="label">Übungsquiz</span>
+</a>
   </nav>
 
   <h2 id="karteikarten">Karteikarten</h2>
@@ -64,7 +73,9 @@
   <div class="karteikarte">
     <button class="karteikarte-frage" aria-expanded="false">
       Was unterscheidet KI von einem klassischen Programm?
-      <svg class="pfeil" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+      <svg class="pfeil" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<polyline points="6 9 12 15 18 9"/>
+</svg>
     </button>
     <div class="karteikarte-antwort">
       <p>Ein klassisches Programm folgt festen, vorprogrammierten Regeln. Eine KI hat aus Daten und Beispielen Muster gelernt und kann so auch mit neuen Situationen umgehen.</p>
@@ -74,7 +85,9 @@
   <div class="karteikarte">
     <button class="karteikarte-frage" aria-expanded="false">
       Wer hat den Turing-Test vorgeschlagen, und wann?
-      <svg class="pfeil" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+      <svg class="pfeil" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<polyline points="6 9 12 15 18 9"/>
+</svg>
     </button>
     <div class="karteikarte-antwort">
       <p>Alan Turing, im Jahr 1950.</p>
@@ -84,7 +97,9 @@
   <div class="karteikarte">
     <button class="karteikarte-frage" aria-expanded="false">
       Was genau prüft der Turing-Test?
-      <svg class="pfeil" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+      <svg class="pfeil" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<polyline points="6 9 12 15 18 9"/>
+</svg>
     </button>
     <div class="karteikarte-antwort">
       <p>Ob ein Mensch im Textgespräch noch unterscheiden kann, ob er mit einem Menschen oder einer Maschine spricht. Er prüft das Verhalten nach aussen, nicht ob die Maschine wirklich denkt.</p>
@@ -94,7 +109,9 @@
   <div class="karteikarte">
     <button class="karteikarte-frage" aria-expanded="false">
       Welche drei Blickwinkel helfen dabei, KI besser zu verstehen?
-      <svg class="pfeil" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+      <svg class="pfeil" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<polyline points="6 9 12 15 18 9"/>
+</svg>
     </button>
     <div class="karteikarte-antwort">
       <p>Technische Funktionsweise, gesellschaftliche Auswirkung und persönliche Nutzung.</p>
@@ -104,7 +121,9 @@
   <div class="karteikarte">
     <button class="karteikarte-frage" aria-expanded="false">
       Nenne zwei Beispiele, wo euch KI im Alltag begegnet.
-      <svg class="pfeil" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+      <svg class="pfeil" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<polyline points="6 9 12 15 18 9"/>
+</svg>
     </button>
     <div class="karteikarte-antwort">
       <p>Zum Beispiel Bildfilter in Apps, Musik- und Videoempfehlungen, Chatbots in Apps oder KI-Funktionen in Word und Copilot.</p>
@@ -116,7 +135,9 @@
   <div class="karteikarte">
     <button class="karteikarte-frage" aria-expanded="false">
       Wie funktioniert ein klassischer, regelbasierter Chatbot wie ELIZA?
-      <svg class="pfeil" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+      <svg class="pfeil" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<polyline points="6 9 12 15 18 9"/>
+</svg>
     </button>
     <div class="karteikarte-antwort">
       <p>Er sucht im Satz nach Schlüsselwörtern und wendet feste falls-dann-sonst-Regeln an, ohne den Satz wirklich zu verstehen.</p>
@@ -126,7 +147,9 @@
   <div class="karteikarte">
     <button class="karteikarte-frage" aria-expanded="false">
       Von wem stammt ELIZA, und aus welchem Jahr?
-      <svg class="pfeil" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+      <svg class="pfeil" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<polyline points="6 9 12 15 18 9"/>
+</svg>
     </button>
     <div class="karteikarte-antwort">
       <p>Von Joseph Weizenbaum, aus dem Jahr 1966.</p>
@@ -136,17 +159,21 @@
   <div class="karteikarte">
     <button class="karteikarte-frage" aria-expanded="false">
       Worauf beruhen moderne KI-Chatbots?
-      <svg class="pfeil" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+      <svg class="pfeil" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<polyline points="6 9 12 15 18 9"/>
+</svg>
     </button>
     <div class="karteikarte-antwort">
-      <p>Auf maschinellem Lernen mit riesigen Textmengen. Sie sagen das statistisch wahrscheinlichste nächste Wort voraus.</p>
+      <p>Auf maschinellem Lernen mit riesigen Textmengen. Sie sagen mögliche nächste Textstücke (Tokens) voraus.</p>
     </div>
   </div>
 
   <div class="karteikarte">
     <button class="karteikarte-frage" aria-expanded="false">
       Versteht ein moderner KI-Chatbot Sprache wie ein Mensch?
-      <svg class="pfeil" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+      <svg class="pfeil" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<polyline points="6 9 12 15 18 9"/>
+</svg>
     </button>
     <div class="karteikarte-antwort">
       <p>Nein. Er erkennt statistische Muster, das ist kein echtes Verständnis im menschlichen Sinn.</p>
@@ -156,7 +183,9 @@
   <div class="karteikarte">
     <button class="karteikarte-frage" aria-expanded="false">
       Warum lässt sich ein regelbasierter Chatbot leicht austricksen?
-      <svg class="pfeil" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+      <svg class="pfeil" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<polyline points="6 9 12 15 18 9"/>
+</svg>
     </button>
     <div class="karteikarte-antwort">
       <p>Weil er nur nach bekannten Wörtern und Mustern sucht, den Sinn des Gesagten aber nicht wirklich erfasst.</p>
@@ -168,7 +197,9 @@
   <div class="karteikarte">
     <button class="karteikarte-frage" aria-expanded="false">
       Was ist ein Prompt?
-      <svg class="pfeil" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+      <svg class="pfeil" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<polyline points="6 9 12 15 18 9"/>
+</svg>
     </button>
     <div class="karteikarte-antwort">
       <p>Die Anfrage oder Anweisung, die man einer KI gibt.</p>
@@ -178,7 +209,9 @@
   <div class="karteikarte">
     <button class="karteikarte-frage" aria-expanded="false">
       Welche vier Bausteine gehören zu einem guten Prompt?
-      <svg class="pfeil" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+      <svg class="pfeil" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<polyline points="6 9 12 15 18 9"/>
+</svg>
     </button>
     <div class="karteikarte-antwort">
       <p>Ziel, Kontext, Format und, wenn nötig, ein Beispiel.</p>
@@ -188,17 +221,21 @@
   <div class="karteikarte">
     <button class="karteikarte-frage" aria-expanded="false">
       Warum ist die genaue Formulierung eines Prompts wichtig?
-      <svg class="pfeil" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+      <svg class="pfeil" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<polyline points="6 9 12 15 18 9"/>
+</svg>
     </button>
     <div class="karteikarte-antwort">
-      <p>Weil eine KI aufgrund der Eingabe das wahrscheinlichste nächste Wort berechnet. Eine klare Eingabe führt meist zu einem brauchbareren Ergebnis.</p>
+      <p>Weil eine KI aufgrund der Eingabe mögliche nächste Textstücke (Tokens) berechnet. Eine klare Eingabe führt meist zu einem brauchbareren Ergebnis.</p>
     </div>
   </div>
 
   <div class="karteikarte">
     <button class="karteikarte-frage" aria-expanded="false">
       Was fehlt oft in einem schlechten Prompt wie „Schreib etwas über Wale.“?
-      <svg class="pfeil" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+      <svg class="pfeil" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<polyline points="6 9 12 15 18 9"/>
+</svg>
     </button>
     <div class="karteikarte-antwort">
       <p>Klare Angaben zu Ziel, Kontext und Format.</p>
@@ -210,7 +247,9 @@
   <div class="karteikarte">
     <button class="karteikarte-frage" aria-expanded="false">
       Was bedeutet iteratives Nachbessern eines Prompts?
-      <svg class="pfeil" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+      <svg class="pfeil" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<polyline points="6 9 12 15 18 9"/>
+</svg>
     </button>
     <div class="karteikarte-antwort">
       <p>Den Prompt Schritt für Schritt verbessern, basierend auf der bisherigen Antwort der KI, statt komplett neu zu formulieren.</p>
@@ -220,7 +259,9 @@
   <div class="karteikarte">
     <button class="karteikarte-frage" aria-expanded="false">
       Was ist eine Halluzination bei einer KI?
-      <svg class="pfeil" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+      <svg class="pfeil" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<polyline points="6 9 12 15 18 9"/>
+</svg>
     </button>
     <div class="karteikarte-antwort">
       <p>Eine falsche, aber überzeugend klingende Information, die die KI erfunden hat.</p>
@@ -230,7 +271,9 @@
   <div class="karteikarte">
     <button class="karteikarte-frage" aria-expanded="false">
       Nenne zwei Chancen von KI im Schulalltag.
-      <svg class="pfeil" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+      <svg class="pfeil" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<polyline points="6 9 12 15 18 9"/>
+</svg>
     </button>
     <div class="karteikarte-antwort">
       <p>Zum Beispiel Lernunterstützung, Kreativität oder Zeitersparnis.</p>
@@ -240,7 +283,9 @@
   <div class="karteikarte">
     <button class="karteikarte-frage" aria-expanded="false">
       Nenne zwei Risiken von KI.
-      <svg class="pfeil" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+      <svg class="pfeil" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<polyline points="6 9 12 15 18 9"/>
+</svg>
     </button>
     <div class="karteikarte-antwort">
       <p>Zum Beispiel Halluzinationen, Abhängigkeit, Urheberrechtsfragen oder Datenschutzprobleme.</p>
@@ -250,7 +295,9 @@
   <div class="karteikarte">
     <button class="karteikarte-frage" aria-expanded="false">
       Nenne zwei wichtige Regeln für den Umgang mit KI in der Schule.
-      <svg class="pfeil" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+      <svg class="pfeil" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<polyline points="6 9 12 15 18 9"/>
+</svg>
     </button>
     <div class="karteikarte-antwort">
       <p>Zum Beispiel Transparenz über die Nutzung, Ergebnisse immer prüfen und keine privaten Daten eingeben.</p>
@@ -266,7 +313,9 @@
 
   <div class="box hinweis">
     <p style="margin-bottom:0">
-      Aktueller Punktestand: <strong><span data-quiz-punkte>0</span> / <span data-quiz-gesamt>0</span></strong>
+      Aktueller Punktestand: <strong>
+<span data-quiz-punkte>0</span> / <span data-quiz-gesamt>0</span>
+</strong>
     </p>
   </div>
 
@@ -319,13 +368,13 @@
   <div class="frage" data-richtig="1">
     <p class="frage-text">5. Moderne KI-Chatbots sagen jeweils...</p>
     <div class="antwort-liste">
-      <button class="antwort-knopf">das wahrscheinlichste nächste Wort voraus</button>
+      <button class="antwort-knopf">mögliche nächste Textstücke (Tokens) voraus</button>
       <button class="antwort-knopf">eine zufällige Zahl voraus</button>
       <button class="antwort-knopf">das Wetter voraus</button>
       <button class="antwort-knopf">den gesamten Wortschatz aller Sprachen voraus</button>
     </div>
     <div class="rueckmeldung richtig">Richtig!</div>
-    <div class="rueckmeldung falsch">Die richtige Antwort: das wahrscheinlichste nächste Wort.</div>
+    <div class="rueckmeldung falsch">Die richtige Antwort: mögliche nächste Textstücke (Tokens).</div>
   </div>
 
   <div class="frage" data-richtig="2">
@@ -410,7 +459,9 @@
 
   <div class="quiz-ergebnis">
     <p style="margin-bottom:0.6rem">Euer Punktestand:</p>
-    <span class="punktzahl"><span data-quiz-punkte>0</span> / <span data-quiz-gesamt>0</span></span>
+    <span class="punktzahl">
+<span data-quiz-punkte>0</span> / <span data-quiz-gesamt>0</span>
+</span>
     <p style="margin-top:0.9rem; margin-bottom:0">
       Diese Übung dient nur der eigenen Selbstkontrolle und hat keinen
       Einfluss auf eure Note. Wiederholt bei Bedarf einfach die
@@ -420,12 +471,18 @@
 
   <nav class="kapitelnav">
     <a href="../kapitel-4/index.html">
-      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<line x1="19" y1="12" x2="5" y2="12"/>
+<polyline points="12 19 5 12 12 5"/>
+</svg>
       Zurück zu Kapitel 4
     </a>
     <a href="../index.html">
       Zur Startseite
-      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<line x1="5" y1="12" x2="19" y2="12"/>
+<polyline points="12 5 19 12 12 19"/>
+</svg>
     </a>
   </nav>
 
@@ -436,16 +493,26 @@
     <div class="fusszeile-spalte">
       <h4>Kapitel</h4>
       <ul>
-        <li><a href="../kapitel-1/index.html">1. Was ist KI?</a></li>
-        <li><a href="../kapitel-2/index.html">2. Wie denkt ein Chatbot?</a></li>
-        <li><a href="../kapitel-3/index.html">3. Prompting-Grundlagen</a></li>
-        <li><a href="../kapitel-4/index.html">4. Chancen &amp; Regeln</a></li>
+        <li>
+<a href="../kapitel-1/index.html">1. Was ist KI?</a>
+</li>
+        <li>
+<a href="../kapitel-2/index.html">2. Wie denkt ein Chatbot?</a>
+</li>
+        <li>
+<a href="../kapitel-3/index.html">3. Prompting-Grundlagen</a>
+</li>
+        <li>
+<a href="../kapitel-4/index.html">4. Chancen &amp; Regeln</a>
+</li>
       </ul>
     </div>
     <div class="fusszeile-spalte">
       <h4>Üben</h4>
       <ul>
-        <li><a href="../pruefungsvorbereitung/index.html">Prüfungsvorbereitung</a></li>
+        <li>
+<a href="../pruefungsvorbereitung/index.html">Prüfungsvorbereitung</a>
+</li>
       </ul>
     </div>
     <div class="fusszeile-spalte">

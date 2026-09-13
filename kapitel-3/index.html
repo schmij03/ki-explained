@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kapitel 3: Prompting-Grundlagen – ki-explained</title>
+<meta name="description" content="Was ein Prompt ist, welche Bausteine ein guter Prompt braucht und wie ihr eure Anfragen an eine KI klarer formuliert.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-kapitel="3">
+
+<header class="kopfzeile">
+  <div class="kopfzeile-inhalt">
+    <a href="../index.html" class="logo">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="5" r="2.2"/>
+        <circle cx="5" cy="17" r="2.2"/>
+        <circle cx="19" cy="17" r="2.2"/>
+        <line x1="12" y1="7.2" x2="6.4" y2="15.2"/>
+        <line x1="12" y1="7.2" x2="17.6" y2="15.2"/>
+        <line x1="7.2" y1="17" x2="16.8" y2="17"/>
+      </svg>
+      ki-explained
+    </a>
+    <button class="menu-knopf" aria-label="Menü öffnen" aria-expanded="false">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <line x1="4" y1="7" x2="20" y2="7"/>
+        <line x1="4" y1="12" x2="20" y2="12"/>
+        <line x1="4" y1="17" x2="20" y2="17"/>
+      </svg>
+    </button>
+    <nav class="hauptnav">
+      <a href="../kapitel-1/index.html" data-kapitel-link="1">1. Was ist KI?</a>
+      <a href="../kapitel-2/index.html" data-kapitel-link="2">2. Chatbots</a>
+      <a href="index.html" class="aktiv" data-kapitel-link="3">3. Prompting</a>
+      <a href="../kapitel-4/index.html" data-kapitel-link="4">4. Chancen &amp; Regeln</a>
+      <a href="../pruefungsvorbereitung/index.html">Prüfung</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <span class="tag">Kapitel 3</span>
+  <h1>Prompting-Grundlagen</h1>
+  <p class="einleitungstext">
+    Ob eine KI euch weiterhilft, hängt stark davon ab, wie ihr sie fragt.
+    In diesem Kapitel lernt ihr, was einen guten Prompt ausmacht, und übt
+    das direkt an Beispielen.
+  </p>
+
+  <nav class="etappenleiste" aria-label="Weg durch dieses Kapitel">
+    <a class="etappe-punkt" href="#was-ist-ein-prompt"><span class="kreis">1</span><span class="label">Was ist ein Prompt?</span></a>
+    <a class="etappe-punkt" href="#bausteine"><span class="kreis">2</span><span class="label">Bausteine</span></a>
+    <a class="etappe-punkt" href="#prompt-uebung"><span class="kreis">3</span><span class="label">Übung</span></a>
+    <a class="etappe-punkt" href="#selbsttest"><span class="kreis">4</span><span class="label">Selbsttest</span></a>
+  </nav>
+
+  <h2 id="was-ist-ein-prompt">Etappe 1: Was ist ein Prompt?</h2>
+  <p>
+    Ein <strong>Prompt</strong> ist die Anfrage oder Anweisung, die ihr
+    einer KI gebt, egal ob als Frage, als Auftrag oder als Beschreibung
+    dessen, was ihr haben möchtet. Weil ein KI-Chatbot (wie ihr in Kapitel
+    2 gesehen habt) das wahrscheinlichste nächste Wort auf Basis eurer
+    Eingabe berechnet, macht die genaue Formulierung einen echten
+    Unterschied für das Ergebnis.
+  </p>
+  <p>
+    Ein unklarer Prompt führt zu einer unklaren oder wenig hilfreichen
+    Antwort. Ein klarer, gut aufgebauter Prompt führt meistens zu einem
+    deutlich brauchbareren Ergebnis.
+  </p>
+
+  <div class="zwei-spalten">
+    <div class="box spalte-schlecht">
+      <span class="spalte-label">Schlechter Prompt</span>
+      <p class="prompt-text">„Schreib eine Geschichte."</p>
+      <p style="margin-bottom:0">Kein Ziel, kein Thema, keine Länge, keine Zielgruppe. Das Ergebnis kann alles Mögliche sein und passt wahrscheinlich nicht zu dem, was ihr eigentlich wollt.</p>
+    </div>
+    <div class="box spalte-gut">
+      <span class="spalte-label">Guter Prompt</span>
+      <p class="prompt-text">„Schreib eine kurze, spannende Geschichte (ca. 200 Wörter) über eine Schülerin, die ein Geheimnis entdeckt. Zielgruppe: Jugendliche. Ton: spannend, aber nicht gruselig."</p>
+      <p style="margin-bottom:0">Thema, Länge, Zielgruppe und Ton sind klar. Die KI weiss genau, worauf sie hinarbeiten soll.</p>
+    </div>
+  </div>
+
+  <h2 id="bausteine">Etappe 2: Die Bausteine eines guten Prompts</h2>
+  <p>Ein guter Prompt besteht meistens aus einer Kombination dieser vier Bausteine:</p>
+
+  <div class="drei-spalten" style="grid-template-columns: repeat(2, 1fr)">
+    <div class="box">
+      <h3 style="margin-top:0">1. Ziel</h3>
+      <p style="margin-bottom:0">Was genau soll am Ende herauskommen? Eine Zusammenfassung, eine Liste, eine Erklärung, eine Geschichte?</p>
+    </div>
+    <div class="box">
+      <h3 style="margin-top:0">2. Kontext</h3>
+      <p style="margin-bottom:0">Welche Hintergrundinformationen braucht die KI, um zu verstehen, worum es geht? Für wen ist das Ergebnis gedacht?</p>
+    </div>
+    <div class="box">
+      <h3 style="margin-top:0">3. Format</h3>
+      <p style="margin-bottom:0">Wie soll das Ergebnis aussehen? Länge, Stil, Aufbau (zum Beispiel als Liste, in Sätzen, mit Titel)?</p>
+    </div>
+    <div class="box">
+      <h3 style="margin-top:0">4. Beispiel (falls nötig)</h3>
+      <p style="margin-bottom:0">Ein kurzes Beispiel zeigt der KI, wie das gewünschte Ergebnis ungefähr aussehen soll.</p>
+    </div>
+  </div>
+
+  <h2 id="prompt-uebung">Etappe 3: Übung, die beste Formulierung finden</h2>
+  <p>
+    In den folgenden drei Situationen seht ihr jeweils drei mögliche
+    Prompts. Wählt denjenigen aus, den ihr für den besten haltet. Diese
+    Übung läuft komplett lokal in eurem Browser ab, ohne echte
+    KI-Anbindung.
+  </p>
+
+  <div class="box beispiel" id="prompt-uebung-box">
+    <div id="prompt-uebung-inhalt"></div>
+  </div>
+
+  <script>
+    (function () {
+      var runden = [
+        {
+          situation: "Du hast ein Referat über Wale gehalten und möchtest, dass dir eine KI daraus eine kurze Zusammenfassung für deine Mitschülerinnen und Mitschüler schreibt.",
+          optionen: [
+            { text: "Schreib etwas über Wale.", stufe: "schwach", begruendung: "Kein Kontext, kein Ziel und kein Format. Die KI weiss nicht, worauf sie sich stützen und wie lang der Text werden soll." },
+            { text: "Fasse mein Referat über Wale in maximal 5 Sätzen zusammen.", stufe: "mittel", begruendung: "Ziel und Format (5 Sätze) sind klar, aber es fehlt der eigentliche Referatstext als Kontext und die Angabe, für wen der Text gedacht ist." },
+            { text: "Hier ist mein Referatstext über Wale: [Text einfügen]. Fasse ihn in maximal 5 einfachen Sätzen für meine Mitschülerinnen und Mitschüler zusammen, ohne Fachbegriffe.", stufe: "stark", begruendung: "Enthält Kontext (der Referatstext als Grundlage), ein klares Ziel (Zusammenfassung), ein Format (maximal 5 Sätze) sowie Angaben zur Zielgruppe und zum gewünschten Sprachniveau." }
+            ]
+        },
+        {
+          situation: "Du möchtest von einer KI Ideen für ein Geburtstagsgeschenk für deine beste Freundin bekommen. Sie zeichnet gerne und mag Katzen.",
+          optionen: [
+            { text: "Gib mir Geschenkideen.", stufe: "schwach", begruendung: "Kein Kontext zur Person, kein Budget, keine Anzahl. Die Vorschläge könnten völlig daneben liegen." },
+            { text: "Gib mir 5 Geschenkideen für eine 15-jährige Person, die gerne zeichnet.", stufe: "mittel", begruendung: "Etwas Kontext und ein Format (5 Ideen) sind vorhanden, aber die Vorliebe für Katzen und ein Budget fehlen noch." },
+            { text: "Meine beste Freundin wird 15 und mag Zeichnen und Katzen. Gib mir 5 konkrete Geschenkideen unter 30 Franken, kurz mit Stichworten aufgelistet.", stufe: "stark", begruendung: "Voller Kontext (Alter, Vorlieben), ein klares Ziel (Geschenkideen), eine Einschränkung (Budget) und ein klares Format (5 Ideen, Stichworte)." }
+            ]
+        },
+        {
+          situation: "Du bereitest dich auf eine Prüfung zum Thema Klimawandel vor und möchtest von einer KI eine Übungsfrage erhalten.",
+          optionen: [
+            { text: "Stell mir eine Frage.", stufe: "schwach", begruendung: "Kein Thema, kein Format, kein Niveau. Die Frage könnte zu irgendetwas gehören." },
+            { text: "Stell mir eine Multiple-Choice-Frage zum Thema Klimawandel.", stufe: "mittel", begruendung: "Thema und Format sind klar, aber Anzahl Antwortmöglichkeiten, Niveau und ob eine Erklärung gewünscht ist, fehlen noch." },
+            { text: "Erstelle eine Multiple-Choice-Frage mit vier Antwortmöglichkeiten zum Thema Ursachen des Klimawandels, mit einer richtigen Antwort und einer kurzen Erklärung danach, auf Sekundarschul-Niveau.", stufe: "stark", begruendung: "Klares Thema, klares Format (4 Antworten plus Erklärung) und eine Angabe zum Niveau, genau darauf zugeschnitten, wie es zum Lernen gebraucht wird." }
+            ]
+        }
+      ];
+
+      var index = 0;
+      var punkte = 0;
+      var container = document.getElementById("prompt-uebung-inhalt");
+      var buchstaben = ["A", "B", "C"];
+
+      function zeigeRunde() {
+        if (index >= runden.length) {
+          container.innerHTML =
+            '<div class="uebung-abschluss">' +
+            '<span class="punktzahl">' + punkte + ' / ' + runden.length + '</span>' +
+            '<p style="margin-bottom:0">Mal habt ihr direkt den stärksten Prompt erkannt. Denkt beim eigenen Formulieren immer an Ziel, Kontext, Format und wenn nötig ein Beispiel.</p>' +
+            '</div>';
+          return;
+        }
+
+        var runde = runden[index];
+        var html = '<p class="uebung-fortschritt">Situation ' + (index + 1) + ' von ' + runden.length + '</p>';
+        html += '<p class="uebung-aussage">' + runde.situation + '</p>';
+        html += '<div class="antwort-liste" id="prompt-optionen">';
+        runde.optionen.forEach(function (option, i) {
+          html += '<button class="antwort-knopf" data-index="' + i + '"><strong>' + buchstaben[i] + '.</strong> ' + option.text + '</button>';
+        });
+        html += '</div><div id="prompt-feedback"></div>';
+        container.innerHTML = html;
+
+        container.querySelectorAll("#prompt-optionen [data-index]").forEach(function (knopf) {
+          knopf.addEventListener("click", function () {
+            var gewaehlterIndex = parseInt(knopf.getAttribute("data-index"), 10);
+            var istRichtig = runde.optionen[gewaehlterIndex].stufe === "stark";
+            if (istRichtig) punkte++;
+
+            container.querySelectorAll("#prompt-optionen [data-index]").forEach(function (k, i) {
+              k.disabled = true;
+              if (runde.optionen[i].stufe === "stark") {
+                k.classList.add("richtig");
+              } else if (i === gewaehlterIndex) {
+                k.classList.add("falsch");
+              }
+            });
+
+            var feedbackHtml = '<div class="rueckmeldung zeigen ' + (istRichtig ? "richtig" : "falsch") + '">' +
+              (istRichtig ? "Genau, das ist die stärkste Formulierung! " : "Diese Formulierung ist nicht die stärkste. ") +
+              'Hier die Einschätzung zu allen dreien:</div>';
+
+            feedbackHtml += '<ul style="padding-left:1.1rem; margin-top:0.8rem">';
+            runde.optionen.forEach(function (option, i) {
+              feedbackHtml += '<li style="margin-bottom:0.5rem"><strong>' + buchstaben[i] + ' (' + option.stufe + '):</strong> ' + option.begruendung + '</li>';
+            });
+            feedbackHtml += '</ul>';
+            feedbackHtml += '<button class="knopf sekundaer" id="prompt-weiter">' + (index + 1 < runden.length ? "Nächste Situation" : "Ergebnis anzeigen") + '</button>';
+
+            document.getElementById("prompt-feedback").innerHTML = feedbackHtml;
+            document.getElementById("prompt-weiter").addEventListener("click", function () {
+              index++;
+              zeigeRunde();
+            });
+          });
+        });
+      }
+
+      zeigeRunde();
+    })();
+  </script>
+
+  <h2 id="selbsttest">Etappe 4: Selbsttest</h2>
+  <p>Prüft kurz, ob die wichtigsten Punkte aus diesem Kapitel sitzen.</p>
+
+  <div class="frage" data-richtig="2">
+    <p class="frage-text">1. Was ist ein Prompt?</p>
+    <div class="antwort-liste">
+      <button class="antwort-knopf">Ein Computervirus</button>
+      <button class="antwort-knopf">Die Anfrage oder Anweisung, die man einer KI gibt</button>
+      <button class="antwort-knopf">Ein Programmierfehler</button>
+      <button class="antwort-knopf">Ein Passwort</button>
+    </div>
+    <div class="rueckmeldung richtig">Genau, ein Prompt ist die Anfrage an die KI.</div>
+    <div class="rueckmeldung falsch">Die richtige Antwort: Ein Prompt ist die Anfrage oder Anweisung, die man einer KI gibt.</div>
+  </div>
+
+  <div class="frage" data-richtig="2">
+    <p class="frage-text">2. Welche Bausteine gehören zu einem guten Prompt?</p>
+    <div class="antwort-liste">
+      <button class="antwort-knopf">Nur eine möglichst kurze Frage</button>
+      <button class="antwort-knopf">Ziel, Kontext, Format und wenn nötig ein Beispiel</button>
+      <button class="antwort-knopf">Nur ein einziges Wort</button>
+      <button class="antwort-knopf">Eine möglichst lange Liste von Ausrufezeichen</button>
+    </div>
+    <div class="rueckmeldung richtig">Richtig: Ziel, Kontext, Format und wenn nötig ein Beispiel.</div>
+    <div class="rueckmeldung falsch">Die richtige Antwort: Ziel, Kontext, Format und wenn nötig ein Beispiel.</div>
+  </div>
+
+  <div class="frage" data-richtig="2">
+    <p class="frage-text">3. Richtig oder falsch: Die genaue Formulierung eines Prompts spielt für das Ergebnis keine grosse Rolle.</p>
+    <div class="antwort-liste">
+      <button class="antwort-knopf">Richtig</button>
+      <button class="antwort-knopf">Falsch</button>
+    </div>
+    <div class="rueckmeldung richtig">Richtig, das ist falsch! Die Formulierung beeinflusst das Ergebnis stark.</div>
+    <div class="rueckmeldung falsch">Das stimmt nicht. Die Formulierung beeinflusst das Ergebnis stark.</div>
+  </div>
+
+  <div class="frage" data-richtig="2">
+    <p class="frage-text">4. Was fehlt am ehesten im Prompt „Schreib etwas über Wale."?</p>
+    <div class="antwort-liste">
+      <button class="antwort-knopf">Die Rechtschreibung</button>
+      <button class="antwort-knopf">Ziel, Kontext und Format sind unklar</button>
+      <button class="antwort-knopf">Er ist viel zu lang</button>
+      <button class="antwort-knopf">Nichts, der Prompt ist bereits perfekt</button>
+    </div>
+    <div class="rueckmeldung richtig">Genau, es fehlen klare Angaben zu Ziel, Kontext und Format.</div>
+    <div class="rueckmeldung falsch">Nicht ganz. Es fehlen klare Angaben zu Ziel, Kontext und Format.</div>
+  </div>
+
+  <div class="frage" data-richtig="2">
+    <p class="frage-text">5. Warum kann ein Beispiel im Prompt hilfreich sein?</p>
+    <div class="antwort-liste">
+      <button class="antwort-knopf">Weil es die KI verlangsamt</button>
+      <button class="antwort-knopf">Weil es der KI zeigt, wie das gewünschte Ergebnis ungefähr aussehen soll</button>
+      <button class="antwort-knopf">Weil ohne Beispiel gar keine Antwort möglich ist</button>
+      <button class="antwort-knopf">Weil es die Anfrage kürzer macht</button>
+    </div>
+    <div class="rueckmeldung richtig">Richtig, ein Beispiel zeigt der KI die gewünschte Richtung.</div>
+    <div class="rueckmeldung falsch">Die richtige Antwort: Ein Beispiel zeigt der KI, wie das Ergebnis ungefähr aussehen soll.</div>
+  </div>
+
+  <nav class="kapitelnav">
+    <a href="../kapitel-2/index.html">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      Zurück zu Kapitel 2
+    </a>
+    <a href="../kapitel-4/index.html">
+      Weiter zu Kapitel 4: Chancen &amp; Regeln
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+  </nav>
+
+</main>
+
+<footer class="fusszeile">
+  <div class="fusszeile-inhalt">
+    <div class="fusszeile-spalte">
+      <h4>Kapitel</h4>
+      <ul>
+        <li><a href="../kapitel-1/index.html">1. Was ist KI?</a></li>
+        <li><a href="../kapitel-2/index.html">2. Wie denkt ein Chatbot?</a></li>
+        <li><a href="../kapitel-3/index.html">3. Prompting-Grundlagen</a></li>
+        <li><a href="../kapitel-4/index.html">4. Chancen &amp; Regeln</a></li>
+      </ul>
+    </div>
+    <div class="fusszeile-spalte">
+      <h4>Üben</h4>
+      <ul>
+        <li><a href="../pruefungsvorbereitung/index.html">Prüfungsvorbereitung</a></li>
+      </ul>
+    </div>
+    <div class="fusszeile-spalte">
+      <h4>Über diese Seite</h4>
+      <ul>
+        <li>Begleitmaterial zur KI-Einheit im Fach Medien und Informatik</li>
+      </ul>
+    </div>
+  </div>
+  <p class="fusszeile-klein">ki-explained · ein Lernangebot für den M&amp;I-Unterricht</p>
+</footer>
+
+<script src="../assets/script.js"></script>
+</body>
+</html>

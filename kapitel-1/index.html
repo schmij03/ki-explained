@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kapitel 1: Was ist Künstliche Intelligenz? – ki-explained</title>
+<meta name="description" content="Was ist Künstliche Intelligenz, wo begegnet sie euch im Alltag, und was hat es mit dem Turing-Test auf sich?">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-kapitel="1">
+
+<header class="kopfzeile">
+  <div class="kopfzeile-inhalt">
+    <a href="../index.html" class="logo">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="5" r="2.2"/>
+        <circle cx="5" cy="17" r="2.2"/>
+        <circle cx="19" cy="17" r="2.2"/>
+        <line x1="12" y1="7.2" x2="6.4" y2="15.2"/>
+        <line x1="12" y1="7.2" x2="17.6" y2="15.2"/>
+        <line x1="7.2" y1="17" x2="16.8" y2="17"/>
+      </svg>
+      ki-explained
+    </a>
+    <button class="menu-knopf" aria-label="Menü öffnen" aria-expanded="false">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <line x1="4" y1="7" x2="20" y2="7"/>
+        <line x1="4" y1="12" x2="20" y2="12"/>
+        <line x1="4" y1="17" x2="20" y2="17"/>
+      </svg>
+    </button>
+    <nav class="hauptnav">
+      <a href="index.html" class="aktiv" data-kapitel-link="1">1. Was ist KI?</a>
+      <a href="../kapitel-2/index.html" data-kapitel-link="2">2. Chatbots</a>
+      <a href="../kapitel-3/index.html" data-kapitel-link="3">3. Prompting</a>
+      <a href="../kapitel-4/index.html" data-kapitel-link="4">4. Chancen &amp; Regeln</a>
+      <a href="../pruefungsvorbereitung/index.html">Prüfung</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <span class="tag">Kapitel 1</span>
+  <h1>Was ist Künstliche Intelligenz?</h1>
+  <p class="einleitungstext">
+    Der Begriff „Künstliche Intelligenz" (KI) begegnet euch ständig, in der
+    Werbung, in Apps, in den Nachrichten. Aber was bedeutet er eigentlich
+    genau? In diesem Kapitel bekommt ihr eine einfache, aber fachlich
+    korrekte Antwort.
+  </p>
+
+  <nav class="etappenleiste" aria-label="Weg durch dieses Kapitel">
+    <a class="etappe-punkt" href="#was-ist-ki"><span class="kreis">1</span><span class="label">Definition</span></a>
+    <a class="etappe-punkt" href="#drei-blickwinkel"><span class="kreis">2</span><span class="label">Drei Blickwinkel</span></a>
+    <a class="etappe-punkt" href="#turing-test"><span class="kreis">3</span><span class="label">Turing-Test</span></a>
+    <a class="etappe-punkt" href="#selbsttest"><span class="kreis">4</span><span class="label">Selbsttest</span></a>
+  </nav>
+
+  <h2 id="was-ist-ki">Etappe 1: Eine einfache Definition</h2>
+  <p>
+    Ein klassisches Programm arbeitet nach festen Regeln, die eine
+    Programmiererin oder ein Programmierer vorher genau festgelegt hat.
+    Zum Beispiel: „Wenn die Eingabe grösser als 10 ist, zeige eine
+    Warnung." Das Programm tut immer exakt das, was vorprogrammiert wurde,
+    nicht mehr und nicht weniger.
+  </p>
+  <p>
+    Ein KI-System funktioniert anders. Es wurde mit sehr vielen Beispielen
+    „trainiert" und hat daraus selbst Muster gelernt, statt dass ihm jede
+    einzelne Regel vorgegeben wurde. Deshalb kann eine KI auch mit neuen,
+    unbekannten Situationen umgehen, die niemand vorher explizit
+    einprogrammiert hat.
+  </p>
+
+  <div class="box beispiel">
+    <h3>Kurz gesagt</h3>
+    <p style="margin-bottom:0">
+      <strong>Klassisches Programm:</strong> Menschen schreiben feste
+      Regeln, der Computer folgt ihnen exakt.<br>
+      <strong>Künstliche Intelligenz:</strong> Der Computer lernt aus
+      Beispielen und Daten Muster, mit denen er auch auf neue Situationen
+      reagieren kann.
+    </p>
+  </div>
+
+  <h3>KI in eurem Alltag</h3>
+  <p>Vermutlich nutzt ihr KI schon öfter, als euch bewusst ist:</p>
+  <div class="kachel-raster">
+    <div class="box" style="margin:0">
+      <h3 style="margin-top:0">Bildfilter in Apps</h3>
+      <p style="margin-bottom:0">Filter, die euer Gesicht erkennen und automatisch Hasenohren oder einen Weichzeichner platzieren.</p>
+    </div>
+    <div class="box" style="margin:0">
+      <h3 style="margin-top:0">Musik- und Videoempfehlungen</h3>
+      <p style="margin-bottom:0">Streaming-Dienste, die aus eurem bisherigen Verhalten vorschlagen, was euch als Nächstes gefallen könnte.</p>
+    </div>
+    <div class="box" style="margin:0">
+      <h3 style="margin-top:0">Chatbots in Apps</h3>
+      <p style="margin-bottom:0">Support-Chats oder Assistenten, die auf eure Textnachrichten antworten.</p>
+    </div>
+    <div class="box" style="margin:0">
+      <h3 style="margin-top:0">KI-Funktionen in Word &amp; Co.</h3>
+      <p style="margin-bottom:0">Werkzeuge wie Copilot, die euch beim Schreiben, Zusammenfassen oder Formulieren unterstützen.</p>
+    </div>
+  </div>
+
+  <h2 id="drei-blickwinkel">Etappe 2: Drei Arten, KI zu betrachten</h2>
+  <p>
+    Wenn man über KI spricht, lohnt es sich, immer auch zu fragen: Aus
+    welchem Blickwinkel schaue ich gerade darauf? Es gibt drei
+    unterschiedliche, aber miteinander verbundene Zugänge zum gleichen
+    Thema.
+  </p>
+
+  <div class="drei-spalten">
+    <div class="box">
+      <svg class="icon-klein" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 17V7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10"/><path d="M2 17h20l-1.5 3h-17Z"/></svg>
+      <h3>Technische Funktionsweise</h3>
+      <p style="margin-bottom:0">Wie funktioniert KI eigentlich unter der Haube? Welche Daten braucht sie, wie „lernt" sie?</p>
+    </div>
+    <div class="box">
+      <svg class="icon-klein" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="7" r="3"/><path d="M2 21v-2a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v2"/><circle cx="18" cy="8" r="2.4"/><path d="M15.5 21v-1.6a4 4 0 0 1 4-4h.3a4 4 0 0 1 3.2 1.6"/></svg>
+      <h3>Gesellschaftliche Auswirkung</h3>
+      <p style="margin-bottom:0">Was verändert KI für uns alle? Welche Chancen und welche Risiken bringt sie für die Gesellschaft?</p>
+    </div>
+    <div class="box">
+      <svg class="icon-klein" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="10" y1="19" x2="14" y2="19"/></svg>
+      <h3>Persönliche Nutzung</h3>
+      <p style="margin-bottom:0">Wie nutze ich KI selbst sinnvoll, verantwortungsvoll und ohne mich zu sehr darauf zu verlassen?</p>
+    </div>
+  </div>
+
+  <p>
+    Diese drei Blickwinkel begleiten euch durch die ganze Einheit: In
+    Kapitel 2 schaut ihr genauer auf die technische Funktionsweise von
+    Chatbots, in Kapitel 3 geht es um die persönliche Nutzung beim
+    Prompting, und in Kapitel 4 stehen gesellschaftliche Chancen und
+    Risiken im Zentrum.
+  </p>
+
+  <h2 id="turing-test">Etappe 3: Der Turing-Test</h2>
+  <p>
+    Schon 1950 stellte sich der britische Mathematiker <strong>Alan
+    Turing</strong> eine spannende Frage: Kann eine Maschine so
+    überzeugend „sprechen", dass ein Mensch im Textgespräch nicht mehr
+    erkennt, ob er mit einem Menschen oder mit einem Computer schreibt?
+    Genau das prüft der nach ihm benannte Turing-Test.
+  </p>
+  <p>
+    Wichtig dabei: Der Turing-Test prüft nicht, ob eine Maschine wirklich
+    „denkt" oder etwas „versteht". Er prüft nur, ob ihr Verhalten
+    nach aussen menschlich wirkt. Das ist ein wichtiger Unterschied, den
+    ihr im nächsten Kapitel noch genauer kennenlernt.
+  </p>
+
+  <div class="box hinweis" id="turing-uebung">
+    <h3>Übung: Mensch oder Maschine?</h3>
+    <p>
+      Stellt euch vor, jemand hat per Textchat die Frage „Wie war dein
+      Wochenende?" gestellt. Lest die Antwort und schätzt: Stammt sie
+      eher von einem Menschen oder von einer Maschine?
+    </p>
+    <div id="turing-inhalt"></div>
+  </div>
+
+  <script>
+    (function () {
+      var beispiele = [
+        {
+          text: "Ziemlich gut! Ich war am Samstag klettern und hab mir dabei fast den Finger eingeklemmt 😅 Und bei dir?",
+          loesung: "mensch",
+          begruendung: "Kleine, unerwartete Details wie der eingeklemmte Finger, ein Emoji und eine spontane Gegenfrage wirken typisch menschlich. Eine Maschine antwortet meistens glatter und allgemeiner."
+        },
+        {
+          text: "Mein Wochenende verlief gut. Ich habe mich ausgeruht und einige Aufgaben erledigt. Ich hoffe, dein Wochenende war ebenfalls angenehm.",
+          loesung: "maschine",
+          begruendung: "Die Antwort ist sehr allgemein und höflich-neutral formuliert, ohne konkrete, persönliche Details. Solche glatten Formulierungen sind typisch für automatisch erzeugten Text."
+        },
+        {
+          text: "Hab bis Mittag geschlafen, dann Pizza mit Freunden. War okay, nix Besonderes. Und du, was geht?",
+          loesung: "mensch",
+          begruendung: "Umgangssprache, unvollständige Sätze und eine lockere Rückfrage sind für heutige KI-Chatbots zwar grundsätzlich möglich, im Alltag aber oft ein Hinweis auf eine echte Person."
+        },
+        {
+          text: "Ich habe an einem kreativen Projekt gearbeitet und dabei viel gelernt. Es hat mir Freude bereitet, neue Ideen zu entwickeln.",
+          loesung: "maschine",
+          begruendung: "Auffällig glatt, inhaltlich unspezifisch (nur „ein kreatives Projekt", keine Details) und ohne konkrete Angaben. Das ist typisch für automatisch generierten Text."
+        }
+      ];
+
+      var index = 0;
+      var punkte = 0;
+      var container = document.getElementById("turing-inhalt");
+
+      function zeigeBeispiel() {
+        if (index >= beispiele.length) {
+          container.innerHTML =
+            '<div class="uebung-abschluss">' +
+            '<span class="punktzahl">' + punkte + ' / ' + beispiele.length + '</span>' +
+            '<p style="margin-bottom:1rem">richtig eingeschätzt.</p>' +
+            '<p style="margin-bottom:0">Auch erfahrene Leserinnen und Leser liegen manchmal falsch, denn moderne KI-Chatbots schreiben zunehmend natürlich. Genau das macht den Turing-Test bis heute spannend.</p>' +
+            '</div>';
+          return;
+        }
+
+        var beispiel = beispiele[index];
+        container.innerHTML =
+          '<p class="uebung-fortschritt">Beispiel ' + (index + 1) + ' von ' + beispiele.length + '</p>' +
+          '<p class="uebung-aussage">„' + beispiel.text + '"</p>' +
+          '<div class="wahl-reihe">' +
+          '<button class="knopf wahl-knopf" data-wahl="mensch">Mensch</button>' +
+          '<button class="knopf sekundaer wahl-knopf" data-wahl="maschine">Maschine</button>' +
+          '</div>' +
+          '<div id="turing-feedback"></div>';
+
+        container.querySelectorAll("[data-wahl]").forEach(function (knopf) {
+          knopf.addEventListener("click", function () {
+            var gewaehlt = knopf.getAttribute("data-wahl");
+            var istRichtig = gewaehlt === beispiel.loesung;
+            if (istRichtig) punkte++;
+
+            container.querySelectorAll("[data-wahl]").forEach(function (b) { b.disabled = true; });
+
+            var feedback = document.getElementById("turing-feedback");
+            feedback.className = "rueckmeldung zeigen " + (istRichtig ? "richtig" : "falsch");
+            feedback.innerHTML =
+              (istRichtig ? "Richtig eingeschätzt! " : "Diesmal daneben. ") +
+              "Diese Antwort stammt vermutlich von " +
+              (beispiel.loesung === "mensch" ? "einem Menschen" : "einer Maschine") +
+              ". " + beispiel.begruendung +
+              '<div style="margin-top:0.8rem"><button class="knopf sekundaer" id="turing-weiter">Nächstes Beispiel</button></div>';
+
+            document.getElementById("turing-weiter").addEventListener("click", function () {
+              index++;
+              zeigeBeispiel();
+            });
+          });
+        });
+      }
+
+      zeigeBeispiel();
+    })();
+  </script>
+
+  <h2 id="selbsttest">Etappe 4: Selbsttest</h2>
+  <p>Prüft kurz, ob die wichtigsten Punkte aus diesem Kapitel sitzen.</p>
+
+  <div class="frage" data-richtig="2">
+    <p class="frage-text">1. Was unterscheidet ein KI-Programm grundsätzlich von einem klassischen Programm mit fest programmierten Regeln?</p>
+    <div class="antwort-liste">
+      <button class="antwort-knopf">Ein KI-Programm läuft grundsätzlich schneller.</button>
+      <button class="antwort-knopf">Ein KI-Programm hat aus Daten und Beispielen Muster gelernt, statt nur festen, vorgegebenen Regeln zu folgen.</button>
+      <button class="antwort-knopf">Ein KI-Programm braucht keinen Programmcode.</button>
+      <button class="antwort-knopf">Es gibt keinen wirklichen Unterschied.</button>
+    </div>
+    <div class="rueckmeldung richtig">Richtig! KI-Systeme lernen Muster aus Daten, statt jede Regel einzeln vorgegeben zu bekommen.</div>
+    <div class="rueckmeldung falsch">Nicht ganz. Der entscheidende Unterschied ist: KI lernt Muster aus Daten, statt nur festen, vorgegebenen Regeln zu folgen.</div>
+  </div>
+
+  <div class="frage" data-richtig="2">
+    <p class="frage-text">2. Richtig oder falsch: Ein KI-Chatbot versteht Sprache genauso wie ein Mensch und denkt eigenständig nach.</p>
+    <div class="antwort-liste">
+      <button class="antwort-knopf">Richtig</button>
+      <button class="antwort-knopf">Falsch</button>
+    </div>
+    <div class="rueckmeldung richtig">Richtig, das ist falsch! Ein KI-Chatbot erkennt statistische Muster in Sprache, versteht sie aber nicht im menschlichen Sinn.</div>
+    <div class="rueckmeldung falsch">Das stimmt nicht ganz. Ein KI-Chatbot erkennt statistische Muster in Sprache, versteht sie aber nicht im menschlichen Sinn.</div>
+  </div>
+
+  <div class="frage" data-richtig="2">
+    <p class="frage-text">3. Wer hat 1950 den sogenannten Turing-Test vorgeschlagen?</p>
+    <div class="antwort-liste">
+      <button class="antwort-knopf">Bill Gates</button>
+      <button class="antwort-knopf">Alan Turing</button>
+      <button class="antwort-knopf">Steve Jobs</button>
+      <button class="antwort-knopf">Ada Lovelace</button>
+    </div>
+    <div class="rueckmeldung richtig">Genau, Alan Turing.</div>
+    <div class="rueckmeldung falsch">Die richtige Antwort ist Alan Turing.</div>
+  </div>
+
+  <div class="frage" data-richtig="2">
+    <p class="frage-text">4. Worum geht es beim Turing-Test?</p>
+    <div class="antwort-liste">
+      <button class="antwort-knopf">Zu prüfen, ob ein Computer schneller rechnen kann als ein Mensch.</button>
+      <button class="antwort-knopf">Zu prüfen, ob ein Mensch im Textgespräch noch unterscheiden kann, ob er mit einem Menschen oder einer Maschine schreibt.</button>
+      <button class="antwort-knopf">Zu prüfen, wie viel Strom ein Computer verbraucht.</button>
+      <button class="antwort-knopf">Zu prüfen, ob ein Roboter laufen kann.</button>
+    </div>
+    <div class="rueckmeldung richtig">Genau. Es geht darum, ob das Verhalten der Maschine im Textgespräch menschlich wirkt.</div>
+    <div class="rueckmeldung falsch">Nicht ganz. Es geht darum, ob das Verhalten der Maschine im Textgespräch menschlich wirkt.</div>
+  </div>
+
+  <div class="frage" data-richtig="2">
+    <p class="frage-text">5. Welche drei Blickwinkel helfen dabei, KI besser zu verstehen?</p>
+    <div class="antwort-liste">
+      <button class="antwort-knopf">Preis, Farbe, Grösse</button>
+      <button class="antwort-knopf">Technische Funktionsweise, gesellschaftliche Auswirkung, persönliche Nutzung</button>
+      <button class="antwort-knopf">Hardware, Software, Internet</button>
+      <button class="antwort-knopf">Vergangenheit, Gegenwart, Zukunft</button>
+    </div>
+    <div class="rueckmeldung richtig">Richtig, diese drei Blickwinkel begleiten euch durch die ganze Einheit.</div>
+    <div class="rueckmeldung falsch">Die richtige Antwort: technische Funktionsweise, gesellschaftliche Auswirkung, persönliche Nutzung.</div>
+  </div>
+
+  <nav class="kapitelnav">
+    <a href="../index.html">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      Zur Startseite
+    </a>
+    <a href="../kapitel-2/index.html">
+      Weiter zu Kapitel 2: Wie denkt ein Chatbot?
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+  </nav>
+
+</main>
+
+<footer class="fusszeile">
+  <div class="fusszeile-inhalt">
+    <div class="fusszeile-spalte">
+      <h4>Kapitel</h4>
+      <ul>
+        <li><a href="../kapitel-1/index.html">1. Was ist KI?</a></li>
+        <li><a href="../kapitel-2/index.html">2. Wie denkt ein Chatbot?</a></li>
+        <li><a href="../kapitel-3/index.html">3. Prompting-Grundlagen</a></li>
+        <li><a href="../kapitel-4/index.html">4. Chancen &amp; Regeln</a></li>
+      </ul>
+    </div>
+    <div class="fusszeile-spalte">
+      <h4>Üben</h4>
+      <ul>
+        <li><a href="../pruefungsvorbereitung/index.html">Prüfungsvorbereitung</a></li>
+      </ul>
+    </div>
+    <div class="fusszeile-spalte">
+      <h4>Über diese Seite</h4>
+      <ul>
+        <li>Begleitmaterial zur KI-Einheit im Fach Medien und Informatik</li>
+      </ul>
+    </div>
+  </div>
+  <p class="fusszeile-klein">ki-explained · ein Lernangebot für den M&amp;I-Unterricht</p>
+</footer>
+
+<script src="../assets/script.js"></script>
+</body>
+</html>

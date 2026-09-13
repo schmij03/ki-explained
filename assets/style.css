@@ -359,6 +359,30 @@ p {
   }
 }
 
+.drei-spalten {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 1.2rem 0;
+}
+
+@media (max-width: 760px) {
+  .drei-spalten {
+    grid-template-columns: 1fr;
+  }
+}
+
+.drei-spalten .box {
+  margin: 0;
+}
+
+.drei-spalten .box .icon-klein {
+  width: 30px;
+  height: 30px;
+  color: var(--farbe-primaer);
+  margin-bottom: 0.4rem;
+}
+
 .spalte-schlecht {
   border-left: 4px solid var(--farbe-fehler);
 }
@@ -438,6 +462,49 @@ p {
   gap: 0.8rem;
   flex-wrap: wrap;
   margin: 1.2rem 0;
+}
+
+/* ---------- Wahl-Übungen (z. B. Turing-Test, Prompt-Auswahl) ---------- */
+
+.wahl-reihe {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin: 1rem 0 1.3rem;
+}
+
+.wahl-knopf {
+  flex: 1;
+  min-width: 140px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.uebung-fortschritt {
+  font-size: 0.85rem;
+  color: var(--farbe-text-schwach);
+  margin-bottom: 0.3rem;
+}
+
+.uebung-aussage {
+  font-size: 1.05rem;
+  background: var(--farbe-hintergrund);
+  border-radius: 10px;
+  padding: 0.9rem 1.1rem;
+  margin-bottom: 0.2rem;
+}
+
+.uebung-abschluss {
+  text-align: center;
+  padding: 1.4rem;
+}
+
+.uebung-abschluss .punktzahl {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--farbe-primaer);
+  display: block;
+  margin-bottom: 0.4rem;
 }
 
 /* ---------- Selbsttest / Quiz ---------- */

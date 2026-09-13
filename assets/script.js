@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initAkkordeon();
   markiereFortschritt();
   initEtappenNavigation();
-  initLernstand();
+  // The workshop homepage uses explicit self-assessment instead of page visits.
   initLesefortschritt();
   markiereAktiveNavigation();
 });
@@ -255,11 +255,23 @@ function initQuizFragen() {
     var rueckmeldungRichtig = frage.querySelector(".rueckmeldung.richtig");
     var rueckmeldungFalsch = frage.querySelector(".rueckmeldung.falsch");
     var beantwortet = false;
+    [rueckmeldungRichtig, rueckmeldungFalsch].forEach(function (el) { if (el) el.setAttribute('role', 'status'); });
+    var nochmal = document.createElement('button');
+    nochmal.type = 'button'; nochmal.className = 'knopf sekundaer'; nochmal.textContent = 'Nochmals versuchen'; nochmal.hidden = true;
+    frage.appendChild(nochmal);
+    nochmal.addEventListener('click', function () {
+      if (frage.dataset.punkt === '1') punkte--;
+      delete frage.dataset.punkt; beantwortet = false;
+      knoepfe.forEach(function (k) { k.disabled = false; k.classList.remove('richtig', 'falsch'); });
+      [rueckmeldungRichtig, rueckmeldungFalsch].forEach(function (el) { if (el) el.classList.remove('zeigen'); });
+      punkteContainer.forEach(function (el) { el.textContent = punkte; });
+      nochmal.hidden = true; knoepfe[0].focus();
+    });
 
     knoepfe.forEach(function (knopf, index) {
       knopf.addEventListener("click", function () {
         if (beantwortet) return;
-        beantwortet = true;
+        beantwortet = true; nochmal.hidden = false;
 
         var istRichtig = index + 1 === richtigIndex;
 
@@ -273,7 +285,7 @@ function initQuizFragen() {
         });
 
         if (istRichtig) {
-          punkte++;
+          punkte++; frage.dataset.punkt = "1";
           if (rueckmeldungRichtig) rueckmeldungRichtig.classList.add("zeigen");
         } else {
           if (rueckmeldungFalsch) rueckmeldungFalsch.classList.add("zeigen");

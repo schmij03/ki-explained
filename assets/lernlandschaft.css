@@ -632,3 +632,51 @@ p, li {
     transform: none !important;
   }
 }
+
+/* Werkstatt für die 3. Sek: eigenständige Umsetzung der Lernweg-Idee. */
+.sprunglink { position:fixed; top:-100px; left:12px; z-index:100; padding:12px; background:white; }
+.sprunglink:focus { top:8px; }
+.titelband { border-left:7px solid var(--kapitel-1); padding:1rem 2rem 2rem; background:var(--papier-warm); }
+.titelband h1 { max-width:24ch; font-size:clamp(2.4rem,5vw,4rem); }
+.materialwege,.werkzeugwege { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; margin:24px 0; }
+.materialwege a,.werkzeugwege a { padding:18px; background:var(--karte-ruhig); border:1px solid var(--linie-warm); color:var(--tinte); text-decoration:none; }
+.materialwege b,.materialwege span { display:block; }
+.materialwege span { margin-top:6px; font-size:.88rem; color:var(--matt); }
+.abschnittskopf { display:flex; flex-wrap:wrap; align-items:baseline; gap:16px; }
+.abschnittskopf>span,.arbeitsart,.seitenhinweis { color:var(--matt); font-size:.9rem; }
+.stationsliste { display:grid; gap:14px; margin:24px 0 40px; }
+.stationskarte { --station:var(--kapitel-1); display:grid; grid-template-columns:70px 1fr 24px; align-items:center; gap:20px; padding:24px; border:1px solid var(--linie-warm); border-left:6px solid var(--station); background:var(--karte-ruhig); color:var(--tinte); text-decoration:none; }
+.station-2 { --station:var(--kapitel-2); }.station-3 { --station:var(--kapitel-3); }.station-4 { --station:var(--kapitel-4); }
+.stationskarte:hover { background:var(--papier-warm); }
+.stationsnummer { font-size:2.5rem; color:var(--station); font-weight:700; }
+.stationskarte small { color:var(--station); font-weight:700; }
+.stationskarte h3 { margin:.35rem 0; font-size:1.35rem; }
+.stationskarte p { margin:0 0 .65rem; max-width:70ch; }
+.stationsstatus { font-size:.8rem; border:1px solid var(--linie-warm); padding:3px 8px; }
+.lernauftrag { background:var(--papier-warm); border-top:4px solid var(--kapitel-farbe); padding:20px; margin:28px 0; }
+.lernauftrag h2 { margin:0; font-size:1.2rem; }
+.lernauftrag .werkzeugwege a { font-weight:650; font-size:.9rem; padding:12px; }
+.werkstatt { border-top:5px solid var(--kapitel-farbe); margin-top:50px; scroll-margin-top:85px; }
+.werkstatt>h2 { margin-top:22px; }
+.etappenmarke { display:block; color:var(--kapitel-farbe); font-size:.8rem; text-transform:uppercase; letter-spacing:.08em; margin-bottom:8px; }
+.labor { padding:22px; border:1px solid var(--linie-warm); background:var(--karte-ruhig); margin:24px 0; }
+.labor label,.journal-label { display:block; font-weight:650; margin:16px 0 8px; }
+textarea,.labor input:not([type=range]),.labor select { display:block; width:100%; max-width:100%; padding:12px; font:inherit; color:var(--tinte); background:var(--karte-ruhig); border:1px solid var(--matt); border-radius:3px; }
+.labor input[type=range] { width:100%; accent-color:var(--kapitel-farbe); }
+textarea { resize:vertical; min-height:110px; }
+.labor select { white-space:normal; }
+.labor button { margin:16px 8px 0 0; }
+.hilfe,.bonus { border:1px solid var(--linie-warm); background:var(--karte-ruhig); padding:15px 20px; margin:18px 0; }
+.hilfe summary,.bonus summary { cursor:pointer; font-weight:700; min-height:28px; }
+.bonus { border-left:4px solid var(--kapitel-3); }
+.abschluss { padding:24px; background:var(--papier-warm); margin-top:40px; }
+.abschluss h2 { margin-top:0; }.abschluss>label { display:block; margin:20px 0; }
+.abschluss input[type=checkbox] { width:20px; height:20px; vertical-align:middle; accent-color:var(--kapitel-farbe); }
+.speicherstatus { font-size:.85rem; color:var(--matt); }
+.wahrscheinlichkeit { padding:8px 12px; background:linear-gradient(to right,#cce3d7 var(--anteil),#f8f4ec var(--anteil)); border:1px solid var(--linie-warm); }
+#theorie-start { scroll-margin-top:90px; } button:disabled { cursor:default; opacity:.65; }
+@media(max-width:650px) { .materialwege,.werkzeugwege { grid-template-columns:1fr; }.titelband { padding:18px; }.stationskarte { grid-template-columns:40px 1fr; padding:16px; gap:12px; }.stationskarte>span:last-child { display:none; }.stationsnummer { font-size:1.8rem; }.labor,.abschluss { padding:16px; } }
+@media print { .kopfzeile,.fusszeile,.sprunglink,.lesefortschritt,button,.kapitelnav { display:none!important; } body { background:white; } main,main:not(.breit) { max-width:none; width:100%; padding:0; } textarea { border:1px solid #888; } .box,.labor,.stationskarte { break-inside:avoid; } }
+
+[hidden] { display:none !important; }
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }

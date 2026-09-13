@@ -7,6 +7,7 @@
 <meta name="description" content="Der Unterschied zwischen klassischen, regelbasierten Chatbots und modernen KI-Chatbots, inklusive einer Chatbot-Simulation zum Ausprobieren.">
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" data-lernlandschaft href="../assets/lernlandschaft.css">
 </head>
 <body data-kapitel="2">
 
@@ -31,6 +32,7 @@
       </svg>
     </button>
     <nav class="hauptnav">
+      <a href="../projekt/index.html">Projekt</a>
       <a href="../kapitel-1/index.html" data-kapitel-link="1">1. Was ist KI?</a>
       <a href="index.html" class="aktiv" data-kapitel-link="2">2. Chatbots</a>
       <a href="../kapitel-3/index.html" data-kapitel-link="3">3. Prompting</a>
@@ -40,7 +42,8 @@
   </div>
 </header>
 
-<main>
+<a class="sprunglink" href="#inhalt">Zum Inhalt</a>
+<main id="inhalt">
 
   <span class="tag">Kapitel 2</span>
   <h1>Wie „denkt“ ein KI-Chatbot?</h1>
@@ -51,14 +54,39 @@
     Chatbot aus.
   </p>
 
-  <nav class="etappenleiste" aria-label="Weg durch dieses Kapitel">
-    <a class="etappe-punkt" href="#traditionelle-chatbots"><span class="kreis">1</span><span class="label">Regelbasiert</span></a>
-    <a class="etappe-punkt" href="#moderne-chatbots"><span class="kreis">2</span><span class="label">Moderne KI</span></a>
-    <a class="etappe-punkt" href="#chatbot-demo"><span class="kreis">3</span><span class="label">Selbst ausprobieren</span></a>
-    <a class="etappe-punkt" href="#selbsttest"><span class="kreis">4</span><span class="label">Selbsttest</span></a>
+  <section class="lernauftrag" aria-label="Dein Lernauftrag">
+<p class="arbeitsart">3. Sek · Medien und Informatik · 45 Min.</p>
+<h2>Das kannst du danach</h2>
+<p>Du unterscheidest einen Regel-Bot von einem Sprachmodell und erklärst, warum eine flüssige Antwort falsch sein kann.</p>
+<nav class="werkzeugwege" aria-label="Zugänge zum Kapitel">
+<a href="#theorie-start">▤ Theorie lesen</a>
+<a href="#werkstatt">◇ Werkstatt starten</a>
+<a href="#selbsttest">✓ Wissen prüfen</a>
+</nav>
+<p>Dein Weg: Theorie → Experiment → eigene Erklärung → Selbsttest. ? hilft dir weiter; ★ ist freiwillig.</p>
+</section>
+<nav class="etappenleiste" aria-label="Weg durch dieses Kapitel">
+    <a class="etappe-punkt" href="#traditionelle-chatbots">
+<span class="kreis">1</span>
+<span class="label">Regelbasiert</span>
+</a>
+    <a class="etappe-punkt" href="#moderne-chatbots">
+<span class="kreis">2</span>
+<span class="label">Moderne KI</span>
+</a>
+    <a class="etappe-punkt" href="#chatbot-demo">
+<span class="kreis">3</span>
+<span class="label">Selbst ausprobieren</span>
+</a>
+    <a class="etappe-punkt" href="#selbsttest">
+<span class="kreis">4</span>
+<span class="label">Selbsttest</span>
+</a>
   </nav>
 
-  <h2 id="traditionelle-chatbots">Etappe 1: Traditionelle, regelbasierte Chatbots</h2>
+  <span id="theorie-start">
+</span>
+<h2 id="traditionelle-chatbots">Etappe 1: Traditionelle, regelbasierte Chatbots</h2>
   <p>
     Schon 1966 entwickelte der Informatiker Joseph Weizenbaum ein Programm
     namens <strong>ELIZA</strong>, das eine Gesprächstherapeutin
@@ -69,9 +97,12 @@
   </p>
   <div class="box beispiel">
     <h3>So funktioniert der Trick</h3>
-    <p style="margin-bottom:0.4rem"><strong>Eingabe:</strong> „Ich bin müde.“</p>
-    <p style="margin-bottom:0"><strong>Regel:</strong> falls Satz mit „Ich bin ...“ beginnt, dann antworte „Warum bist du ...?“</p>
-    <p style="margin:0.4rem 0 0"><strong>Ausgabe:</strong> „Warum bist du müde?“</p>
+    <p style="margin-bottom:0.4rem">
+<strong>Eingabe:</strong> „Ich bin müde.“</p>
+    <p style="margin-bottom:0">
+<strong>Regel:</strong> falls Satz mit „Ich bin ...“ beginnt, dann antworte „Warum bist du ...?“</p>
+    <p style="margin:0.4rem 0 0">
+<strong>Ausgabe:</strong> „Warum bist du müde?“</p>
   </div>
   <p>
     Das wirkt erstaunlich echt, obwohl das Programm den Satz nie wirklich
@@ -86,13 +117,11 @@
     Moderne KI-Chatbots funktionieren technisch völlig anders als ELIZA.
     Sie beruhen auf <strong>maschinellem Lernen</strong> und wurden mit
     riesigen Mengen an Text trainiert, zum Beispiel aus Büchern,
-    Webseiten und Artikeln. Dabei haben sie gelernt, wie wahrscheinlich
-    ein bestimmtes Wort auf ein anderes folgt.
+    Webseiten und Artikeln. Dabei haben sie Muster gelernt, mit denen sich mögliche Fortsetzungen des bisherigen Textes berechnen lassen.
   </p>
   <p>
     Wenn ihr einem modernen KI-Chatbot eine Frage stellt, berechnet er im
-    Grunde immer wieder: „Welches Wort passt statistisch gesehen am
-    besten als Nächstes?“ Das Ergebnis wirkt oft erstaunlich flüssig und
+    Grunde immer wieder: „Welche Textstücke könnten in diesem Kontext als Nächstes passen?“ Das Ergebnis wirkt oft erstaunlich flüssig und
     sinnvoll, trotzdem handelt es sich weiterhin um <strong>statistische
     Mustererkennung</strong>, nicht um echtes Verständnis im menschlichen
     Sinn.
@@ -101,8 +130,7 @@
     <h3>Wichtig zu wissen</h3>
     <p style="margin-bottom:0">
       Ein KI-Chatbot „denkt“ und „versteht“ nicht wie ein Mensch. Er
-      erkennt Muster in Sprache und sagt daraus das wahrscheinlichste
-      nächste Wort voraus. Deshalb kann er auch überzeugend klingende,
+      erkennt Muster in Sprache und wählt daraus nächste Textstücke (Tokens). Dabei muss nicht immer das wahrscheinlichste Token gewählt werden. Deshalb kann er auch überzeugend klingende,
       aber inhaltlich falsche Antworten geben (mehr dazu in Kapitel 4).
     </p>
   </div>
@@ -115,12 +143,16 @@
   </p>
 
   <div class="chat-fenster">
-    <div class="chat-verlauf" id="chatbot-verlauf" aria-live="polite"></div>
+    <div class="chat-verlauf" id="chatbot-verlauf" aria-live="polite">
+</div>
     <form class="chat-eingabe-zeile" id="chatbot-formular">
       <label class="sr-only" for="chatbot-eingabe">Nachricht an den Beispiel-Chatbot</label>
       <input type="text" id="chatbot-eingabe" placeholder="Schreib etwas..." autocomplete="off" maxlength="200">
       <button type="submit" aria-label="Senden">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<line x1="22" y1="2" x2="11" y2="13"/>
+<polygon points="22 2 15 22 11 13 2 9 22 2"/>
+</svg>
       </button>
     </form>
   </div>
@@ -137,13 +169,44 @@
   </div>
 
   <p>
-    Im weiteren Verlauf des Unterrichts programmiert ihr im Frühling
-    selbst einen einfachen Chatbot nach diesem Prinzip. Was ihr hier
-    ausprobiert habt, hilft euch dann, die Funktionsweise von innen zu
-    verstehen.
+    Als freiwillige Vertiefung könnt ihr einen Regel-Bot auf Papier entwerfen. Die Bonusaufgabe in der Werkstatt erklärt euch, wie das geht.
   </p>
 
-  <h2 id="selbsttest">Etappe 4: Selbsttest</h2>
+  <section id="werkstatt" class="werkstatt">
+<h2>
+<span class="etappenmarke">Werkstatt 2</span>Chatbots durchschauen</h2>
+<p class="arbeitsart">Zu zweit · 12 Min. · Pflicht</p>
+<h3>Das nächste Wort: plausibel heisst nicht wahr</h3>
+<p>Sprachmodelle erzeugen Text Stück für Stück. Diese Stücke heissen <strong>Tokens</strong>: ein Wort, ein Wortteil oder ein Satzzeichen. Der bisherige Text beeinflusst, was folgen könnte. Die folgende Tabelle ist ein erfundenes Anschauungsmodell, keine Messung eines echten Chatbots.</p>
+<div class="labor">
+<label for="satzkontext">Wähle den bisherigen Text</label>
+<select id="satzkontext">
+<option value="pause">In der grossen Pause esse ich …</option>
+<option value="velo">Für den Schulweg nehme ich mein …</option>
+</select>
+<div id="wortverteilung" aria-live="polite">
+</div>
+<button id="wort-ziehen" class="knopf" type="button">Ein nächstes Wort ziehen</button>
+<p id="wort-ausgabe" role="status">Ziehe mehrmals ein Wort und vergleiche.</p>
+</div>
+<ol>
+<li>Ziehe fünfmal ein Wort. Kommt immer das häufigste?</li>
+<li>Wechsle den Satzanfang. Wie verändern sich die Möglichkeiten?</li>
+<li>Kennt dieses Modell dein echtes Znüni? Begründe.</li>
+</ol>
+<label class="journal-label" for="tokens">Was kann eine wahrscheinliche Fortsetzung über die Wirklichkeit aussagen?</label>
+<textarea id="tokens" data-journal="tokens" rows="4" placeholder="Deine Beobachtung und Begründung …">
+</textarea>
+<details class="hilfe">
+<summary>? Hilfe und mögliche Lösung</summary>
+<p>Die Auswahl ist zufällig gewichtet: Auch ein selteneres Wort kann erscheinen. Der Kontext verändert die Auswahl. Das Modell kennt dein Znüni nicht; ein plausibler Satz belegt keine Tatsache.</p>
+</details>
+<details class="bonus">
+<summary>★ Bonus · Entwirf einen Regel-Bot auf Papier</summary>
+<p>Schreibe drei Wenn-dann-Regeln für einen Schulbibliothek-Bot und eine Antwort für unbekannte Eingaben. Eine Person spielt den Bot und befolgt nur diese Regeln, die andere stellt Fragen. Testet auch «Wann ist die Bibliothek NICHT offen?» und verbessert eine Regel.</p>
+</details>
+</section>
+<h2 id="selbsttest">Etappe 4: Selbsttest</h2>
   <p>Prüft kurz, ob die wichtigsten Punkte aus diesem Kapitel sitzen.</p>
 
   <div class="frage" data-richtig="2">
@@ -172,12 +235,12 @@
     <p class="frage-text">3. Worauf beruhen moderne KI-Chatbots?</p>
     <div class="antwort-liste">
       <button class="antwort-knopf">Auf fest programmierten Wenn-Dann-Regeln</button>
-      <button class="antwort-knopf">Auf maschinellem Lernen mit riesigen Textmengen, um das wahrscheinlichste nächste Wort vorherzusagen</button>
+      <button class="antwort-knopf">Auf maschinellem Lernen mit riesigen Textmengen, um mögliche nächste Textstücke (Tokens) vorherzusagen</button>
       <button class="antwort-knopf">Auf einer festen Liste vorgefertigter Antworten</button>
       <button class="antwort-knopf">Auf reinem Zufall</button>
     </div>
-    <div class="rueckmeldung richtig">Genau. Moderne KI-Chatbots sagen basierend auf Training das wahrscheinlichste nächste Wort voraus.</div>
-    <div class="rueckmeldung falsch">Nicht ganz. Moderne KI-Chatbots sagen basierend auf Training das wahrscheinlichste nächste Wort voraus.</div>
+    <div class="rueckmeldung richtig">Genau. Moderne KI-Chatbots sagen basierend auf Training mögliche nächste Textstücke (Tokens) voraus.</div>
+    <div class="rueckmeldung falsch">Nicht ganz. Moderne KI-Chatbots sagen basierend auf Training mögliche nächste Textstücke (Tokens) voraus.</div>
   </div>
 
   <div class="frage" data-richtig="2">
@@ -202,14 +265,32 @@
     <div class="rueckmeldung falsch">Nicht ganz. Die Übung zeigt vor allem, dass ein regelbasierter Bot kein echtes Sprachverständnis hat.</div>
   </div>
 
-  <nav class="kapitelnav">
+  <section class="abschluss">
+<h2>Rückblick &amp; Lernjournal</h2>
+<label class="journal-label" for="reflexion-2">Erkläre das Lernziel oben in eigenen Worten. Nenne ein Beispiel und eine offene Frage.</label>
+<textarea id="reflexion-2" data-journal="reflexion-2" rows="4" placeholder="Deine Beobachtung und Begründung …">
+</textarea>
+<label>
+<input type="checkbox" data-erledigt="2"> Ich habe die Werkstatt bearbeitet, den Selbsttest gemacht und meinen Rückblick geschrieben.</label>
+<p>Diese Selbsteinschätzung ist keine Note.</p>
+<button class="knopf sekundaer" data-export type="button">Lernjournal herunterladen</button>
+<p class="speicherstatus" role="status">
+</p>
+</section>
+<nav class="kapitelnav">
     <a href="../kapitel-1/index.html">
-      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<line x1="19" y1="12" x2="5" y2="12"/>
+<polyline points="12 19 5 12 12 5"/>
+</svg>
       Zurück zu Kapitel 1
     </a>
     <a href="../kapitel-3/index.html">
       Weiter zu Kapitel 3: Prompting-Grundlagen
-      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<line x1="5" y1="12" x2="19" y2="12"/>
+<polyline points="12 5 19 12 12 19"/>
+</svg>
     </a>
   </nav>
 
@@ -220,16 +301,26 @@
     <div class="fusszeile-spalte">
       <h4>Kapitel</h4>
       <ul>
-        <li><a href="../kapitel-1/index.html">1. Was ist KI?</a></li>
-        <li><a href="../kapitel-2/index.html">2. Wie denkt ein Chatbot?</a></li>
-        <li><a href="../kapitel-3/index.html">3. Prompting-Grundlagen</a></li>
-        <li><a href="../kapitel-4/index.html">4. Chancen &amp; Regeln</a></li>
+        <li>
+<a href="../kapitel-1/index.html">1. Was ist KI?</a>
+</li>
+        <li>
+<a href="../kapitel-2/index.html">2. Wie denkt ein Chatbot?</a>
+</li>
+        <li>
+<a href="../kapitel-3/index.html">3. Prompting-Grundlagen</a>
+</li>
+        <li>
+<a href="../kapitel-4/index.html">4. Chancen &amp; Regeln</a>
+</li>
       </ul>
     </div>
     <div class="fusszeile-spalte">
       <h4>Üben</h4>
       <ul>
-        <li><a href="../pruefungsvorbereitung/index.html">Prüfungsvorbereitung</a></li>
+        <li>
+<a href="../pruefungsvorbereitung/index.html">Prüfungsvorbereitung</a>
+</li>
       </ul>
     </div>
     <div class="fusszeile-spalte">
@@ -244,5 +335,6 @@
 
 <script src="../assets/script.js"></script>
 <script src="../assets/chatbot.js"></script>
+<script src="../assets/werkstatt.js"></script>
 </body>
 </html>

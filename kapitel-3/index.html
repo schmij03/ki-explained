@@ -7,6 +7,7 @@
 <meta name="description" content="Was ein Prompt ist, welche Bausteine ein guter Prompt braucht und wie ihr eure Anfragen an eine KI klarer formuliert.">
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" data-lernlandschaft href="../assets/lernlandschaft.css">
 </head>
 <body data-kapitel="3">
 
@@ -31,6 +32,7 @@
       </svg>
     </button>
     <nav class="hauptnav">
+      <a href="../projekt/index.html">Projekt</a>
       <a href="../kapitel-1/index.html" data-kapitel-link="1">1. Was ist KI?</a>
       <a href="../kapitel-2/index.html" data-kapitel-link="2">2. Chatbots</a>
       <a href="index.html" class="aktiv" data-kapitel-link="3">3. Prompting</a>
@@ -40,7 +42,8 @@
   </div>
 </header>
 
-<main>
+<a class="sprunglink" href="#inhalt">Zum Inhalt</a>
+<main id="inhalt">
 
   <span class="tag">Kapitel 3</span>
   <h1>Prompting-Grundlagen</h1>
@@ -50,19 +53,44 @@
     das direkt an Beispielen.
   </p>
 
-  <nav class="etappenleiste" aria-label="Weg durch dieses Kapitel">
-    <a class="etappe-punkt" href="#was-ist-ein-prompt"><span class="kreis">1</span><span class="label">Was ist ein Prompt?</span></a>
-    <a class="etappe-punkt" href="#bausteine"><span class="kreis">2</span><span class="label">Bausteine</span></a>
-    <a class="etappe-punkt" href="#prompt-uebung"><span class="kreis">3</span><span class="label">Übung</span></a>
-    <a class="etappe-punkt" href="#selbsttest"><span class="kreis">4</span><span class="label">Selbsttest</span></a>
+  <section class="lernauftrag" aria-label="Dein Lernauftrag">
+<p class="arbeitsart">3. Sek · Medien und Informatik · 45 Min.</p>
+<h2>Das kannst du danach</h2>
+<p>Du schreibst einen Prompt mit Ziel, Kontext und Format und verbesserst ihn nach einer Rückmeldung.</p>
+<nav class="werkzeugwege" aria-label="Zugänge zum Kapitel">
+<a href="#theorie-start">▤ Theorie lesen</a>
+<a href="#werkstatt">◇ Werkstatt starten</a>
+<a href="#selbsttest">✓ Wissen prüfen</a>
+</nav>
+<p>Dein Weg: Theorie → Experiment → eigene Erklärung → Selbsttest. ? hilft dir weiter; ★ ist freiwillig.</p>
+</section>
+<nav class="etappenleiste" aria-label="Weg durch dieses Kapitel">
+    <a class="etappe-punkt" href="#was-ist-ein-prompt">
+<span class="kreis">1</span>
+<span class="label">Was ist ein Prompt?</span>
+</a>
+    <a class="etappe-punkt" href="#bausteine">
+<span class="kreis">2</span>
+<span class="label">Bausteine</span>
+</a>
+    <a class="etappe-punkt" href="#prompt-uebung">
+<span class="kreis">3</span>
+<span class="label">Übung</span>
+</a>
+    <a class="etappe-punkt" href="#selbsttest">
+<span class="kreis">4</span>
+<span class="label">Selbsttest</span>
+</a>
   </nav>
 
-  <h2 id="was-ist-ein-prompt">Etappe 1: Was ist ein Prompt?</h2>
+  <span id="theorie-start">
+</span>
+<h2 id="was-ist-ein-prompt">Etappe 1: Was ist ein Prompt?</h2>
   <p>
     Ein <strong>Prompt</strong> ist die Anfrage oder Anweisung, die ihr
     einer KI gebt, egal ob als Frage, als Auftrag oder als Beschreibung
     dessen, was ihr haben möchtet. Weil ein KI-Chatbot (wie ihr in Kapitel
-    2 gesehen habt) das wahrscheinlichste nächste Wort auf Basis eurer
+    2 gesehen habt) mögliche nächste Textstücke (Tokens) auf Basis eurer
     Eingabe berechnet, macht die genaue Formulierung einen echten
     Unterschied für das Ergebnis.
   </p>
@@ -116,7 +144,8 @@
   </p>
 
   <div class="box beispiel" id="prompt-uebung-box">
-    <div id="prompt-uebung-inhalt"></div>
+    <div id="prompt-uebung-inhalt">
+</div>
   </div>
 
   <script>
@@ -212,7 +241,44 @@
     })();
   </script>
 
-  <h2 id="selbsttest">Etappe 4: Selbsttest</h2>
+  <section id="werkstatt" class="werkstatt">
+<h2>
+<span class="etappenmarke">Werkstatt 3</span>Gute Aufträge formulieren</h2>
+<p class="arbeitsart">Einzelarbeit → Partnerfeedback · 15 Min. · Pflicht</p>
+<h3>Dein Prompt für die nächste Prüfung</h3>
+<p>Aus «Hilf mir in Mathe» wird ein überprüfbarer Lernauftrag. Wähle ein Thema aus eurem Unterricht. Fülle die drei Bausteine aus. Du brauchst dafür keinen echten KI-Chatbot.</p>
+<form id="prompt-baukasten" class="labor">
+<label for="prompt-ziel">1. Ziel: Was möchtest du üben?</label>
+<input id="prompt-ziel" data-journal="prompt-ziel" placeholder="Zum Beispiel: Prozentrechnen mit Rabatten" required maxlength="300">
+<label for="prompt-kontext">2. Kontext: Was soll die KI über die Aufgabe wissen?</label>
+<input id="prompt-kontext" data-journal="prompt-kontext" placeholder="3. Sek in der Schweiz; ich verwechsle Grundwert und Prozentwert" required maxlength="400">
+<label for="prompt-format">3. Format: Wie soll die Hilfe aussehen?</label>
+<select id="prompt-format" data-journal="prompt-format">
+<option>Stelle mir drei Aufgaben, eine nach der anderen. Warte auf meine Antwort und gib zuerst nur einen Tipp.</option>
+<option>Erkläre es in drei kurzen Schritten mit einem Beispiel in CHF. Stelle danach eine Kontrollfrage.</option>
+<option>Stelle mir fünf Lernfragen. Zeige die Musterlösungen erst, wenn ich danach frage.</option>
+</select>
+<button class="knopf" type="submit">Prompt zusammensetzen</button>
+<p id="prompt-bau-feedback" role="status">
+</p>
+<label for="prompt-ergebnis">Dein zusammengesetzter Prompt</label>
+<textarea id="prompt-ergebnis" rows="6" readonly placeholder="Hier erscheint dein Prompt.">
+</textarea>
+</form>
+<p>Tauscht die Prompts. Markiert Ziel, Kontext und Format. Kann eine andere Person den Auftrag ausführen? Was würde zeigen, dass die Antwort hilfreich ist?</p>
+<label class="journal-label" for="prompt-revision">Mein verbesserter Prompt und wie ich die Antwort prüfen würde</label>
+<textarea id="prompt-revision" data-journal="prompt-revision" rows="4" placeholder="Deine Beobachtung und Begründung …">
+</textarea>
+<details class="hilfe">
+<summary>? Hilfe und mögliche Lösung</summary>
+<p>Ein prüfbarer Auftrag nennt das Thema, dein Vorwissen und die gewünschte Hilfe. Zum Beispiel: «Gib zuerst nur einen Tipp» lässt dir Denkarbeit. Prüfe Rechnungen selbst und vergleiche Erklärungen mit dem Unterrichtsmaterial. Ein guter Prompt garantiert keine richtige Antwort.</p>
+</details>
+<details class="bonus">
+<summary>★ Bonus · Eine unpassende Antwort verbessern</summary>
+<p>Die gedachte Antwort enthält zehn Fachbegriffe und verrät sofort alle Lösungen. Schreibe eine Rückfrage, die beide Probleme gezielt behebt. Optional mit einem von der Lehrperson freigegebenen KI-Werkzeug testen.</p>
+</details>
+</section>
+<h2 id="selbsttest">Etappe 4: Selbsttest</h2>
   <p>Prüft kurz, ob die wichtigsten Punkte aus diesem Kapitel sitzen.</p>
 
   <div class="frage" data-richtig="2">
@@ -273,14 +339,32 @@
     <div class="rueckmeldung falsch">Die richtige Antwort: Ein Beispiel zeigt der KI, wie das Ergebnis ungefähr aussehen soll.</div>
   </div>
 
-  <nav class="kapitelnav">
+  <section class="abschluss">
+<h2>Rückblick &amp; Lernjournal</h2>
+<label class="journal-label" for="reflexion-3">Erkläre das Lernziel oben in eigenen Worten. Nenne ein Beispiel und eine offene Frage.</label>
+<textarea id="reflexion-3" data-journal="reflexion-3" rows="4" placeholder="Deine Beobachtung und Begründung …">
+</textarea>
+<label>
+<input type="checkbox" data-erledigt="3"> Ich habe die Werkstatt bearbeitet, den Selbsttest gemacht und meinen Rückblick geschrieben.</label>
+<p>Diese Selbsteinschätzung ist keine Note.</p>
+<button class="knopf sekundaer" data-export type="button">Lernjournal herunterladen</button>
+<p class="speicherstatus" role="status">
+</p>
+</section>
+<nav class="kapitelnav">
     <a href="../kapitel-2/index.html">
-      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<line x1="19" y1="12" x2="5" y2="12"/>
+<polyline points="12 19 5 12 12 5"/>
+</svg>
       Zurück zu Kapitel 2
     </a>
     <a href="../kapitel-4/index.html">
       Weiter zu Kapitel 4: Chancen &amp; Regeln
-      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<line x1="5" y1="12" x2="19" y2="12"/>
+<polyline points="12 5 19 12 12 19"/>
+</svg>
     </a>
   </nav>
 
@@ -291,16 +375,26 @@
     <div class="fusszeile-spalte">
       <h4>Kapitel</h4>
       <ul>
-        <li><a href="../kapitel-1/index.html">1. Was ist KI?</a></li>
-        <li><a href="../kapitel-2/index.html">2. Wie denkt ein Chatbot?</a></li>
-        <li><a href="../kapitel-3/index.html">3. Prompting-Grundlagen</a></li>
-        <li><a href="../kapitel-4/index.html">4. Chancen &amp; Regeln</a></li>
+        <li>
+<a href="../kapitel-1/index.html">1. Was ist KI?</a>
+</li>
+        <li>
+<a href="../kapitel-2/index.html">2. Wie denkt ein Chatbot?</a>
+</li>
+        <li>
+<a href="../kapitel-3/index.html">3. Prompting-Grundlagen</a>
+</li>
+        <li>
+<a href="../kapitel-4/index.html">4. Chancen &amp; Regeln</a>
+</li>
       </ul>
     </div>
     <div class="fusszeile-spalte">
       <h4>Üben</h4>
       <ul>
-        <li><a href="../pruefungsvorbereitung/index.html">Prüfungsvorbereitung</a></li>
+        <li>
+<a href="../pruefungsvorbereitung/index.html">Prüfungsvorbereitung</a>
+</li>
       </ul>
     </div>
     <div class="fusszeile-spalte">
@@ -314,5 +408,6 @@
 </footer>
 
 <script src="../assets/script.js"></script>
+<script src="../assets/werkstatt.js"></script>
 </body>
 </html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kapitel 2: Wie „denkt" ein KI-Chatbot? – ki-explained</title>
+<meta name="description" content="Der Unterschied zwischen klassischen, regelbasierten Chatbots und modernen KI-Chatbots, inklusive einer Chatbot-Simulation zum Ausprobieren.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-kapitel="2">
+
+<header class="kopfzeile">
+  <div class="kopfzeile-inhalt">
+    <a href="../index.html" class="logo">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="5" r="2.2"/>
+        <circle cx="5" cy="17" r="2.2"/>
+        <circle cx="19" cy="17" r="2.2"/>
+        <line x1="12" y1="7.2" x2="6.4" y2="15.2"/>
+        <line x1="12" y1="7.2" x2="17.6" y2="15.2"/>
+        <line x1="7.2" y1="17" x2="16.8" y2="17"/>
+      </svg>
+      ki-explained
+    </a>
+    <button class="menu-knopf" aria-label="Menü öffnen" aria-expanded="false">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <line x1="4" y1="7" x2="20" y2="7"/>
+        <line x1="4" y1="12" x2="20" y2="12"/>
+        <line x1="4" y1="17" x2="20" y2="17"/>
+      </svg>
+    </button>
+    <nav class="hauptnav">
+      <a href="../kapitel-1/index.html" data-kapitel-link="1">1. Was ist KI?</a>
+      <a href="index.html" class="aktiv" data-kapitel-link="2">2. Chatbots</a>
+      <a href="../kapitel-3/index.html" data-kapitel-link="3">3. Prompting</a>
+      <a href="../kapitel-4/index.html" data-kapitel-link="4">4. Chancen &amp; Regeln</a>
+      <a href="../pruefungsvorbereitung/index.html">Prüfung</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <span class="tag">Kapitel 2</span>
+  <h1>Wie „denkt" ein KI-Chatbot?</h1>
+  <p class="einleitungstext">
+    Chatbots gibt es schon länger, als ihr vielleicht denkt, allerdings
+    funktionieren nicht alle gleich. In diesem Kapitel vergleicht ihr zwei
+    ganz unterschiedliche Prinzipien und probiert selbst einen einfachen
+    Chatbot aus.
+  </p>
+
+  <nav class="etappenleiste" aria-label="Weg durch dieses Kapitel">
+    <a class="etappe-punkt" href="#traditionelle-chatbots"><span class="kreis">1</span><span class="label">Regelbasiert</span></a>
+    <a class="etappe-punkt" href="#moderne-chatbots"><span class="kreis">2</span><span class="label">Moderne KI</span></a>
+    <a class="etappe-punkt" href="#chatbot-demo"><span class="kreis">3</span><span class="label">Selbst ausprobieren</span></a>
+    <a class="etappe-punkt" href="#selbsttest"><span class="kreis">4</span><span class="label">Selbsttest</span></a>
+  </nav>
+
+  <h2 id="traditionelle-chatbots">Etappe 1: Traditionelle, regelbasierte Chatbots</h2>
+  <p>
+    Schon 1966 entwickelte der Informatiker Joseph Weizenbaum ein Programm
+    namens <strong>ELIZA</strong>, das eine Gesprächstherapeutin
+    nachahmte. ELIZA hatte keine Ahnung von Sprache oder Gefühlen. Sie
+    suchte in jedem Satz nach bestimmten <strong>Schlüsselwörtern</strong>
+    und wandte dann feste <strong>falls-dann-sonst-Regeln</strong> an, um
+    eine passende Antwort zusammenzubauen.
+  </p>
+  <div class="box beispiel">
+    <h3>So funktioniert der Trick</h3>
+    <p style="margin-bottom:0.4rem"><strong>Eingabe:</strong> „Ich bin müde."</p>
+    <p style="margin-bottom:0"><strong>Regel:</strong> falls Satz mit „Ich bin ..." beginnt, dann antworte „Warum bist du ...?"</p>
+    <p style="margin:0.4rem 0 0"><strong>Ausgabe:</strong> „Warum bist du müde?"</p>
+  </div>
+  <p>
+    Das wirkt erstaunlich echt, obwohl das Programm den Satz nie wirklich
+    verstanden hat. Es hat nur Wörter ausgetauscht und die Frage
+    zurückgespiegelt. Viele Testpersonen glaubten damals trotzdem, mit
+    einem verständnisvollen Gegenüber zu sprechen, obwohl es sich um
+    reine Mustererkennung handelte.
+  </p>
+
+  <h2 id="moderne-chatbots">Etappe 2: Moderne KI-Chatbots</h2>
+  <p>
+    Moderne KI-Chatbots funktionieren technisch völlig anders als ELIZA.
+    Sie beruhen auf <strong>maschinellem Lernen</strong> und wurden mit
+    riesigen Mengen an Text trainiert, zum Beispiel aus Büchern,
+    Webseiten und Artikeln. Dabei haben sie gelernt, wie wahrscheinlich
+    ein bestimmtes Wort auf ein anderes folgt.
+  </p>
+  <p>
+    Wenn ihr einem modernen KI-Chatbot eine Frage stellt, berechnet er im
+    Grunde immer wieder: „Welches Wort passt statistisch gesehen am
+    besten als Nächstes?" Das Ergebnis wirkt oft erstaunlich flüssig und
+    sinnvoll, trotzdem handelt es sich weiterhin um <strong>statistische
+    Mustererkennung</strong>, nicht um echtes Verständnis im menschlichen
+    Sinn.
+  </p>
+  <div class="box hinweis">
+    <h3>Wichtig zu wissen</h3>
+    <p style="margin-bottom:0">
+      Ein KI-Chatbot „denkt" und „versteht" nicht wie ein Mensch. Er
+      erkennt Muster in Sprache und sagt daraus das wahrscheinlichste
+      nächste Wort voraus. Deshalb kann er auch überzeugend klingende,
+      aber inhaltlich falsche Antworten geben (mehr dazu in Kapitel 4).
+    </p>
+  </div>
+
+  <h2 id="chatbot-demo">Etappe 3: Probiert selbst einen regelbasierten Chatbot aus</h2>
+  <p>
+    Der folgende Chatbot funktioniert nach dem klassischen
+    Schlüsselwort-Prinzip wie ELIZA. Er läuft komplett in eurem Browser,
+    es besteht keine Verbindung zu einer echten KI oder zum Internet.
+  </p>
+
+  <div class="chat-fenster">
+    <div class="chat-verlauf" id="chatbot-verlauf" aria-live="polite"></div>
+    <form class="chat-eingabe-zeile" id="chatbot-formular">
+      <label class="sr-only" for="chatbot-eingabe">Nachricht an den Beispiel-Chatbot</label>
+      <input type="text" id="chatbot-eingabe" placeholder="Schreib etwas..." autocomplete="off" maxlength="200">
+      <button type="submit" aria-label="Senden">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      </button>
+    </form>
+  </div>
+
+  <div class="box hinweis">
+    <h3>Versucht, den Bot auszutricksen</h3>
+    <p style="margin-bottom:0">
+      Schreibt zum Beispiel etwas völlig Unsinniges wie „Banane Mittwoch
+      fliegt lila". Der Bot hat keine Ahnung, was das bedeutet, trotzdem
+      antwortet er, weil er nur nach bekannten Wörtern und Mustern sucht,
+      nicht nach echtem Sinn. Genau das zeigt: Ein regelbasierter Bot hat
+      kein echtes Sprachverständnis.
+    </p>
+  </div>
+
+  <p>
+    Im weiteren Verlauf des Unterrichts programmiert ihr im Frühling
+    selbst einen einfachen Chatbot nach diesem Prinzip. Was ihr hier
+    ausprobiert habt, hilft euch dann, die Funktionsweise von innen zu
+    verstehen.
+  </p>
+
+  <h2 id="selbsttest">Etappe 4: Selbsttest</h2>
+  <p>Prüft kurz, ob die wichtigsten Punkte aus diesem Kapitel sitzen.</p>
+
+  <div class="frage" data-richtig="2">
+    <p class="frage-text">1. Wonach sucht ein klassischer, regelbasierter Chatbot wie ELIZA, um eine Antwort zu geben?</p>
+    <div class="antwort-liste">
+      <button class="antwort-knopf">Nach dem Sinn des ganzen Satzes</button>
+      <button class="antwort-knopf">Nach bestimmten Schlüsselwörtern und festen falls-dann-sonst-Regeln</button>
+      <button class="antwort-knopf">Nach der Tonlage der Stimme</button>
+      <button class="antwort-knopf">Nach dem aktuellen Wetter</button>
+    </div>
+    <div class="rueckmeldung richtig">Genau. ELIZA sucht Schlüsselwörter und wendet feste Regeln an.</div>
+    <div class="rueckmeldung falsch">Nicht ganz. ELIZA sucht nach Schlüsselwörtern und wendet feste falls-dann-sonst-Regeln an.</div>
+  </div>
+
+  <div class="frage" data-richtig="2">
+    <p class="frage-text">2. Richtig oder falsch: ELIZA aus dem Jahr 1966 verstand die Anliegen ihrer Nutzerinnen und Nutzer wirklich.</p>
+    <div class="antwort-liste">
+      <button class="antwort-knopf">Richtig</button>
+      <button class="antwort-knopf">Falsch</button>
+    </div>
+    <div class="rueckmeldung richtig">Richtig, das ist falsch! ELIZA hat nur Muster erkannt und Sätze gespiegelt, ohne echtes Verständnis.</div>
+    <div class="rueckmeldung falsch">Das stimmt nicht. ELIZA hat nur Muster erkannt und Sätze gespiegelt, ohne echtes Verständnis.</div>
+  </div>
+
+  <div class="frage" data-richtig="2">
+    <p class="frage-text">3. Worauf beruhen moderne KI-Chatbots?</p>
+    <div class="antwort-liste">
+      <button class="antwort-knopf">Auf fest programmierten Wenn-Dann-Regeln</button>
+      <button class="antwort-knopf">Auf maschinellem Lernen mit riesigen Textmengen, um das wahrscheinlichste nächste Wort vorherzusagen</button>
+      <button class="antwort-knopf">Auf einer festen Liste vorgefertigter Antworten</button>
+      <button class="antwort-knopf">Auf reinem Zufall</button>
+    </div>
+    <div class="rueckmeldung richtig">Genau. Moderne KI-Chatbots sagen basierend auf Training das wahrscheinlichste nächste Wort voraus.</div>
+    <div class="rueckmeldung falsch">Nicht ganz. Moderne KI-Chatbots sagen basierend auf Training das wahrscheinlichste nächste Wort voraus.</div>
+  </div>
+
+  <div class="frage" data-richtig="2">
+    <p class="frage-text">4. Richtig oder falsch: Auch ein moderner KI-Chatbot versteht Sprache im menschlichen Sinn.</p>
+    <div class="antwort-liste">
+      <button class="antwort-knopf">Richtig</button>
+      <button class="antwort-knopf">Falsch</button>
+    </div>
+    <div class="rueckmeldung richtig">Richtig, das ist falsch! Auch moderne KI-Chatbots erkennen statistische Muster, ohne im menschlichen Sinn zu verstehen.</div>
+    <div class="rueckmeldung falsch">Das stimmt nicht. Auch moderne KI-Chatbots erkennen statistische Muster, ohne im menschlichen Sinn zu verstehen.</div>
+  </div>
+
+  <div class="frage" data-richtig="1">
+    <p class="frage-text">5. Was zeigt die Chatbot-Übung in diesem Kapitel besonders gut?</p>
+    <div class="antwort-liste">
+      <button class="antwort-knopf">Dass ein regelbasierter Bot leicht mit unsinnigen Eingaben verwirrt werden kann, weil er nicht wirklich versteht.</button>
+      <button class="antwort-knopf">Dass Chatbots immer perfekt antworten.</button>
+      <button class="antwort-knopf">Dass Chatbots menschliche Gefühle haben.</button>
+      <button class="antwort-knopf">Dass Chatbots nur auf Englisch funktionieren.</button>
+    </div>
+    <div class="rueckmeldung richtig">Genau. Ein regelbasierter Bot erkennt kein echtes Sprachverständnis, sondern nur Muster.</div>
+    <div class="rueckmeldung falsch">Nicht ganz. Die Übung zeigt vor allem, dass ein regelbasierter Bot kein echtes Sprachverständnis hat.</div>
+  </div>
+
+  <nav class="kapitelnav">
+    <a href="../kapitel-1/index.html">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      Zurück zu Kapitel 1
+    </a>
+    <a href="../kapitel-3/index.html">
+      Weiter zu Kapitel 3: Prompting-Grundlagen
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+  </nav>
+
+</main>
+
+<footer class="fusszeile">
+  <div class="fusszeile-inhalt">
+    <div class="fusszeile-spalte">
+      <h4>Kapitel</h4>
+      <ul>
+        <li><a href="../kapitel-1/index.html">1. Was ist KI?</a></li>
+        <li><a href="../kapitel-2/index.html">2. Wie denkt ein Chatbot?</a></li>
+        <li><a href="../kapitel-3/index.html">3. Prompting-Grundlagen</a></li>
+        <li><a href="../kapitel-4/index.html">4. Chancen &amp; Regeln</a></li>
+      </ul>
+    </div>
+    <div class="fusszeile-spalte">
+      <h4>Üben</h4>
+      <ul>
+        <li><a href="../pruefungsvorbereitung/index.html">Prüfungsvorbereitung</a></li>
+      </ul>
+    </div>
+    <div class="fusszeile-spalte">
+      <h4>Über diese Seite</h4>
+      <ul>
+        <li>Begleitmaterial zur KI-Einheit im Fach Medien und Informatik</li>
+      </ul>
+    </div>
+  </div>
+  <p class="fusszeile-klein">ki-explained · ein Lernangebot für den M&amp;I-Unterricht</p>
+</footer>
+
+<script src="../assets/script.js"></script>
+<script src="../assets/chatbot.js"></script>
+</body>
+</html>

@@ -1,0 +1,634 @@
+/*
+ * ki-explained – Lernlandschaft-Erweiterung
+ *
+ * Inspiriert von den Gestaltungsprinzipien der PH-Luzern-Lernlandschaft
+ * "Form und Raum": ruhige Papierflaechen, klare Kapitel-Farbcodes,
+ * kompakte Navigation und ein sichtbar gefuehrter Lernweg.
+ *
+ * Dieses Stylesheet liegt bewusst ueber dem bestehenden style.css.
+ * Interaktive Komponenten und vorhandene Klassen bleiben dadurch erhalten.
+ */
+
+:root {
+  --papier: #f8f4ec;
+  --papier-warm: #f3ecdf;
+  --karte-ruhig: #fffefb;
+  --tinte: #2d2924;
+  --matt: #6c6357;
+  --linie-warm: #e4d9c7;
+  --kapitel-1: #0065a9;
+  --kapitel-2: #007d57;
+  --kapitel-3: #7a5aa6;
+  --kapitel-4: #a64b32;
+  --pruefung: #7a4a18;
+}
+
+body {
+  --kapitel-farbe: var(--farbe-primaer);
+  --kapitel-dunkel: var(--farbe-primaer-dunkel);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: var(--tinte);
+  background:
+    radial-gradient(circle at 12% 8%, rgba(255,255,255,.72), transparent 26rem),
+    var(--papier);
+}
+
+body[data-kapitel="1"] {
+  --farbe-primaer: var(--kapitel-1);
+  --farbe-primaer-dunkel: #004b7e;
+  --kapitel-farbe: var(--kapitel-1);
+  --kapitel-dunkel: #004b7e;
+}
+
+body[data-kapitel="2"] {
+  --farbe-primaer: var(--kapitel-2);
+  --farbe-primaer-dunkel: #005f43;
+  --kapitel-farbe: var(--kapitel-2);
+  --kapitel-dunkel: #005f43;
+}
+
+body[data-kapitel="3"] {
+  --farbe-primaer: var(--kapitel-3);
+  --farbe-primaer-dunkel: #584078;
+  --kapitel-farbe: var(--kapitel-3);
+  --kapitel-dunkel: #584078;
+}
+
+body[data-kapitel="4"] {
+  --farbe-primaer: var(--kapitel-4);
+  --farbe-primaer-dunkel: #793522;
+  --kapitel-farbe: var(--kapitel-4);
+  --kapitel-dunkel: #793522;
+}
+
+body > main {
+  flex: 1 0 auto;
+}
+
+body > footer {
+  flex: 0 0 auto;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--kapitel-farbe) 22%, white);
+}
+
+:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--kapitel-farbe) 68%, white);
+  outline-offset: 3px;
+}
+
+/* ---------- Kopfzeile: kompakter und lernorientierter ---------- */
+
+.kopfzeile {
+  background: rgba(255, 254, 251, .96);
+  border-bottom-color: var(--linie-warm);
+  backdrop-filter: blur(8px);
+}
+
+.kopfzeile-inhalt {
+  max-width: 1120px;
+  min-height: 58px;
+  padding-top: .55rem;
+  padding-bottom: .55rem;
+}
+
+.logo {
+  position: relative;
+  gap: .7rem;
+  font-size: 1.05rem;
+  letter-spacing: -.01em;
+}
+
+.logo::before {
+  content: "";
+  width: 5px;
+  height: 28px;
+  border-radius: 4px;
+  background: var(--kapitel-farbe);
+  flex: 0 0 auto;
+}
+
+.logo svg {
+  width: 24px;
+  height: 24px;
+  color: var(--kapitel-farbe);
+}
+
+.hauptnav {
+  gap: .25rem;
+}
+
+.hauptnav a {
+  position: relative;
+  padding: .38rem .56rem;
+  border-radius: 5px;
+  font-size: .86rem;
+  font-weight: 650;
+}
+
+.hauptnav a:hover,
+.hauptnav a:focus-visible {
+  background: color-mix(in srgb, var(--kapitel-farbe) 8%, white);
+}
+
+.hauptnav a.aktiv {
+  color: var(--kapitel-farbe);
+  background: color-mix(in srgb, var(--kapitel-farbe) 11%, white);
+}
+
+.hauptnav a.aktiv::after {
+  content: "";
+  position: absolute;
+  left: .55rem;
+  right: .55rem;
+  bottom: .12rem;
+  height: 2px;
+  background: var(--kapitel-farbe);
+}
+
+.hauptnav a.besucht:not(.aktiv)::before {
+  content: "✓";
+  margin-right: .28rem;
+  color: var(--farbe-erfolg);
+  font-size: .75rem;
+}
+
+.menu-knopf {
+  color: var(--tinte);
+  border-color: var(--linie-warm);
+  border-radius: 5px;
+  background: var(--karte-ruhig);
+}
+
+/* ---------- Typografie und Seitenrhythmus ---------- */
+
+main {
+  padding-top: 2.35rem;
+  padding-bottom: 4.75rem;
+}
+
+main:not(.breit) {
+  max-width: 820px;
+}
+
+.breit {
+  max-width: 1120px;
+}
+
+h1, h2, h3 {
+  color: var(--tinte);
+  letter-spacing: -.018em;
+}
+
+h1 {
+  max-width: 18ch;
+  font-size: clamp(2rem, 4vw, 3.15rem);
+  line-height: 1.06;
+  margin-top: .3rem;
+}
+
+main:not(.breit) h1 {
+  max-width: 22ch;
+}
+
+h2 {
+  position: relative;
+  font-size: clamp(1.42rem, 2.2vw, 1.75rem);
+  margin-top: 2.8rem;
+  padding-top: .2rem;
+}
+
+h2[id] {
+  scroll-margin-top: 88px;
+}
+
+h3 {
+  font-size: 1.12rem;
+}
+
+p, li {
+  text-wrap: pretty;
+}
+
+.einleitungstext {
+  max-width: 68ch;
+  font-size: clamp(1.04rem, 1.5vw, 1.16rem);
+  line-height: 1.68;
+  color: var(--matt);
+}
+
+.tag {
+  border-radius: 4px;
+  padding: .3rem .72rem;
+  background: var(--kapitel-farbe);
+  font-size: .76rem;
+  letter-spacing: .055em;
+}
+
+/* ---------- Startseite: Kapitel als Lernstationen ---------- */
+
+.breit > .tag:first-child {
+  margin-top: .25rem;
+}
+
+.breit > h1 + .einleitungstext {
+  margin-bottom: 1.55rem;
+}
+
+.kachel-raster {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.kachel {
+  --stationsfarbe: var(--kapitel-1);
+  position: relative;
+  min-height: 210px;
+  overflow: hidden;
+  border: 1px solid var(--linie-warm);
+  border-top: 5px solid var(--stationsfarbe);
+  border-radius: 5px;
+  background: var(--karte-ruhig);
+  box-shadow: 0 1px 0 rgba(45, 41, 36, .04);
+  padding: 1.25rem 1.35rem 1.35rem;
+  transition: transform .16s ease, border-color .16s ease, box-shadow .16s ease;
+}
+
+.kachel:nth-child(2) { --stationsfarbe: var(--kapitel-2); }
+.kachel:nth-child(3) { --stationsfarbe: var(--kapitel-3); }
+.kachel:nth-child(4) { --stationsfarbe: var(--kapitel-4); }
+
+.kachel:hover,
+.kachel:focus-visible {
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--stationsfarbe) 52%, var(--linie-warm));
+  box-shadow: 0 10px 24px rgba(45, 41, 36, .08);
+}
+
+.kachel-icon {
+  width: 36px;
+  height: 36px;
+  color: var(--stationsfarbe);
+}
+
+.kachel-nummer {
+  color: var(--stationsfarbe);
+  font-size: .75rem;
+}
+
+.kachel h3 {
+  font-size: 1.17rem;
+}
+
+.kachel p {
+  line-height: 1.55;
+  color: var(--matt);
+}
+
+.kachel.besucht::after {
+  content: "besucht ✓";
+  position: absolute;
+  top: .9rem;
+  right: .95rem;
+  color: var(--farbe-erfolg);
+  font-size: .72rem;
+  font-weight: 750;
+  letter-spacing: .02em;
+}
+
+.kachel.pruefung {
+  --stationsfarbe: var(--pruefung);
+  grid-column: 1 / -1;
+  min-height: auto;
+  background: color-mix(in srgb, var(--pruefung) 7%, var(--karte-ruhig));
+  color: var(--tinte);
+  border: 1px solid color-mix(in srgb, var(--pruefung) 35%, var(--linie-warm));
+  border-top: 5px solid var(--pruefung);
+}
+
+.kachel.pruefung .kachel-icon,
+.kachel.pruefung .kachel-nummer {
+  color: var(--pruefung);
+}
+
+.kachel.pruefung p {
+  color: var(--matt);
+}
+
+/* ---------- Lernstand auf der Startseite ---------- */
+
+.lernstand {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: .85rem 1rem;
+  margin: 1.1rem 0 1.75rem;
+  padding: .9rem 1rem;
+  background: var(--karte-ruhig);
+  border: 1px solid var(--linie-warm);
+  border-left: 5px solid var(--farbe-primaer);
+}
+
+.lernstand strong {
+  font-size: .92rem;
+}
+
+.lernstand-text {
+  color: var(--matt);
+  font-size: .9rem;
+}
+
+.lernstand-zahl {
+  font-variant-numeric: tabular-nums;
+  font-weight: 800;
+  color: var(--farbe-primaer);
+}
+
+.lernstand-balken {
+  grid-column: 1 / -1;
+  height: 5px;
+  overflow: hidden;
+  background: var(--papier-warm);
+}
+
+.lernstand-balken > span {
+  display: block;
+  height: 100%;
+  background: var(--farbe-primaer);
+}
+
+/* ---------- Boxen: weniger App, mehr Arbeitsmaterial ---------- */
+
+.box,
+.frage,
+.karteikarte,
+.chat-fenster,
+.quiz-ergebnis,
+.nutzungs-hinweis {
+  border-color: var(--linie-warm);
+  border-radius: 5px;
+  background: var(--karte-ruhig);
+  box-shadow: 0 1px 0 rgba(45, 41, 36, .04);
+}
+
+.box {
+  padding: 1.1rem 1.25rem;
+}
+
+.hinweis {
+  border-left: 5px solid var(--farbe-akzent);
+  background: color-mix(in srgb, var(--farbe-akzent) 7%, var(--karte-ruhig));
+}
+
+.beispiel {
+  border-left: 5px solid var(--kapitel-farbe);
+  background: color-mix(in srgb, var(--kapitel-farbe) 4%, var(--karte-ruhig));
+}
+
+.nutzungs-hinweise {
+  gap: .85rem;
+}
+
+.nutzungs-hinweis {
+  border-top: 3px solid var(--linie-warm);
+}
+
+/* ---------- Etappen: aus Punkten wird ein sichtbarer Lernweg ---------- */
+
+.etappenleiste {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(128px, 1fr));
+  gap: .55rem;
+  margin: 1.65rem 0 2.45rem;
+}
+
+.etappe-punkt {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  align-items: center;
+  gap: .55rem;
+  text-align: left;
+  padding: .55rem .62rem;
+  border: 1px solid var(--linie-warm);
+  border-left: 3px solid transparent;
+  border-radius: 4px;
+  background: rgba(255,254,251,.68);
+}
+
+.etappe-punkt:hover,
+.etappe-punkt:focus-visible {
+  background: var(--karte-ruhig);
+  border-left-color: color-mix(in srgb, var(--kapitel-farbe) 55%, white);
+}
+
+.etappe-punkt .kreis {
+  width: 30px;
+  height: 30px;
+  margin: 0;
+  border-width: 1px;
+  border-color: color-mix(in srgb, var(--kapitel-farbe) 32%, var(--linie-warm));
+  background: var(--karte-ruhig);
+  color: var(--kapitel-farbe);
+  font-size: .82rem;
+}
+
+.etappe-punkt span.label {
+  font-size: .77rem;
+  line-height: 1.25;
+}
+
+.etappe-punkt.aktiv {
+  color: var(--tinte);
+  border-left-color: var(--kapitel-farbe);
+  background: color-mix(in srgb, var(--kapitel-farbe) 7%, var(--karte-ruhig));
+}
+
+.etappe-punkt.aktiv .kreis {
+  background: var(--kapitel-farbe);
+  border-color: var(--kapitel-farbe);
+}
+
+/* ---------- Interaktive Elemente ---------- */
+
+.knopf,
+.chat-eingabe-zeile input,
+.chat-eingabe-zeile button,
+.antwort-knopf,
+.rueckmeldung,
+.prompt-text,
+.uebung-aussage,
+.regel-liste li {
+  border-radius: 5px;
+}
+
+.knopf {
+  padding: .65rem 1.05rem;
+}
+
+.knopf.sekundaer {
+  background: var(--karte-ruhig);
+}
+
+.antwort-knopf {
+  background: #fbf8f2;
+  border-color: var(--linie-warm);
+}
+
+.antwort-knopf:hover:not(:disabled) {
+  background: var(--karte-ruhig);
+}
+
+.chat-verlauf {
+  background: #fbf8f2;
+}
+
+.chat-blase {
+  border-radius: 7px;
+}
+
+.chat-blase.bot {
+  border-bottom-left-radius: 2px;
+}
+
+.chat-blase.nutzer {
+  border-bottom-right-radius: 2px;
+}
+
+/* ---------- Kapitelende und Fuss ---------- */
+
+.kapitelnav {
+  border-top-color: var(--linie-warm);
+}
+
+.kapitelnav a {
+  padding: .5rem .65rem;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.kapitelnav a:hover,
+.kapitelnav a:focus-visible {
+  border-color: var(--linie-warm);
+  background: var(--karte-ruhig);
+}
+
+.fusszeile {
+  margin-top: 0;
+  background: #302c27;
+  color: #ded7cc;
+}
+
+.fusszeile-inhalt {
+  max-width: 1120px;
+}
+
+.fusszeile a {
+  color: #fff9ef;
+}
+
+.fusszeile-klein {
+  color: #aaa095;
+}
+
+/* ---------- Scroll-Fortschritt ---------- */
+
+.lesefortschritt {
+  position: fixed;
+  z-index: 60;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  pointer-events: none;
+  background: transparent;
+}
+
+.lesefortschritt > span {
+  display: block;
+  width: 0;
+  height: 100%;
+  background: var(--kapitel-farbe);
+  transform-origin: left center;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 820px) {
+  .kachel-raster {
+    grid-template-columns: 1fr;
+  }
+
+  .kachel.pruefung {
+    grid-column: auto;
+  }
+
+  .lernstand {
+    grid-template-columns: 1fr auto;
+  }
+
+  .lernstand strong {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 720px) {
+  .kopfzeile-inhalt {
+    min-height: 54px;
+  }
+
+  .hauptnav {
+    background: var(--karte-ruhig);
+    border-bottom-color: var(--linie-warm);
+    padding-top: .35rem;
+  }
+
+  .hauptnav a {
+    border-bottom-color: var(--linie-warm);
+    border-radius: 0;
+    padding: .75rem .2rem;
+  }
+
+  .hauptnav a.aktiv::after {
+    left: .2rem;
+    right: auto;
+    width: 32px;
+  }
+
+  main {
+    padding-top: 1.75rem;
+  }
+
+  h1 {
+    font-size: 2.18rem;
+  }
+
+  .etappenleiste {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 500px) {
+  .etappenleiste {
+    grid-template-columns: 1fr;
+  }
+
+  .kachel {
+    min-height: 0;
+  }
+
+  .kachel.besucht::after {
+    position: static;
+    order: 5;
+    margin-top: .1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kachel {
+    transform: none !important;
+  }
+}

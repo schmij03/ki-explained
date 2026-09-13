@@ -317,9 +317,37 @@ p {
   color: #fff;
 }
 
+.etappe-punkt.aktiv span.label {
+  color: var(--farbe-primaer);
+  font-weight: 700;
+}
+
 .etappe-punkt span.label {
   display: block;
   font-size: 0.8rem;
+}
+
+.etappe-punkt:hover .kreis {
+  border-color: var(--farbe-primaer);
+}
+
+/* ---------- Etappen-Wizard: nur eine Etappe gleichzeitig sichtbar ---------- */
+
+.versteckt {
+  display: none !important;
+}
+
+.etappen-schritt-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 2.4rem 0 1.6rem;
+  flex-wrap: wrap;
+}
+
+.etappe-inhalt {
+  scroll-margin-top: 84px;
 }
 
 /* ---------- Karten / Boxen ---------- */

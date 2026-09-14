@@ -1,58 +1,112 @@
-# ki-explained – Lernwerkstatt für die 3. Sek
+# ki-explained
 
-Interaktive Lernlandschaft für Medien und Informatik in der Schweiz. Vier Kapitel mit Theorie, Experimenten, Hilfen, Bonusaufgaben, Selbsttests und einem herunterladbaren Lernjournal. Dazu Karteikarten und ein Abschlussprojekt.
+**KI verstehen, ausprobieren und verantwortungsvoll nutzen.**
 
-## Unterricht
+ki-explained ist eine interaktive Lernwerkstatt für die 3. Sek im Fach Medien und Informatik. Kurze Erklärungen, Experimente und eigene Aufgaben führen durch die Grundlagen der Künstlichen Intelligenz. Die Lernenden arbeiten allein oder zu zweit und dokumentieren ihre Erkenntnisse in einem persönlichen Lernjournal.
 
-- Kapitel 1: Regeln, gelernte Muster und Trainingsdaten (45–60 Minuten).
-- Kapitel 2: Regel-Bots, Tokens und wahrscheinliche Fortsetzungen (45 Minuten).
-- Kapitel 3: Ziel, Kontext und Format im Prompt-Baukasten (45 Minuten).
-- Kapitel 4: Aussagen anhand einer Quelle prüfen, Datenschutz und Verantwortung (45 Minuten).
-- Abschluss: Lernhelfer als Steckbrief und Rollenspiel (1–2 zusätzliche Lektionen).
+## Einstieg und Orientierung
 
-Voraussetzungen: grundlegende Browserbedienung, Lesen und einfache Zahlenvergleiche. Kein Konto, API-Schlüssel, Webcamzugriff oder kostenpflichtiger Dienst erforderlich. Eingebaute Experimente sind bewusst vereinfachte, lokal ausgeführte Modelle. Sie sind kein Zugriff auf einen generativen KI-Dienst. Die Wortverteilung ist erfunden und als solche gekennzeichnet. Das Obstmodell verwendet den nächsten Nachbarn nach Gewicht und zeigt Gleichstände ausdrücklich.
+Die [Startseite](index.html) stellt die Themen vor und erklärt den Ablauf. Von dort aus lassen sich die vier Kapitel, der Kompetenzkompass, das Abschlussprojekt und die Prüfungsvorbereitung direkt öffnen.
 
-Unterstützung: Partnerarbeit, aufklappbare Hilfen, Beobachtungen mündlich erklären. Vertiefung: freiwillige Bonusaufgaben. Zeiten sind Richtwerte. Kein Anspruch auf eine offizielle Lehrplan-Zertifizierung.
+Die Lernwerkstatt ist für die Nutzung auf dem iPad ausgelegt und funktioniert auch am Computer. Die Inhalte sind in kurze Lernschritte aufgeteilt: Mit **Zurück** und **Weiter** wird geblättert, über **Direkt zu** lässt sich ein bestimmter Abschnitt auswählen. Quizfragen erscheinen einzeln. Bei längeren Aufgaben oder vergrösserter Schrift kann zusätzliches Scrollen nötig sein.
 
-## Technik und Datenschutz
+## Themen und Lernziele
 
-Statische HTML-, CSS- und JavaScript-Dateien; kein Build-Schritt. Lokal `python -m http.server 8765` ausführen und `http://localhost:8765` öffnen. Die bestehenden Kapitel-URLs bleiben erhalten; GitHub Pages kann die Dateien direkt ausliefern.
+| Bereich | Was die Lernenden erarbeiten |
+| --- | --- |
+| [1. Was ist KI?](kapitel-1/index.html) | KI im Alltag erkennen, feste Regeln von gelernten Mustern unterscheiden und den Einfluss von Trainingsdaten untersuchen. |
+| [2. Chatbots](kapitel-2/index.html) | Einen Regel-Bot ausprobieren, Wortvorhersagen verstehen und die Grenzen überzeugend formulierter Antworten erkennen. |
+| [3. Prompting](kapitel-3/index.html) | Aufträge mit Ziel, Kontext und Format formulieren, Ergebnisse vergleichen und Prompts verbessern. |
+| [4. Chancen, Risiken und Regeln](kapitel-4/index.html) | Aussagen anhand von Quellen prüfen, persönliche Daten schützen sowie Fairness, Umweltfolgen und Verantwortung diskutieren. |
+| [Kompetenzkompass](kompetenzen/index.html) | Den eigenen Lernstand vor und nach der Einheit einschätzen und mit konkreten Lernbelegen begründen. |
+| [Abschlussprojekt](projekt/index.html) | Einen KI-Lernhelfer als Steckbrief und Rollenspiel entwerfen, testen und nach Rückmeldungen überarbeiten. |
+| [Prüfungsvorbereitung](pruefungsvorbereitung/index.html) | Inhalte mit Karteikarten und einem kapitelübergreifenden Quiz wiederholen. |
 
-Das Lernjournal verwendet `localStorage` (`kiExplainedWerkstattV1`). Eingaben werden nicht versendet. Auf gemeinsam genutzten Geräten sind sie für weitere Nutzer desselben Browserprofils sichtbar. Export als UTF-8-Text; Löschen auf der Startseite. Bei gesperrtem Speicher erscheint ein Hinweis, der Export der aktuellen Sitzung bleibt möglich. Besuchsmarkierungen der bestehenden Navigation sind keine Leistungsbewertung; Abschluss-Häkchen werden ausdrücklich von Lernenden gesetzt.
+## Einsatz im Unterricht
 
-## Gestaltung
+Vorausgesetzt werden grundlegende Browserbedienung, Lesen, Texteingabe und einfache Zahlenvergleiche. Für die eingebauten Aufgaben sind weder ein KI-Konto noch ein API-Schlüssel oder eine Webcam erforderlich.
 
-Orientierung an den Gestaltungs- und Lernwegprinzipien von [Form und Raum](https://github.com/mathe-phlu/form_und_raum): Papierfarben, klare Kapitel-Farbcodes, Materialzugänge, Werkstatt, Hilfe, Bonus und Rückblick. Eigenständige Umsetzung für KI-Themen und die 3. Sek; keine Übernahme von PH-Logos, Bildern oder Unterrichtsmaterialien und keine behauptete Verbindung zur PH Luzern.
+Ein typischer Lernweg besteht aus Lernziel, kurzer Erklärung, Experiment, eigener Begründung und Selbsttest. Aufklappbare Hilfen unterstützen den Einstieg. Freiwillige Bonus- und Kompetenzaufträge ermöglichen Vertiefungen. Beobachtungen können auch mündlich erläutert oder auf Papier festgehalten werden.
 
-## Prüfen
+Als Richtwerte gelten:
 
-DOM-Interaktionen (ohne Browserinstallation): `npm install` und `npm test`.
+- **Basisweg:** 4–5 Lektionen à 45 Minuten; Kapitel 1 benötigt etwa 45–60 Minuten.
+- **Mit Kompetenzaufträgen und Kompass:** insgesamt etwa 6–7 Lektionen.
+- **Abschlussprojekt:** zusätzlich 1–2 Lektionen.
 
-Visuelle Browserprüfung: `npx playwright install chromium`, lokalen Server starten und:
+Im Mittelpunkt stehen nachvollziehbare Begründungen, eigene Lernfortschritte und das Überarbeiten von Ergebnissen. Selbsttests dienen dem Üben. Selbsteinschätzungen und Abschluss-Häkchen ergeben keine automatische Note.
+
+## Kompetenzorientierung und Quellen
+
+Die Lernwerkstatt verbindet **Verstehen, Anwenden, Reflektieren und Mitgestalten**. Grundlage ist das Modell *KI-Kompetenzen für Lehrende und Lernende* von Susanne Alles, Joscha Falck, Manuel Flick und Regina Schulz (2025). Für die 3. Sek liegt der Schwerpunkt auf Niveau I; ausgewählte Aufgaben vertiefen Niveau II. Niveau III dient als Ausblick.
+
+Ergänzend fliesst das **OECD/EU AILit-Framework (2026)** ein: mit KI bewusst umgehen, KI kreativ anwenden, KI gezielt einsetzen und KI aktiv mitgestalten. Die beiden Modelle werden als unterschiedliche Perspektiven genutzt und nicht gleichgesetzt.
+
+Quellen, Originalgrafiken, Namensnennungen sowie Lizenz- und Bearbeitungshinweise stehen im [Kompetenzkompass](kompetenzen/index.html#quellen). Die Unterrichtsaufträge sind für diese Lernwerkstatt angepasst; sie stellen keine offizielle Zertifizierung dar.
+
+## Lernjournal und Speicherung
+
+Journaltexte, Selbsteinschätzungen und Abschlussmarkierungen werden ausschliesslich im Browser auf dem jeweiligen Gerät gespeichert. Die Lernjournal-Eingaben werden nicht an einen KI-Dienst gesendet.
+
+- Das Journal lässt sich als Textdatei herunterladen.
+- Alle gespeicherten Journaleinträge und Abschlussmarkierungen können auf der Startseite gelöscht werden.
+- Vor einem Gerätewechsel oder dem Löschen von Browserdaten sollte das Journal exportiert werden.
+- Auf gemeinsam genutzten Geräten können weitere Personen desselben Browserprofils die Einträge sehen.
+- Wenn der Browserspeicher gesperrt ist, erscheint ein Hinweis. Der Export der aktuellen Sitzung bleibt möglich.
+
+Beim Blättern bleiben Eingaben, Quizantworten und Experimentzustände erhalten. Beim Neuladen werden Quiz- und Experimentzustände zurückgesetzt; gespeicherte Journaltexte bleiben bestehen. Besuchsmarkierungen in der Navigation sind keine Leistungsbewertung.
+
+## Technischer Aufbau
+
+Das Projekt besteht aus statischen HTML-, CSS- und JavaScript-Dateien. Ein Build-Schritt oder Backend ist nicht erforderlich. Die Dateien können beispielsweise über GitHub Pages ausgeliefert werden.
+
+| Pfad | Inhalt |
+| --- | --- |
+| `index.html` | Startseite, Anleitung und Zugang zum Lernjournal |
+| `kapitel-1/` bis `kapitel-4/` | Erklärungen, Werkstätten, Aufgaben und Selbsttests |
+| `kompetenzen/` | Kompetenzkompass und Quellen |
+| `projekt/` | Abschlussprojekt |
+| `pruefungsvorbereitung/` | Karteikarten und Übungsquiz |
+| `assets/` | Gestaltung, Navigation, interaktive Funktionen und Grafiken |
+| `tests/` | DOM- und Browser-Tests |
+
+Die Experimente sind bewusst vereinfachte Modelle ohne Verbindung zu einer echten generativen KI. Das Obstlabor ordnet Früchte anhand des nächstgelegenen Gewichts zu und zeigt Gleichstände an. Die Wortvorhersage nutzt eine erfundene, gekennzeichnete Verteilung.
+
+`assets/lernseiten.js` organisiert die Lernschritte, ohne die vorhandenen Elemente beim Blättern neu aufzubauen. URL-Fragmente ermöglichen Direktlinks und Browsernavigation. Ohne JavaScript bleiben die Lerntexte lesbar; interaktive Funktionen benötigen JavaScript. Die Druckansicht zeigt alle Lernschritte. Das Journal verwendet den lokalen Speicherschlüssel `kiExplainedWerkstattV1`.
+
+## Lokal starten
+
+Im Projektverzeichnis mit installiertem Python 3 ausführen:
 
 ```sh
-node tests/workshop.cjs
+python3 -m http.server 8765
 ```
 
-`TEST_URL` kann eine andere Basis-URL setzen. Der Test prüft sieben Seiten, mobile und Desktop-Breiten, interne Sprungziele, die vier Werkstätten, Quiz-Wiederholung, Lernjournal-Speicherung, Download, Zurücksetzen sowie gesperrten Browserspeicher.
+Anschliessend die Lernwerkstatt unter [localhost:8765](http://localhost:8765) öffnen.
 
-Validierung dieser Überarbeitung: DOM-Tests für alle sieben Seiten, die vier Werkstätten, Gleichstände, Quiz-Wiederholung und Punktestand, gespeicherte Antworten, Abschlussmarkierungen, Löschen und blockierten Speicher bestanden. Interne Dateien/Links und JavaScript-Syntax geprüft. Der Playwright-Test ist vorbereitet, konnte in der Arbeitsumgebung wegen nicht erreichbarem Chromium-Download nicht ausgeführt werden; visuelle Prüfung steht aus.
+## Tests
 
+Für die Entwicklungstests wird Node.js ab Version 22.13.0 benötigt.
 
-## Kompetenzorientierte Ergänzung
+```sh
+npm install
+npm test
+```
 
-Der Kompetenzkompass (`kompetenzen/index.html`) verbindet die vier Bereiche von Alles/Falck/Flick/Schulz (2025) mit konkreten Lernbelegen. Niveau I ist Schwerpunkt, Niveau II ausgewählte Vertiefung und Niveau III Ausblick. Das OECD/EU AILit-Framework (2026), deutsche bereitgestellte Ausgabe, ergänzt bewusste Nutzung, kreatives Anwenden, gezielten Einsatz und aktive Mitgestaltung. Die Modelle sind nicht gleichgesetzt. Quellen, Bearbeitungshinweise und CC-BY-4.0-Angaben stehen auf der Kompassseite; die zwei bereitgestellten Originalgrafiken sind unverändert eingebunden.
+Die DOM-Tests prüfen die acht Bereiche, Navigation und Direktlinks, Übungen, Quiz-Wiederholung, Eingabeerhalt sowie Speicherung, Export und Löschen des Journals.
 
-Neue Aufträge: Datenvergleich und Testfälle (Kapitel 1), KI-Antworten beurteilen (2), kreative Lernkarte und Arbeitsaufteilung (3), Fairness, Perspektiven und Ressourcen (4), Testprotokoll und Überarbeitung (Projekt). Alle funktionieren ohne KI-Konto. Selbsteinschätzung vorher/nachher und Lernbelege nutzen das bestehende lokale Journal samt Export und Löschung. Es werden keine automatischen Kompetenznoten vergeben.
+Für die Browserprüfung zunächst Chromium installieren:
 
-Zeitbedarf mit Ergänzungen: etwa 6–7 Lektionen für die Kapitel inklusive Kompass, zusätzlich 1–2 Lektionen Projekt. Basisweg weiterhin 4–5 Lektionen.
+```sh
+npx playwright install chromium
+```
 
-Validierung der Kompetenzergänzung: `npm test` bestanden für alle acht Seiten, inklusive Kompass-Speicherung, Exportinhalt, Löschen, gesperrtem Speicher, eindeutigen IDs und allen lokalen Links/Sprungzielen. JavaScript-Syntax und `git diff --check` bestanden. Browserprüfung um die achte Seite und den Kompass ergänzt; noch nicht ausgeführt, weil Chromium fehlt und die Installation in der Arbeitsumgebung mit einem Lock-Aktualisierungsfehler abbrach. Visuelle Prüfung bleibt offen.
+Bei laufendem lokalem Server in einem zweiten Terminal ausführen:
 
-## Startseite und kurze Lernseiten fürs iPad
+```sh
+npm run test:browser
+```
 
-Die Startseite bietet Themenkarten, eine kurze Anleitung sowie einen eigenen Bereich für Lernjournal und Unterricht. Alle acht Bereiche lassen sich in kleinen Schritten durchblättern: native Themenauswahl, Zurück/Weiter und Seitenzählung. Quizfragen erscheinen einzeln; der Kompetenzkompass trennt die Selbsteinschätzungen nach Bereichen. Die Navigation nutzt URL-Fragmente, sodass Direktlinks, Neuladen und Browser-Zurück funktionieren. Bestehende Kapitel- und Aufgabenlinks bleiben erhalten.
+Mit `TEST_URL` lässt sich eine andere Basisadresse festlegen. Der Browser-Test umfasst die Lernschritte bei 768 × 1024, 1024 × 768 und 390 × 844 Pixeln sowie Navigation, Übungen und Journalfunktionen.
 
-Die Umsetzung in `assets/lernseiten.js` bewegt die vorhandenen Elemente, statt sie beim Blättern neu zu laden. Dadurch bleiben Eingaben, Quizantworten und Experimentzustände beim Seitenwechsel erhalten. Journaltexte werden weiterhin lokal gespeichert; Quiz- und Experimentzustände werden beim Neuladen zurückgesetzt. Ohne JavaScript sind alle Inhalte lesbar; die Druckansicht zeigt alle Lernschritte. Die Seiten passen sich dem Inhalt an und können bei längeren Aufgaben oder vergrösserter Schrift weiterhin etwas Scrollen erfordern.
-
-Validierung: DOM-Tests inklusive aller acht Bereiche, Einzelseitenanzeige, Navigationsschaltflächen, Auswahl, bestehender Direktlinks, Eingabeerhalt und Journalfunktionen bestanden. Syntax und Diff geprüft. Der Browser-Test prüft nun jeden Lernschritt bei 768×1024, 1024×768 und 390×844 sowie History und Übungen. Er konnte hier nicht ausgeführt werden: Der Chromium-Download scheiterte an Netzwerk-Timeouts und einem anschliessenden Lock-Fehler. Visuelle Prüfung auf dem iPad bleibt offen.
+**Prüfstand:** Die DOM-Tests sowie Syntax- und Diff-Prüfungen der Umsetzung sind bestanden. Die Browserprüfung und eine visuelle Kontrolle auf dem iPad stehen noch aus, da der Chromium-Download in der bisherigen Arbeitsumgebung nicht erfolgreich war.

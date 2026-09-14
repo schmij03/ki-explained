@@ -1,0 +1,42 @@
+/* Short reading steps with native, touch-friendly navigation. */
+.mit-lernseiten main,.mit-lernseiten main:not(.breit) { max-width:960px; padding-top:22px; }
+.mit-lernseiten main>h1 { font-size:clamp(1.6rem,3.8vw,2.5rem); margin:8px 0 20px; line-height:1.16; }
+.lernseiten-kopf { display:flex; gap:12px; align-items:center; flex-wrap:wrap; padding:12px 0; border-block:1px solid var(--linie-warm); margin-bottom:20px; }
+.lernseiten-kopf a { margin-right:auto; font-weight:700; }
+.lernseiten-kopf label { font-size:.85rem; }
+.lernseiten-kopf select { width:min(100%,440px); min-height:48px; padding:8px 12px; font:inherit; color:var(--tinte); background:#fffefb; border:1px solid #a79d8d; border-radius:8px; }
+.lernseite { min-width:0; outline:none; }
+.lernseite[hidden] { display:none!important; }
+.lernseite>section { margin-top:0; }
+.lernseite h2:first-child { margin-top:12px; }
+.lernseite .werkstatt { margin-top:0; }
+.lernseiten-fuss { display:flex; align-items:center; justify-content:space-between; gap:12px; margin:26px 0 12px; padding-top:16px; border-top:1px solid var(--linie-warm); }
+.lernseiten-fuss button { min-height:48px; min-width:110px; padding:12px 18px; border:0; border-radius:9px; background:#263d38; color:white; font:inherit; font-weight:700; cursor:pointer; }
+.lernseiten-fuss button:disabled { background:#e6e0d6; color:#655e53; }
+.lernseiten-fuss span { font-size:.9rem; text-align:center; }
+.mit-lernseiten .lesefortschritt { display:none; }
+.mit-lernseiten :is(button,select,input,textarea) { font-size: max(16px,1em); }
+.mit-lernseiten :is(button,summary,.knopf,.hauptnav a) { min-height:44px; }
+.mit-lernseiten :is(textarea,input,select) { max-width:100%; }
+.mit-lernseiten summary { padding:12px; cursor:pointer; }
+.mit-lernseiten :focus-visible { outline:3px solid #126aaa; outline-offset:4px; }
+.mit-lernseiten .fusszeile { margin-top:24px; padding:12px 20px; }
+.footer-details { max-width:960px; margin:auto; }
+.footer-details summary { cursor:pointer; font-weight:600; }
+.mit-lernseiten .fusszeile-klein { margin:8px 0; }
+.start-intro { max-width:75ch; margin-top:0; }
+.themen-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
+.themenkarte { display:flex; flex-direction:column; gap:8px; padding:20px; border:1px solid var(--linie-warm); border-left:5px solid var(--thema); border-radius:12px; background:#fffefb; color:var(--tinte); text-decoration:none; }
+.themenkarte:hover { border-color:var(--thema); }
+.themenkarte h2 { margin:0!important; font-size:1.35rem; line-height:1.25; color:var(--tinte); }
+.themenkarte p { margin:0; font-size:.95rem; line-height:1.5; }
+.themenkarte b { margin-top:auto; color:var(--thema); }
+.thema-nummer { color:var(--thema); font-size:.75rem; font-weight:800; letter-spacing:.06em; }
+.thema-meta,.themenkarte .stationsstatus { font-size:.78rem; color:#665d51; }
+.thema-1 { --thema:#0065a9; } .thema-2 { --thema:#007d57; } .thema-3 { --thema:#77519e; } .thema-4 { --thema:#a64b32; }
+.start-wege { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; margin-top:16px; }
+.start-wege a { padding:14px; background:#eae7dc; border-radius:10px; text-decoration:none; color:#263d38; }
+.start-wege b,.start-wege span { display:block; } .start-wege span { font-size:.85rem; margin-top:6px; }
+.start-anleitung li { margin-bottom:16px; }
+@media(max-width:600px) { .themen-grid,.start-wege { grid-template-columns:1fr; } .lernseiten-kopf select { width:100%; } .lernseiten-fuss button { min-width:90px; padding:10px; } }
+@media print { .lernseite[hidden] { display:block!important; } .lernseiten-kopf,.lernseiten-fuss { display:none; } .lernseite { break-before:page; } }

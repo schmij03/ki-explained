@@ -1,14 +1,14 @@
 const {JSDOM,VirtualConsole}=require('jsdom');
 const fs=require('fs'),path=require('path'),assert=require('assert/strict');
 const root=path.resolve(__dirname,'..');let saved=null;const errors=[];
-async function load(p,blocked=false){
+async function load(p,blocked=false,hash=''){
  const vc=new VirtualConsole();vc.on('jsdomError',e=>errors.push(e.message));
- const dom=new JSDOM(fs.readFileSync(path.join(root,p,'index.html'),'utf8'),{url:'https://example.org/'+p+'/',runScripts:'dangerously',virtualConsole:vc,beforeParse(w){
+ const dom=new JSDOM(fs.readFileSync(path.join(root,p,'index.html'),'utf8'),{url:'https://example.org/'+p+'/'+hash,runScripts:'dangerously',virtualConsole:vc,beforeParse(w){
   if(blocked)Object.defineProperty(w,'localStorage',{get(){throw Error('denied')}});
   else if(saved)w.localStorage.setItem('kiExplainedWerkstattV1',saved);
   w.URL.createObjectURL=()=> 'blob:test';w.URL.revokeObjectURL=()=>{};
  }});
- const w=dom.window;for(const name of ['script.js','werkstatt.js'])w.eval(fs.readFileSync(path.join(root,'assets',name),'utf8'));
+ const w=dom.window;for(const name of ['script.js','werkstatt.js','lernseiten.js'])w.eval(fs.readFileSync(path.join(root,'assets',name),'utf8'));
  await new Promise(r=>w.addEventListener('load',r,{once:true}));
  return {w,d:w.document,keep(){saved=w.localStorage.getItem('kiExplainedWerkstattV1');},close(){w.close()}};
 }
@@ -56,5 +56,37 @@ async function load(p,blocked=false){
    if(fragment){const dest=new JSDOM(fs.readFileSync(target,'utf8'));assert(dest.window.document.getElementById(fragment),url);dest.window.close();}
   } dom.window.close();
  }
- assert.deepEqual(errors,[]);console.log('PASS: all 8 pages, compass persistence/export/reset and local links; page scripts; four labs; tie case; quiz retry and scoring; persisted notes and completion; reset; blocked storage; stored text treated as text.');
+
+ for(const folder of ['', 'kapitel-1','kapitel-2','kapitel-3','kapitel-4','projekt','pruefungsvorbereitung','kompetenzen']) {
+  x=await load(folder);d=x.d;
+  const pages=[...d.querySelectorAll('.lernseite')]; assert(pages.length>=3,folder);
+  assert.equal(pages.filter(p=>!p.hidden).length,1);
+  assert(d.querySelector('.lernseiten-fuss button').disabled);
+  const ids=[...d.querySelectorAll('[id]')].map(el=>el.id);assert.equal(new Set(ids).size,ids.length);
+  const note=d.querySelector('textarea[data-journal],input[data-journal]'); if(note){note.value='Bleibt beim Blättern';note.dispatchEvent(new x.w.Event('input'));}
+  for(let i=0;i<pages.length;i++) {
+   x.w.location.hash=pages[i].id;x.w.dispatchEvent(new x.w.HashChangeEvent('hashchange'));
+   assert(!pages[i].hidden);assert.equal(pages.filter(p=>!p.hidden).length,1);
+   assert.equal(d.querySelector('#lernseiten-auswahl').value,String(i));
+  }
+  assert(d.querySelector('.lernseiten-fuss button:last-child').disabled);
+  if(note)assert.equal(note.value,'Bleibt beim Blättern');
+  x.w.location.hash=pages[0].id;x.w.dispatchEvent(new x.w.HashChangeEvent('hashchange'));
+  assert(!pages[0].hidden);x.close();
+ }
+ for(const [folder,hash] of [['kapitel-1','werkstatt'],['kapitel-2','chatbot-demo'],['kapitel-3','kompetenzauftrag'],['kompetenzen','quellen'],['','journal']]) {
+  x=await load(folder,false,'#'+hash);assert(!x.d.getElementById(hash).closest('.lernseite').hidden,hash);x.close();
+ }
+
+ x=await load('kapitel-1');d=x.d;
+ d.querySelector('.lernseiten-fuss button:last-child').click();
+ await new Promise(r=>setTimeout(r,10));assert.equal(d.querySelector('#lernseiten-auswahl').value,'1');
+ d.querySelector('.lernseiten-fuss button:first-child').click();
+ await new Promise(r=>setTimeout(r,10));assert.equal(d.querySelector('#lernseiten-auswahl').value,'0');
+ const choice=d.querySelector('#lernseiten-auswahl');choice.value='2';choice.dispatchEvent(new x.w.Event('change'));
+ await new Promise(r=>setTimeout(r,10));assert.equal(x.w.location.hash,'#lernseite-3');
+ const firstQuestion=d.querySelector('.frage');firstQuestion.querySelector('.antwort-knopf').click();
+ const quizPage=firstQuestion.closest('.lernseite');x.w.location.hash=quizPage.id;
+ await new Promise(r=>setTimeout(r,10));assert(firstQuestion.querySelector('.antwort-knopf').disabled);x.close();
+ assert.deepEqual(errors,[]);console.log('PASS: all 8 pages, pagination/buttons/deep links/input retention, compass persistence/export/reset and local links; page scripts; four labs; tie case; quiz retry and scoring; persisted notes and completion; reset; blocked storage; stored text treated as text.');
 })().catch(e=>{console.error(e);process.exit(1)});

@@ -48,3 +48,11 @@ Neue Aufträge: Datenvergleich und Testfälle (Kapitel 1), KI-Antworten beurteil
 Zeitbedarf mit Ergänzungen: etwa 6–7 Lektionen für die Kapitel inklusive Kompass, zusätzlich 1–2 Lektionen Projekt. Basisweg weiterhin 4–5 Lektionen.
 
 Validierung der Kompetenzergänzung: `npm test` bestanden für alle acht Seiten, inklusive Kompass-Speicherung, Exportinhalt, Löschen, gesperrtem Speicher, eindeutigen IDs und allen lokalen Links/Sprungzielen. JavaScript-Syntax und `git diff --check` bestanden. Browserprüfung um die achte Seite und den Kompass ergänzt; noch nicht ausgeführt, weil Chromium fehlt und die Installation in der Arbeitsumgebung mit einem Lock-Aktualisierungsfehler abbrach. Visuelle Prüfung bleibt offen.
+
+## Startseite und kurze Lernseiten fürs iPad
+
+Die Startseite bietet Themenkarten, eine kurze Anleitung sowie einen eigenen Bereich für Lernjournal und Unterricht. Alle acht Bereiche lassen sich in kleinen Schritten durchblättern: native Themenauswahl, Zurück/Weiter und Seitenzählung. Quizfragen erscheinen einzeln; der Kompetenzkompass trennt die Selbsteinschätzungen nach Bereichen. Die Navigation nutzt URL-Fragmente, sodass Direktlinks, Neuladen und Browser-Zurück funktionieren. Bestehende Kapitel- und Aufgabenlinks bleiben erhalten.
+
+Die Umsetzung in `assets/lernseiten.js` bewegt die vorhandenen Elemente, statt sie beim Blättern neu zu laden. Dadurch bleiben Eingaben, Quizantworten und Experimentzustände beim Seitenwechsel erhalten. Journaltexte werden weiterhin lokal gespeichert; Quiz- und Experimentzustände werden beim Neuladen zurückgesetzt. Ohne JavaScript sind alle Inhalte lesbar; die Druckansicht zeigt alle Lernschritte. Die Seiten passen sich dem Inhalt an und können bei längeren Aufgaben oder vergrösserter Schrift weiterhin etwas Scrollen erfordern.
+
+Validierung: DOM-Tests inklusive aller acht Bereiche, Einzelseitenanzeige, Navigationsschaltflächen, Auswahl, bestehender Direktlinks, Eingabeerhalt und Journalfunktionen bestanden. Syntax und Diff geprüft. Der Browser-Test prüft nun jeden Lernschritt bei 768×1024, 1024×768 und 390×844 sowie History und Übungen. Er konnte hier nicht ausgeführt werden: Der Chromium-Download scheiterte an Netzwerk-Timeouts und einem anschliessenden Lock-Fehler. Visuelle Prüfung auf dem iPad bleibt offen.

@@ -680,3 +680,15 @@ textarea { resize:vertical; min-height:110px; }
 
 [hidden] { display:none !important; }
 @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+
+/* Kompetenzbereiche: separate Farben von den Kapitel-Farbcodes. */
+.kompetenz-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; }
+.kompetenz-karte { background:var(--karte-ruhig); border:1px solid var(--linie-warm); border-top:6px solid var(--bereich); padding:1.2rem; border-radius:8px; }
+.bereich-0 { --bereich:#198539; } .bereich-1 { --bereich:#096aaa; } .bereich-2 { --bereich:#b96b00; } .bereich-3 { --bereich:#902082; }
+.kompetenz-stand { min-width:0; margin:1.25rem 0; padding:1rem; border:1px solid var(--linie-warm); }
+.kompetenz-stand legend { font-weight:700; padding:0 .4rem; }
+.kompetenz-stand label { display:block; margin-top:.6rem; }
+.kompetenz-stand select { width:100%; max-width:100%; padding:.7rem; font:inherit; background:white; color:var(--tinte); }
+.kompetenz-tabelle { overflow-x:auto; } .kompetenz-tabelle th,.kompetenz-tabelle td { text-align:left; padding:.8rem; vertical-align:top; border-bottom:1px solid var(--linie-warm); }
+#quellen { overflow-wrap:anywhere; } #quellen figure { margin:1.5rem 0; } #quellen img { width:100%; height:auto; } #quellen figcaption { font-size:.85rem; }
+@media(max-width:650px) { .kompetenz-grid { grid-template-columns:1fr; } }

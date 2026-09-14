@@ -37,3 +37,14 @@ node tests/workshop.cjs
 `TEST_URL` kann eine andere Basis-URL setzen. Der Test prüft sieben Seiten, mobile und Desktop-Breiten, interne Sprungziele, die vier Werkstätten, Quiz-Wiederholung, Lernjournal-Speicherung, Download, Zurücksetzen sowie gesperrten Browserspeicher.
 
 Validierung dieser Überarbeitung: DOM-Tests für alle sieben Seiten, die vier Werkstätten, Gleichstände, Quiz-Wiederholung und Punktestand, gespeicherte Antworten, Abschlussmarkierungen, Löschen und blockierten Speicher bestanden. Interne Dateien/Links und JavaScript-Syntax geprüft. Der Playwright-Test ist vorbereitet, konnte in der Arbeitsumgebung wegen nicht erreichbarem Chromium-Download nicht ausgeführt werden; visuelle Prüfung steht aus.
+
+
+## Kompetenzorientierte Ergänzung
+
+Der Kompetenzkompass (`kompetenzen/index.html`) verbindet die vier Bereiche von Alles/Falck/Flick/Schulz (2025) mit konkreten Lernbelegen. Niveau I ist Schwerpunkt, Niveau II ausgewählte Vertiefung und Niveau III Ausblick. Das OECD/EU AILit-Framework (2026), deutsche bereitgestellte Ausgabe, ergänzt bewusste Nutzung, kreatives Anwenden, gezielten Einsatz und aktive Mitgestaltung. Die Modelle sind nicht gleichgesetzt. Quellen, Bearbeitungshinweise und CC-BY-4.0-Angaben stehen auf der Kompassseite; die zwei bereitgestellten Originalgrafiken sind unverändert eingebunden.
+
+Neue Aufträge: Datenvergleich und Testfälle (Kapitel 1), KI-Antworten beurteilen (2), kreative Lernkarte und Arbeitsaufteilung (3), Fairness, Perspektiven und Ressourcen (4), Testprotokoll und Überarbeitung (Projekt). Alle funktionieren ohne KI-Konto. Selbsteinschätzung vorher/nachher und Lernbelege nutzen das bestehende lokale Journal samt Export und Löschung. Es werden keine automatischen Kompetenznoten vergeben.
+
+Zeitbedarf mit Ergänzungen: etwa 6–7 Lektionen für die Kapitel inklusive Kompass, zusätzlich 1–2 Lektionen Projekt. Basisweg weiterhin 4–5 Lektionen.
+
+Validierung der Kompetenzergänzung: `npm test` bestanden für alle acht Seiten, inklusive Kompass-Speicherung, Exportinhalt, Löschen, gesperrtem Speicher, eindeutigen IDs und allen lokalen Links/Sprungzielen. JavaScript-Syntax und `git diff --check` bestanden. Browserprüfung um die achte Seite und den Kompass ergänzt; noch nicht ausgeführt, weil Chromium fehlt und die Installation in der Arbeitsumgebung mit einem Lock-Aktualisierungsfehler abbrach. Visuelle Prüfung bleibt offen.

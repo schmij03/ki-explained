@@ -29,5 +29,32 @@ async function load(p,blocked=false){
  x=await load('');assert.match(x.d.querySelector('#abschlussstand').textContent,/1 von 4/);x.w.confirm=()=>true;x.d.querySelector('#fortschritt-loeschen').click();assert.match(x.d.querySelector('#abschlussstand').textContent,/0 von 4/);x.keep();x.close();
  x=await load('projekt',true);assert.match(x.d.querySelector('.speicherstatus').textContent,/nicht möglich/);x.close();
  x=await load('pruefungsvorbereitung');d=x.d;const quiz=d.querySelector('.frage');const correct=Number(quiz.dataset.richtig)-1;quiz.querySelectorAll('.antwort-knopf')[correct].click();assert.equal(d.querySelector('[data-quiz-punkte]').textContent,'1');quiz.querySelector('.knopf.sekundaer').click();assert.equal(d.querySelector('[data-quiz-punkte]').textContent,'0');quiz.querySelectorAll('.antwort-knopf')[correct].click();assert.equal(d.querySelector('[data-quiz-punkte]').textContent,'1');x.close();
- assert.deepEqual(errors,[]);console.log('PASS: all 7 page scripts; four labs; tie case; quiz retry and scoring; persisted notes and completion; reset; blocked storage; stored text treated as text.');
+
+ x=await load('kompetenzen'); d=x.d;
+ for(const id of ['kompass-verstehen-vorher','kompass-verstehen-nachher','kompass-verstehen-beleg']) {
+  const el=d.getElementById(id); el.value=el.tagName==='SELECT'?'Mit Unterstützung':'Testfall 160 g begründet'; el.dispatchEvent(new x.w.Event('input'));
+ }
+ x.keep(); x.close(); x=await load('kompetenzen');
+ assert.equal(x.d.getElementById('kompass-verstehen-vorher').value,'Mit Unterstützung');
+ assert.match(x.d.getElementById('kompass-verstehen-beleg').value,/160 g/);
+ let exported; x.w.URL.createObjectURL=b=>{exported=b;return 'blob:test'};
+ x.w.HTMLAnchorElement.prototype.click=function(){}; x.d.querySelector('[data-export]').click();
+ const result=await new Promise(resolve=>{const reader=new x.w.FileReader();reader.onload=()=>resolve(reader.result);reader.readAsText(exported)});
+ assert.match(result,/Kompetenzkompass – verstehen – beleg/);assert.match(result,/160 g/);x.close();
+ x=await load('');x.w.confirm=()=>true;x.d.querySelector('#fortschritt-loeschen').click();x.keep();x.close();
+ x=await load('kompetenzen');assert.equal(x.d.getElementById('kompass-verstehen-beleg').value,'');x.close();
+ x=await load('kompetenzen',true);assert.match(x.d.querySelector('.speicherstatus').textContent,/nicht möglich/);x.close();
+ // Every local link/fragment and label must resolve, including the new page.
+ for(const folder of ['', 'kapitel-1','kapitel-2','kapitel-3','kapitel-4','projekt','pruefungsvorbereitung','kompetenzen']) {
+  const file=path.join(root,folder,'index.html'); const dom=new JSDOM(fs.readFileSync(file,'utf8')); const doc=dom.window.document;
+  const ids=[...doc.querySelectorAll('[id]')].map(el=>el.id); assert.equal(new Set(ids).size,ids.length,file);
+  for(const label of doc.querySelectorAll('label[for]')) assert(doc.getElementById(label.htmlFor),label.htmlFor);
+  for(const el of doc.querySelectorAll('a[href],img[src],script[src],link[href]')) {
+   const url=el.getAttribute('href')||el.getAttribute('src'); if(/^(https?:|data:|mailto:)/.test(url))continue;
+   const [relative,fragment]=url.split('#'); const target=relative?path.resolve(path.dirname(file),relative):file;
+   assert(fs.existsSync(target),target);
+   if(fragment){const dest=new JSDOM(fs.readFileSync(target,'utf8'));assert(dest.window.document.getElementById(fragment),url);dest.window.close();}
+  } dom.window.close();
+ }
+ assert.deepEqual(errors,[]);console.log('PASS: all 8 pages, compass persistence/export/reset and local links; page scripts; four labs; tie case; quiz retry and scoring; persisted notes and completion; reset; blocked storage; stored text treated as text.');
 })().catch(e=>{console.error(e);process.exit(1)});

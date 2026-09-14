@@ -5,7 +5,7 @@ const assert = require('node:assert/strict');
  const page=await browser.newPage({viewport:{width:1280,height:900}});
  const errors=[];page.on('pageerror',e=>errors.push(e.message));
  const base=process.env.TEST_URL||'http://127.0.0.1:8765';
- for(const path of ['','kapitel-1/','kapitel-2/','kapitel-3/','kapitel-4/','pruefungsvorbereitung/','projekt/']) {
+ for(const path of ['','kapitel-1/','kapitel-2/','kapitel-3/','kapitel-4/','pruefungsvorbereitung/','projekt/','kompetenzen/']) {
   await page.goto(base+'/'+path);
   assert.equal(await page.locator('h1').count(),1);
   const broken=await page.evaluate(()=>[...document.querySelectorAll('a[href^="#"]')].filter(a=>!document.getElementById(a.hash.slice(1))).map(a=>a.hash));
@@ -40,8 +40,15 @@ const assert = require('node:assert/strict');
  await page.goto(base);assert.match(await page.locator('#abschlussstand').innerText(),/1 von 4/);
  await page.setViewportSize({width:1280,height:900});if(process.env.SCREENSHOT_DIR) await page.screenshot({path:process.env.SCREENSHOT_DIR+'/home.png',fullPage:true});
  await page.goto(base+'/kapitel-3/#werkstatt');if(process.env.SCREENSHOT_DIR) await page.screenshot({path:process.env.SCREENSHOT_DIR+'/workshop.png'});
+ await page.goto(base+'/kompetenzen/');
+ await page.locator('#kompass-verstehen-vorher').selectOption({label:'Mit Unterstützung'});
+ await page.locator('#kompass-verstehen-beleg').fill('Ich vergleiche neue Testfälle.');
+ await page.reload();assert.equal(await page.locator('#kompass-verstehen-beleg').inputValue(),'Ich vergleiche neue Testfälle.');
+ const compassDownload=page.waitForEvent('download');await page.locator('[data-export]').click();
+ assert.equal((await compassDownload).suggestedFilename(),'ki-lernjournal.txt');
+ if(process.env.SCREENSHOT_DIR) await page.screenshot({path:process.env.SCREENSHOT_DIR+'/compass.png',fullPage:true});
  page.on('dialog',d=>d.accept());await page.goto(base);await page.locator('#fortschritt-loeschen').click();assert.match(await page.locator('#abschlussstand').innerText(),/0 von 4/);
  const blocked=await browser.newContext();await blocked.addInitScript(()=>Object.defineProperty(window,'localStorage',{get(){throw new Error('blocked');}}));
  const p=await blocked.newPage();await p.goto(base+'/kapitel-1/');assert.match(await p.locator('.speicherstatus').innerText(),/nicht möglich/);await p.locator('#obst').fill('Export funktioniert weiterhin.');
- assert.deepEqual(errors,[]);await browser.close();console.log('PASS: seven pages, mobile/desktop, labs, quiz retry, journal persistence/export/reset, blocked storage.');
+ assert.deepEqual(errors,[]);await browser.close();console.log('PASS: eight pages and compass, mobile/desktop, labs, quiz retry, journal persistence/export/reset, blocked storage.');
 })().catch(e=>{console.error(e);process.exit(1)});

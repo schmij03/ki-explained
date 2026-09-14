@@ -36,20 +36,20 @@ document.addEventListener('DOMContentLoaded', () => {
     el.checked = state.done[el.dataset.erledigt] === true;
     el.addEventListener('change', () => { state.done[el.dataset.erledigt] = el.checked; save(); progress(); });
   });
-  const labels = {obst:'Kapitel 1 – Trainingsdaten',tokens:'Kapitel 2 – Wortvorhersage','prompt-ziel':'Prompt – Ziel','prompt-kontext':'Prompt – Kontext','prompt-format':'Prompt – Format','prompt-revision':'Kapitel 3 – Verbesserter Prompt',verantwortung:'Kapitel 4 – Verantwortung',projekt:'Abschlussprojekt'};
+  const labels = {'transfer-1':'Kapitel 1 – Datenvergleich','transfer-2':'Kapitel 2 – Antworten beurteilen','transfer-3':'Kapitel 3 – Kreativer Vergleich','transfer-4':'Kapitel 4 – Faire Klassenregel','projekt-test':'Projekt – Test und Überarbeitung',obst:'Kapitel 1 – Trainingsdaten',tokens:'Kapitel 2 – Wortvorhersage','prompt-ziel':'Prompt – Ziel','prompt-kontext':'Prompt – Kontext','prompt-format':'Prompt – Format','prompt-revision':'Kapitel 3 – Verbesserter Prompt',verantwortung:'Kapitel 4 – Verantwortung',projekt:'Abschlussprojekt'};
   document.querySelectorAll('[data-export]').forEach(btn => btn.addEventListener('click', () => {
     // Include defaults from untouched select fields as well as edited fields.
     document.querySelectorAll('[data-journal]').forEach(el => { state.notes[el.dataset.journal] = el.value; });
     save();
     const lines = ['KI-EXPLAINED · MEIN LERNJOURNAL', '3. Sek · Persönliche Notizen', '', ...[1,2,3,4].map(i => `Kapitel ${i}: ${state.done[i] === true ? 'selbst als bearbeitet markiert' : 'noch offen'}`), ''];
-    Object.entries(state.notes).forEach(([id, value]) => { if (typeof value === 'string') lines.push(labels[id] || (id.startsWith('reflexion-') ? 'Rückblick Kapitel '+id.slice(-1) : id), value || '(noch leer)', ''); });
+    Object.entries(state.notes).forEach(([id, value]) => { if (typeof value === 'string') lines.push(labels[id] || (id.startsWith('kompass-') ? 'Kompetenzkompass – '+id.slice(8).replaceAll('-', ' – ') : id.startsWith('reflexion-') ? 'Rückblick Kapitel '+id.slice(-1) : id), value || '(noch leer)', ''); });
     const url = URL.createObjectURL(new Blob([lines.join('\n')], {type:'text/plain;charset=utf-8'}));
     const a = document.createElement('a'); a.href = url; a.download = 'ki-lernjournal.txt'; a.click();
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   }));
   document.querySelector('#fortschritt-loeschen')?.addEventListener('click', () => {
     if (!window.confirm('Alle Antworten und Häkchen dieser Lernseite in diesem Browser löschen?')) return;
-    state = {notes:{},done:{}}; save(); progress();
+    state = {notes:{},done:{}}; document.querySelectorAll('[data-journal]').forEach(el => { el.value = ''; }); document.querySelectorAll('[data-erledigt]').forEach(el => { el.checked = false; }); save(); progress();
   });
   status(); progress();
 

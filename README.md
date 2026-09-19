@@ -155,6 +155,21 @@ MI.1.1.e (Mediennutzung und Konsequenzen für eigenes Verhalten), MI.1.3.h
 ihre Dagstuhl-Perspektive: technologisch, gesellschaftlich-kulturell oder
 anwendungsbezogen. Diese Zuordnung wird in der Sicherung begründet.
 
+### Geräteplanung für die Vertiefung
+
+Vorsorglich Laptops reservieren, möglichst einen pro Zweierteam. Ob sie
+benötigt werden, entscheidet der Vorabtest der externen Angebote auf den
+Klassen-iPads und den vorgesehenen Laptops im Schulnetz. Die Lernwerkstatt
+bleibt auf beiden Gerätearten nutzbar; eine Laptop-Pflicht wird nicht vorausgesetzt.
+Für Vertiefung 1 Kamera, Kamerafreigabe und Teachable Machine prüfen, alternativ
+vorbereitete Gegenstandsbilder bereithalten. Auch die vier Stationen der zweiten
+Vertiefung auf den tatsächlich eingesetzten Geräten vorab öffnen.
+
+Das persönliche Journal möglichst auf demselben Gerät führen. Der lokale
+Browserspeicher synchronisiert sich nicht zwischen iPad und Laptop. Vor einem
+Wechsel exportieren und die Textdatei über Teams oder OneDrive sichern. Der
+Export ist eine lesbare Sicherung, es gibt keinen automatischen Journalimport.
+
 ### Freischaltung und technischer Aufbau
 
 Die einzige Konfigurationsstelle ist `assets/konfiguration.js`:
@@ -261,7 +276,7 @@ Geprüft am 19.09.2026, eigene Formulierungen, keine übernommenen Aufgabenblät
   Stefan Seegerer. Die Broschürenlizenz ist keine pauschale Lizenz des Spiels
   oder dieses Repositories. Keine Originalgrafiken oder Karten wurden kopiert.
 
-Vor dem 13.01.2027 muss die Lehrperson auf einem Klassen-iPad im Schulnetz
+Vor dem 13.01.2027 muss die Lehrperson auf einem Klassen-iPad und einem vorgesehenen Laptop im Schulnetz
 Kamera, Teachable Machine, Quick, Draw!, Soekia, Code.org und das Krokodil-Spiel
 prüfen. Zugang und Ablauf können sich ändern. Keine Konten für die Aufgaben
 anlegen; bei einer Anmeldesperre die Station wechseln. Für das Brettspiel

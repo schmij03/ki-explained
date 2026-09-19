@@ -1,7 +1,7 @@
 {
   "name": "ki-explained",
   "private": true,
-  "scripts": { "test": "node tests/dom.cjs", "test:browser": "node tests/workshop.cjs" },
+  "scripts": { "test": "node tests/dom.cjs && node tests/vertiefung.cjs", "test:browser": "node tests/workshop.cjs" },
   "devDependencies": { "jsdom": "30.0.1", "playwright": "1.62.1" },
   "engines": { "node": ">=22.13.0" }
 }

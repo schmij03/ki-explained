@@ -8,7 +8,7 @@ async function load(p,blocked=false,hash=''){
   else if(saved)w.localStorage.setItem('kiExplainedWerkstattV1',saved);
   w.URL.createObjectURL=()=> 'blob:test';w.URL.revokeObjectURL=()=>{};
  }});
- const w=dom.window;for(const name of ['script.js','werkstatt.js','lernseiten.js'])w.eval(fs.readFileSync(path.join(root,'assets',name),'utf8'));
+ const w=dom.window;for(const name of ['konfiguration.js','script.js','werkstatt.js','vertiefung.js','lernseiten.js'])w.eval(fs.readFileSync(path.join(root,'assets',name),'utf8').replace('vertiefungSichtbar: false', 'vertiefungSichtbar: true'));
  await new Promise(r=>w.addEventListener('load',r,{once:true}));
  return {w,d:w.document,keep(){saved=w.localStorage.getItem('kiExplainedWerkstattV1');},close(){w.close()}};
 }
@@ -45,7 +45,7 @@ async function load(p,blocked=false,hash=''){
  x=await load('kompetenzen');assert.equal(x.d.getElementById('kompass-verstehen-beleg').value,'');x.close();
  x=await load('kompetenzen',true);assert.match(x.d.querySelector('.speicherstatus').textContent,/nicht möglich/);x.close();
  // Every local link/fragment and label must resolve, including the new page.
- for(const folder of ['', 'kapitel-1','kapitel-2','kapitel-3','kapitel-4','projekt','pruefungsvorbereitung','kompetenzen']) {
+ for(const folder of ['', 'kapitel-1','kapitel-2','kapitel-3','kapitel-4','projekt','pruefungsvorbereitung','kompetenzen','vertiefung-1','vertiefung-2']) {
   const file=path.join(root,folder,'index.html'); const dom=new JSDOM(fs.readFileSync(file,'utf8')); const doc=dom.window.document;
   const ids=[...doc.querySelectorAll('[id]')].map(el=>el.id); assert.equal(new Set(ids).size,ids.length,file);
   for(const label of doc.querySelectorAll('label[for]')) assert(doc.getElementById(label.htmlFor),label.htmlFor);
@@ -57,7 +57,7 @@ async function load(p,blocked=false,hash=''){
   } dom.window.close();
  }
 
- for(const folder of ['', 'kapitel-1','kapitel-2','kapitel-3','kapitel-4','projekt','pruefungsvorbereitung','kompetenzen']) {
+ for(const folder of ['', 'kapitel-1','kapitel-2','kapitel-3','kapitel-4','projekt','pruefungsvorbereitung','kompetenzen','vertiefung-1','vertiefung-2']) {
   x=await load(folder);d=x.d;
   const pages=[...d.querySelectorAll('.lernseite')]; assert(pages.length>=3,folder);
   assert.equal(pages.filter(p=>!p.hidden).length,1);
@@ -74,7 +74,7 @@ async function load(p,blocked=false,hash=''){
   x.w.location.hash=pages[0].id;x.w.dispatchEvent(new x.w.HashChangeEvent('hashchange'));
   assert(!pages[0].hidden);x.close();
  }
- for(const [folder,hash] of [['kapitel-1','werkstatt'],['kapitel-2','chatbot-demo'],['kapitel-3','kompetenzauftrag'],['kompetenzen','quellen'],['','journal']]) {
+ for(const [folder,hash] of [['kapitel-1','werkstatt'],['kapitel-2','chatbot-demo'],['kapitel-3','kompetenzauftrag'],['kompetenzen','quellen'],['','journal'],['vertiefung-1','fehler'],['vertiefung-2','station-c'],['vertiefung-2','laufzettel']]) {
   x=await load(folder,false,'#'+hash);assert(!x.d.getElementById(hash).closest('.lernseite').hidden,hash);x.close();
  }
 
@@ -88,5 +88,5 @@ async function load(p,blocked=false,hash=''){
  const firstQuestion=d.querySelector('.frage');firstQuestion.querySelector('.antwort-knopf').click();
  const quizPage=firstQuestion.closest('.lernseite');x.w.location.hash=quizPage.id;
  await new Promise(r=>setTimeout(r,10));assert(firstQuestion.querySelector('.antwort-knopf').disabled);x.close();
- assert.deepEqual(errors,[]);console.log('PASS: all 8 pages, pagination/buttons/deep links/input retention, compass persistence/export/reset and local links; page scripts; four labs; tie case; quiz retry and scoring; persisted notes and completion; reset; blocked storage; stored text treated as text.');
+ assert.deepEqual(errors,[]);console.log('PASS: all 10 pages, pagination/buttons/deep links/input retention, compass persistence/export/reset and local links; page scripts; four labs; tie case; quiz retry and scoring; persisted notes and completion; reset; blocked storage; stored text treated as text.');
 })().catch(e=>{console.error(e);process.exit(1)});

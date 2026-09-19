@@ -1,6 +1,7 @@
 'use strict';
 // Keep the original elements alive: exercises and unsaved input survive page turns.
 document.addEventListener('DOMContentLoaded', () => {
+  if (document.body.dataset.vertiefungGesperrt) return;
   const main = document.querySelector('main');
   if (!main) return;
   const pages = [];

@@ -1,0 +1,41 @@
+/* Freischaltung ist eine Anzeigehilfe. Ohne JavaScript bleiben Texte lesbar. */
+.vertiefung-gesperrt body[data-vertiefung] main > :not(.freischaltung) { display:none!important; }
+.vertiefung-offen .freischaltung { display:none; }
+body[data-vertiefung] main { overflow-wrap:anywhere; }
+body[data-vertiefung] fieldset { min-width:0; border:1px solid var(--linie-warm); margin:18px 0; padding:16px; }
+body[data-vertiefung] legend { font-weight:700; padding:0 6px; }
+body[data-vertiefung] label { display:block; margin:12px 0 6px; font-weight:600; }
+body[data-vertiefung] input:not([type=checkbox]),body[data-vertiefung] select { width:100%; min-width:0; min-height:48px; padding:10px; font:inherit; border:1px solid #776f64; background:#fffefb; color:#292820; }
+body[data-vertiefung] .wahl { display:flex; align-items:center; gap:12px; min-height:48px; padding:8px; border:1px solid var(--linie-warm); cursor:pointer; }
+body[data-vertiefung] input[type=checkbox] { width:24px; height:24px; flex:none; }
+.vertiefung-tabelle { width:100%; table-layout:fixed; border-collapse:collapse; margin:16px 0; }
+.vertiefung-tabelle th,.vertiefung-tabelle td { padding:8px; border:1px solid var(--linie-warm); vertical-align:top; overflow-wrap:anywhere; }
+.vertiefung-tabelle textarea { min-height:90px; padding:8px; }
+.perspektive { border-left:4px solid #77519e; padding:8px 12px; background:#f0eaf5; color:#443454; }
+.laufzettel { padding:16px; border:1px solid var(--linie-warm); margin:20px 0; }
+.druckantwort { display:none; white-space:pre-wrap; overflow-wrap:anywhere; min-height:2em; border-bottom:1px solid #888; }
+/* Bei offenem Zusatzangebot darf die gemeinsame Navigation umbrechen. */
+.vertiefung-offen .kopfzeile-inhalt { flex-wrap:wrap; }
+.vertiefung-offen .hauptnav { flex-wrap:wrap; }
+@media(max-width:450px) {
+  .vertiefung-tabelle th,.vertiefung-tabelle td { padding:4px; }
+  body[data-vertiefung] fieldset,.laufzettel { padding:10px; }
+  body[data-vertiefung] .lernseiten-fuss { flex-wrap:wrap; }
+  body[data-vertiefung] .lernseiten-fuss span { order:3; width:100%; }
+}
+@media print {
+  @page vertiefung { size:A4; margin:15mm; }
+  body[data-vertiefung] { page:vertiefung; font-size:10pt; }
+  body[data-vertiefung] h1 { font-size:20pt!important; }
+  body[data-vertiefung] h2 { font-size:16pt; }
+  body[data-vertiefung] h3 { font-size:12pt; }
+  body[data-vertiefung] .lernseite { break-before:page; }
+  body[data-vertiefung] .lernseite:first-of-type { break-before:auto; }
+  .laufzettel { break-before:page; padding:0; border:0; }
+  body[data-vertiefung]:not(.stationenwahl-gueltig) [data-laufzettel][hidden] { display:block!important; }
+  body[data-vertiefung] .druckantwort { display:block; min-height:24mm; }
+  body[data-vertiefung] .mit-druckantwort { display:none!important; }
+  body[data-vertiefung] .druckauswahl { min-height:0; }
+  .vertiefung-tabelle .druckantwort { min-height:18mm; }
+  body[data-vertiefung] fieldset { break-inside:avoid; }
+}

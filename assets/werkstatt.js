@@ -1,6 +1,7 @@
 'use strict';
 // All exercises and journal data stay in the browser. No network requests.
 document.addEventListener('DOMContentLoaded', () => {
+  if (document.body.dataset.vertiefungGesperrt) return;
   const key = 'kiExplainedWerkstattV1';
   let state = { notes: {}, done: {} };
   let storageOK = true;
@@ -27,30 +28,131 @@ document.addEventListener('DOMContentLoaded', () => {
     const target = document.querySelector('#abschlussstand');
     if (target) target.textContent = `${[1,2,3,4].filter(i => state.done[i] === true).length} von 4 Kapiteln selbst als bearbeitet markiert.`;
   };
+  const journalValue = el => el.type === 'checkbox' ? (el.checked ? 'ja' : 'nein') : el.value;
   document.querySelectorAll('[data-journal]').forEach(el => {
     const value = state.notes[el.dataset.journal];
-    if (typeof value === 'string') el.value = value;
-    el.addEventListener('input', () => { state.notes[el.dataset.journal] = el.value; save(); });
+    if (el.type === 'checkbox') el.checked = value === 'ja';
+    else if (typeof value === 'string') el.value = value;
+    el.addEventListener(el.type === 'checkbox' ? 'change' : 'input', () => {
+      state.notes[el.dataset.journal] = journalValue(el); save();
+    });
   });
   document.querySelectorAll('[data-erledigt]').forEach(el => {
     el.checked = state.done[el.dataset.erledigt] === true;
     el.addEventListener('change', () => { state.done[el.dataset.erledigt] = el.checked; save(); progress(); });
   });
   const labels = {'transfer-1':'Kapitel 1 – Datenvergleich','transfer-2':'Kapitel 2 – Antworten beurteilen','transfer-3':'Kapitel 3 – Kreativer Vergleich','transfer-4':'Kapitel 4 – Faire Klassenregel','projekt-test':'Projekt – Test und Überarbeitung',obst:'Kapitel 1 – Trainingsdaten',tokens:'Kapitel 2 – Wortvorhersage','prompt-ziel':'Prompt – Ziel','prompt-kontext':'Prompt – Kontext','prompt-format':'Prompt – Format','prompt-revision':'Kapitel 3 – Verbesserter Prompt',verantwortung:'Kapitel 4 – Verantwortung',projekt:'Abschlussprojekt'};
+  const vertiefungLabels = {
+    "vertiefung-1-schnell": "Was wurde schnell erkannt, was nicht? Nenne je ein Beispiel.",
+    "vertiefung-1-katze": "Woher kennt das Modell mögliche Katzenformen? Deine Vermutung.",
+    "vertiefung-1-klassen": "Deine drei Klassen und Anzahl Bilder pro Klasse",
+    "vertiefung-1-test": "Neuer Testgegenstand, vorhergesagte Klasse und angezeigte Sicherheit in Prozent",
+    "vertiefung-1-fehler-1-aenderung": "Fehlerfall 1: Was habe ich verändert?",
+    "vertiefung-1-fehler-1-reaktion": "Fehlerfall 1: Was hat das Modell getan? Klasse und Prozentanzeige.",
+    "vertiefung-1-fehler-1-ursache": "Fehlerfall 1: Warum vermutlich? Nenne eine mögliche Ursache.",
+    "vertiefung-1-fehler-2-aenderung": "Fehlerfall 2: Was habe ich verändert?",
+    "vertiefung-1-fehler-2-reaktion": "Fehlerfall 2: Was hat das Modell getan? Klasse und Prozentanzeige.",
+    "vertiefung-1-fehler-2-ursache": "Fehlerfall 2: Warum vermutlich? Nenne eine mögliche Ursache.",
+    "vertiefung-1-vergleich-1-vorher": "Fall 1: vorher",
+    "vertiefung-1-vergleich-1-nachher": "Fall 1: nachher",
+    "vertiefung-1-vergleich-2-vorher": "Fall 2: vorher",
+    "vertiefung-1-vergleich-2-nachher": "Fall 2: nachher",
+    "vertiefung-1-verbesserung": "Welche Daten hast du ergänzt? Begründe in einem Satz, warum das hilft.",
+    "vertiefung-1-kernsatz": "Formuliere den Kernsatz in eigenen Worten.",
+    "vertiefung-1-verbindung": "Was haben Obstlabor und Bildmodell gemeinsam? Wo liegt ein Unterschied?",
+    "vertiefung-1-exit": "Exit-Ticket: Nenne einen Fehlergrund und eine Massnahme dagegen.",
+    "vertiefung-1-bonus": "Was hat der zusätzliche Test gezeigt?",
+    "vertiefung-1-ziel-1": "Drei Klassen trainieren und neu testen",
+    "vertiefung-1-ziel-2": "Fehler untersuchen und Ursachen nennen",
+    "vertiefung-1-ziel-3": "Einfluss der Trainingsdaten begründen",
+    "vertiefung-2-wahl-a": "Station A gewählt",
+    "vertiefung-2-wahl-b": "Station B gewählt",
+    "vertiefung-2-wahl-c": "Station C gewählt",
+    "vertiefung-2-wahl-d": "Station D gewählt",
+    "vertiefung-2-a-vergleich": "Drei Durchläufe: Wortfolgenlänge, Zufall, kurzer Ausschnitt und Beobachtung",
+    "vertiefung-2-a-training": "Deine fünf Trainingssätze und eine Veränderung nach dem Training",
+    "vertiefung-2-b-daten": "Welche Beispiele hast du gewählt oder weggelassen? Was wurde besser oder schlechter?",
+    "vertiefung-2-c-begriff-1": "Begriff 1: Was gezeichnet? Erkannt wann oder nicht erkannt?",
+    "vertiefung-2-c-begriff-2": "Begriff 2: Was gezeichnet? Erkannt wann oder nicht erkannt?",
+    "vertiefung-2-c-begriff-3": "Begriff 3: Was gezeichnet? Erkannt wann oder nicht erkannt?",
+    "vertiefung-2-c-begriff-4": "Begriff 4: Was gezeichnet? Erkannt wann oder nicht erkannt?",
+    "vertiefung-2-c-begriff-5": "Begriff 5: Was gezeichnet? Erkannt wann oder nicht erkannt?",
+    "vertiefung-2-c-begriff-6": "Begriff 6: Was gezeichnet? Erkannt wann oder nicht erkannt?",
+    "vertiefung-2-c-ungewoehnlich": "Was war an deiner Zeichnung ungewöhnlich? Vergleiche mit Beispielen aus der Datensammlung.",
+    "vertiefung-2-d-runde-1": "Runde 1: Wer gewinnt? Was fällt an den Zügen auf?",
+    "vertiefung-2-d-runde-2": "Runde 2: Wer gewinnt? Was fällt an den Zügen auf?",
+    "vertiefung-2-d-runde-3": "Runde 3: Wer gewinnt? Was fällt an den Zügen auf?",
+    "vertiefung-2-d-runde-4": "Runde 4: Wer gewinnt? Was fällt an den Zügen auf?",
+    "vertiefung-2-d-runde-5": "Runde 5: Wer gewinnt? Was fällt an den Zügen auf?",
+    "vertiefung-2-a-versuch": "Was haben wir ausprobiert? Zwei Sätze.",
+    "vertiefung-2-a-beispiel": "Was ist uns aufgefallen? Ein Beispiel.",
+    "vertiefung-2-a-leitfrage": "Antwort auf die Leitfrage: ein bis zwei Sätze.",
+    "vertiefung-2-a-chance-risiko": "Eine Chance und ein Risiko: Welche Daten braucht die Anwendung und wie schützt du persönliche Daten?",
+    "vertiefung-2-a-bonus": "Bonus: Was würdest du verbessern? Woran erkennst du die Verbesserung?",
+    "vertiefung-2-b-versuch": "Was haben wir ausprobiert? Zwei Sätze.",
+    "vertiefung-2-b-beispiel": "Was ist uns aufgefallen? Ein Beispiel.",
+    "vertiefung-2-b-leitfrage": "Antwort auf die Leitfrage: ein bis zwei Sätze.",
+    "vertiefung-2-b-chance-risiko": "Eine Chance und ein Risiko: Welche Daten braucht die Anwendung und wie schützt du persönliche Daten?",
+    "vertiefung-2-b-bonus": "Bonus: Was würdest du verbessern? Woran erkennst du die Verbesserung?",
+    "vertiefung-2-c-versuch": "Was haben wir ausprobiert? Zwei Sätze.",
+    "vertiefung-2-c-beispiel": "Was ist uns aufgefallen? Ein Beispiel.",
+    "vertiefung-2-c-leitfrage": "Antwort auf die Leitfrage: ein bis zwei Sätze.",
+    "vertiefung-2-c-chance-risiko": "Eine Chance und ein Risiko: Welche Daten braucht die Anwendung und wie schützt du persönliche Daten?",
+    "vertiefung-2-c-bonus": "Bonus: Was würdest du verbessern? Woran erkennst du die Verbesserung?",
+    "vertiefung-2-d-versuch": "Was haben wir ausprobiert? Zwei Sätze.",
+    "vertiefung-2-d-beispiel": "Was ist uns aufgefallen? Ein Beispiel.",
+    "vertiefung-2-d-leitfrage": "Antwort auf die Leitfrage: ein bis zwei Sätze.",
+    "vertiefung-2-d-chance-risiko": "Eine Chance und ein Risiko: Welche Daten braucht die Anwendung und wie schützt du persönliche Daten?",
+    "vertiefung-2-d-bonus": "Bonus: Was würdest du verbessern? Woran erkennst du die Verbesserung?",
+    "vertiefung-2-aha": "Blitzlicht: Mein wichtigster Aha-Moment",
+    "vertiefung-2-a-perspektive": "Welche Perspektive stand für dich im Vordergrund?",
+    "vertiefung-2-a-begruendung": "Begründe deine Zuordnung mit einer Beobachtung.",
+    "vertiefung-2-b-perspektive": "Welche Perspektive stand für dich im Vordergrund?",
+    "vertiefung-2-b-begruendung": "Begründe deine Zuordnung mit einer Beobachtung.",
+    "vertiefung-2-c-perspektive": "Welche Perspektive stand für dich im Vordergrund?",
+    "vertiefung-2-c-begruendung": "Begründe deine Zuordnung mit einer Beobachtung.",
+    "vertiefung-2-d-perspektive": "Welche Perspektive stand für dich im Vordergrund?",
+    "vertiefung-2-d-begruendung": "Begründe deine Zuordnung mit einer Beobachtung.",
+    "vertiefung-2-wunsch-tm": "Eigenes Teachable-Machine-Projekt",
+    "vertiefung-2-wunsch-bilder": "Bildgeneratoren kritisch beurteilen",
+    "vertiefung-2-wunsch-papier": "KI-Lernhelfer auf Papier (Abschlussprojekt)",
+    "vertiefung-2-wunsch-sonstiges": "Sonstiges",
+    "vertiefung-2-wunsch-freitext": "Dein anderer Wunsch"
+  };
   document.querySelectorAll('[data-export]').forEach(btn => btn.addEventListener('click', () => {
     // Include defaults from untouched select fields as well as edited fields.
-    document.querySelectorAll('[data-journal]').forEach(el => { state.notes[el.dataset.journal] = el.value; });
+    document.querySelectorAll('[data-journal]').forEach(el => { state.notes[el.dataset.journal] = journalValue(el); });
     save();
     const lines = ['KI-EXPLAINED · MEIN LERNJOURNAL', '3. Sek · Persönliche Notizen', '', ...[1,2,3,4].map(i => `Kapitel ${i}: ${state.done[i] === true ? 'selbst als bearbeitet markiert' : 'noch offen'}`), ''];
-    Object.entries(state.notes).forEach(([id, value]) => { if (typeof value === 'string') lines.push(labels[id] || (id.startsWith('kompass-') ? 'Kompetenzkompass – '+id.slice(8).replaceAll('-', ' – ') : id.startsWith('reflexion-') ? 'Rückblick Kapitel '+id.slice(-1) : id), value || '(noch leer)', ''); });
+    Object.entries(state.notes).forEach(([id, value]) => { if (typeof value === 'string' && !/^vertiefung-[12]-/.test(id)) lines.push(labels[id] || (id.startsWith('kompass-') ? 'Kompetenzkompass – '+id.slice(8).replaceAll('-', ' – ') : id.startsWith('reflexion-') ? 'Rückblick Kapitel '+id.slice(-1) : id), value || '(noch leer)', ''); });
+    for (const [prefix, title] of [['vertiefung-1-', 'VERTIEFUNG 1: Wir trainieren eine KI'], ['vertiefung-2-', 'VERTIEFUNG 2: KI-Werkstatt (Stationenlernen)']]) {
+      const entries = Object.entries(state.notes).filter(([id, value]) => id.startsWith(prefix) && typeof value === 'string');
+      if (!entries.length) continue;
+      lines.push(title, 'Formativ, ohne Note, nicht prüfungsrelevant', '');
+      entries.forEach(([id, value]) => {
+        const station = id.match(/^vertiefung-2-([abcd])-/);
+        lines.push((station ? 'Station '+station[1].toUpperCase()+': ' : '') + (vertiefungLabels[id] || id), value || '(noch leer)', '');
+      });
+    }
     const url = URL.createObjectURL(new Blob([lines.join('\n')], {type:'text/plain;charset=utf-8'}));
     const a = document.createElement('a'); a.href = url; a.download = 'ki-lernjournal.txt'; a.click();
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   }));
   document.querySelector('#fortschritt-loeschen')?.addEventListener('click', () => {
     if (!window.confirm('Alle Antworten und Häkchen dieser Lernseite in diesem Browser löschen?')) return;
-    state = {notes:{},done:{}}; document.querySelectorAll('[data-journal]').forEach(el => { el.value = ''; }); document.querySelectorAll('[data-erledigt]').forEach(el => { el.checked = false; }); save(); progress();
+    state = {notes:{},done:{}}; document.querySelectorAll('[data-journal]').forEach(el => { if (el.type === 'checkbox') el.checked = false; else el.value = ''; }); document.querySelectorAll('[data-erledigt]').forEach(el => { el.checked = false; }); save(); progress(); document.dispatchEvent(new Event('journal-geloescht'));
   });
+  if (document.body.hasAttribute('data-vertiefung')) {
+    const fields = [...document.querySelectorAll('[data-journal]')];
+    const copies = new Map();
+    fields.forEach(el => {
+      const copy = document.createElement('div');
+      copy.className = 'druckantwort' + (el.type === 'checkbox' || el.tagName === 'SELECT' ? ' druckauswahl' : '');
+      copy.setAttribute('aria-hidden', 'true');
+      el.after(copy); el.classList.add('mit-druckantwort'); copies.set(el, copy);
+    });
+    window.addEventListener('beforeprint', () => fields.forEach(el => { copies.get(el).textContent = journalValue(el); }));
+  }
   status(); progress();
 
   const weight = document.querySelector('#gewicht');

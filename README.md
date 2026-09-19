@@ -157,10 +157,11 @@ anwendungsbezogen. Diese Zuordnung wird in der Sicherung begründet.
 
 ### Geräteplanung für die Vertiefung
 
-Vorsorglich Laptops reservieren, möglichst einen pro Zweierteam. Ob sie
-benötigt werden, entscheidet der Vorabtest der externen Angebote auf den
-Klassen-iPads und den vorgesehenen Laptops im Schulnetz. Die Lernwerkstatt
-bleibt auf beiden Gerätearten nutzbar; eine Laptop-Pflicht wird nicht vorausgesetzt.
+Für jede lernende Person einen Laptop einplanen. Die Zusammenarbeit in
+Zweierteams bleibt bestehen, jede Person arbeitet aber an einem eigenen Gerät
+und führt ihr persönliches Lernjournal. Die externen Angebote vor dem Einsatz
+auf den vorgesehenen Laptops im Schulnetz prüfen. Die Lernwerkstatt bleibt
+auch auf iPads nutzbar.
 Für Vertiefung 1 Kamera, Kamerafreigabe und Teachable Machine prüfen, alternativ
 vorbereitete Gegenstandsbilder bereithalten. Auch die vier Stationen der zweiten
 Vertiefung auf den tatsächlich eingesetzten Geräten vorab öffnen.

@@ -1,6 +1,6 @@
 'use strict';
 // Einzige Freischaltung: am 13.01.2027 auf true setzen und veröffentlichen.
-window.kiExplainedKonfiguration = Object.freeze({ vertiefungSichtbar: false });
+window.kiExplainedKonfiguration = Object.freeze({ vertiefungSichtbar: true });
 const vertiefungSichtbar = window.kiExplainedKonfiguration.vertiefungSichtbar;
 document.documentElement.classList.add(vertiefungSichtbar ? 'vertiefung-offen' : 'vertiefung-gesperrt');
 document.addEventListener('DOMContentLoaded', () => {
